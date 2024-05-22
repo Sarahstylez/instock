@@ -25,3 +25,5 @@ yarn-error.log*
 # Ignore reportWebVitals and setupTests files
 /src/reportWebVitals.js
 /src/setupTests.js 
+
+/src/App.css.map
