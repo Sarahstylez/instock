@@ -9,6 +9,7 @@ function App() {
       <BrowserRouter>
         {/* Header here */}
         <Routes>
+          <Route path="/" element={<WarehousePage />} />
           <Route path="/inventory" element={<InventoryPage />} />
           <Route path="/warehouse" element={<WarehousePage />} />
           <Route path="*" element={<h1>Page not found</h1>} />
