@@ -1,3 +1,126 @@
 @use "../../styles/partials/__variables" as *;
 @use "../../styles/partials/__mixins" as *;
 @use "../../styles/partials/__utils" as *;
+
+.item__card {
+  width: 21.4375rem;
+  height: 22.8125rem;
+  flex-shrink: 0;
+  border-radius: 3px;
+  background: var(--White, #fff);
+  box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.1);
+  @include tablet {
+    width: 44rem;
+    height: 18.25rem;
+    flex-shrink: 0;
+  }
+  @include desktop {
+    width: 1020px;
+    height: 274px;
+    flex-shrink: 0;
+  }
+
+  // Item details header
+  h2 {
+    margin-bottom: 0.25rem;
+    color: var(--Slate, #5c667e);
+    font-family: "Titillium Web";
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 16px;
+    text-transform: uppercase;
+    @include tablet {
+      font-size: 12px;
+      line-height: 1.125rem;
+    }
+  }
+
+  // Item details content
+  p {
+    margin-bottom: 1rem;
+    color: var(--Instock-Black, #13182c);
+    font-family: "Titillium Web";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    @include tablet {
+      font-size: 14px;
+      line-height: 1.375rem;
+    }
+    @include desktop {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  &__back-arrow {
+    display: flex;
+    padding: 8px;
+    width: 24px;
+    height: 24px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    @include tablet {
+      display: inline-flex;
+      padding: 8px 16px;
+      gap: 10px;
+    }
+  }
+  &__name {
+    color: var(--Instock-Black, #13182c);
+    font-family: "Titillium Web";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 36px;
+    @include tablet {
+      font-size: 32px;
+      line-height: 40px;
+    }
+  }
+  &__edit {
+    display: flex;
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    @include tablet {
+      display: inline-flex;
+      padding: 8px 16px;
+      gap: 10px;
+      width: 36px;
+      height: 36px;
+    }
+  }
+
+  &__divider {
+    border-bottom: 1px solid var(--Cloud, #bdc5d5);
+    margin-bottom: 2rem;
+  }
+  &__details {
+    padding: 0 1.5rem;
+  }
+  &__stock-container {
+    display: flex;
+    flex-direction: row;
+  }
+  &__status {
+    flex: 1;
+  }
+  &__quantity {
+    flex: 1;
+  }
+}

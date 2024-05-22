@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import InventoryPage from "./pages/Inventory/Inventory";
 import WarehousePage from "./pages/Warehouse/Warehouse";
-import "./App.css";
+import "./App.scss";
 
 function App() {
   return (
