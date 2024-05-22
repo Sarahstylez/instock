@@ -2,6 +2,60 @@
 @use "../../styles/partials/__mixins" as *;
 @use "../../styles/partials/__utils" as *;
 
+.nav {
+  background-color: $color-bg-graphite;
+  display: flex;
+  flex-direction: column;
+  font-family: "Titillium Semi-Bold";
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem;
+    align-items: center;
+  }
+  @include desktop {
+    padding: 2rem 5rem;
+  }
+}
+
+.nav__logo {
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem 0 0 0;
+  @include tablet {
+    padding: 0;
+  }
+}
+
+.nav__links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 1rem;
+  @include tablet {
+    padding: 0;
+  }
+}
+
+.nav__warehouse,
+.nav__inventory {
+  padding: 0.5rem 1rem;
+  color: $color-secondary-cloud;
+  width: 50%;
+  text-align: center;
+  &:hover {
+    color: white;
+    background-color: $color-primary-is-black;
+    border-radius: 1.5625rem;
+  }
+}
+
+.nav__empty {
+  height: 10vh;
+  background-color: $color-bg-graphite;
+  z-index: 1;
+}
+
 /* -------------------------------------------------------------------------- */
 /*                                Mobile Styles                               */
 /* -------------------------------------------------------------------------- */
