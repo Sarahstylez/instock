@@ -121,6 +121,16 @@
   }
   &__details {
     padding: 0 1.5rem;
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+  &__left_column {
+    flex: 1;
+  }
+  &__right_column {
+    flex: 1;
   }
   &__stock-container {
     display: flex;

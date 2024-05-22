@@ -8,7 +8,6 @@ const InventoryPage = () => {
   return (
     <>
       <div className="inventory__page">
-        <h1>Inventory Page</h1>
         <ItemDetailsCard></ItemDetailsCard>
       </div>
     </>

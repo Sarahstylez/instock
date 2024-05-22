@@ -52,7 +52,7 @@ const ItemDetailsCard = (itemId) => {
               <p>Electronics</p>
             </div>
           </div>
-          <div className="item__card__right-column">
+          <div className="item__card__right_column">
             {/* Fetch  here */}
             <div className="item__card__stock-container">
               <div className="item__card__status">
