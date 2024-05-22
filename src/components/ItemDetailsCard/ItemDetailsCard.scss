@@ -3,6 +3,8 @@
 @use "../../styles/partials/__utils" as *;
 
 .item__card {
+  display: flex;
+  flex-direction: column;
   width: 21.4375rem;
   height: 22.8125rem;
   flex-shrink: 0;
@@ -64,6 +66,9 @@
   }
 
   &__back-arrow {
+    background: #fff;
+    margin-right: 0.5rem;
+    margin-left: 1.5rem;
     display: flex;
     padding: 8px;
     width: 24px;
@@ -90,6 +95,10 @@
     }
   }
   &__edit {
+    background: #2e66e5;
+    border-radius: 1.25rem;
+    margin-left: 6.75rem;
+    margin-right: 2rem;
     display: flex;
     width: 36px;
     height: 36px;

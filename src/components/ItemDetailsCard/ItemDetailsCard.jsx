@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import BackArrow from "../../assets/Icons/arrow_back-24px.svg";
+import EditIcon from "../../assets/Icons/arrow_back-24px.svg";
 import "./ItemDetailsCard.scss";
 
 const ItemDetailsCard = (itemId) => {
@@ -25,12 +27,13 @@ const ItemDetailsCard = (itemId) => {
     <>
       <div className="item__card">
         <div className="item__card__header">
-          <button
-            className="item__card__back-arrow"
-            onClick={() => {}}
-          ></button>
+          <button className="item__card__back-arrow" onClick={backClick}>
+            <img src={BackArrow} alt="back button"></img>
+          </button>
           <h1 className="item__card__name">Television</h1>
-          <button className="item__card__edit" onClick={() => {}}></button>
+          <button className="item__card__edit" onClick={editClick}>
+            <img src={EditIcon} alt="edit button"></img>
+          </button>
         </div>
         <div className="item__card__divider"></div>
         <div className="item__card__details">
