@@ -1,0 +1,12 @@
+@use "../../styles/partials/__variables" as *;
+@use "../../styles/partials/__mixins" as *;
+@use "../../styles/partials/__utils" as *;
+
+.warehouse__section {
+    background-color: white;
+    @include desktop {
+    border: .125rem solid red;
+    margin: -5rem 5rem;
+    }
+};
+
