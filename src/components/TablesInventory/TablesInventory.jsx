@@ -4,6 +4,7 @@ import TrashBin from "../../assets/Icons/delete_outline-24px.svg";
 import EditButton from "../../assets/Icons/edit-24px.svg";
 import InStock from "../Tags/Tags";
 
+/* TODO update table and use GET API endpoint */
 function TablesInventory() {
   return (
     <div className="inventory">

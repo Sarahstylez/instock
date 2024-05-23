@@ -6,6 +6,7 @@ import axios from "axios";
 import TablesInventory from "../../components/TablesInventory/TablesInventory";
 
 const InventoryPage = () => {
+  /* TODO insert page header component */
   return <TablesInventory />;
 };
 
