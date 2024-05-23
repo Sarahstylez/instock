@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   width: 21.4375rem;
-  height: 27rem;
+  height: 28rem;
   padding: 0 1.5rem;
   border-radius: 3px;
   background: var(--White, #fff);
@@ -19,40 +19,6 @@
   @include desktop {
     width: 1020px;
     height: 274px;
-  }
-
-  // Item details header
-  h2 {
-    margin-bottom: 0.25rem;
-    color: var(--Slate, #5c667e);
-    font-family: "Titillium Web";
-    font-size: 11px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 16px;
-    text-transform: uppercase;
-    @include tablet {
-      font-size: 12px;
-      line-height: 1.125rem;
-    }
-  }
-
-  // Item details content
-  p {
-    margin-bottom: 1rem;
-    font-family: "Titillium Web";
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 20px;
-    @include tablet {
-      font-size: 14px;
-      line-height: 1.375rem;
-    }
-    @include desktop {
-      font-size: 14px;
-      line-height: 22px;
-    }
   }
 
   &__header {
