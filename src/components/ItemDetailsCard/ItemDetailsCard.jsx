@@ -2,20 +2,20 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import BackArrow from "../../assets/Icons/arrow_back-24px.svg";
-import EditIcon from "../../assets/Icons/arrow_back-24px.svg";
+import EditIcon from "../../assets/Icons/edit-24px.svg";
 import "./ItemDetailsCard.scss";
 
 const ItemDetailsCard = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const apiUrl = "http://localhost:8080/api";
-  const [item, setItem] = useState(null); // store item detail
+  const [item, setItem] = useState(null);
 
-  // use effect to load item details
+  // Fetch item details
   useEffect(() => {
     const getItem = async () => {
       try {
-        const item = await axios.get(`${apiUrl}/inventories/${id}`);
+        const item = await axios.get(`${apiUrl}/inventory/${id}`);
         setItem(item.data);
       } catch (error) {
         console.log("Could not fetch data", error);
@@ -43,7 +43,11 @@ const ItemDetailsCard = () => {
           </button>
           <h1 className="item__card__name">Television</h1>
           <button className="item__card__edit" onClick={editClick}>
-            <img src={EditIcon} alt="edit button"></img>
+            <img
+              src={EditIcon}
+              alt="edit button"
+              className="item__card__edit-img"
+            ></img>
           </button>
         </div>
         <div className="item__card__divider"></div>

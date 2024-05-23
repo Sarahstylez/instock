@@ -6,11 +6,12 @@
   display: flex;
   flex-direction: column;
   width: 21.4375rem;
-  height: 22.8125rem;
-  flex-shrink: 0;
+  height: 25rem;
+  padding: 0 1.5rem;
   border-radius: 3px;
   background: var(--White, #fff);
   box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.1);
+  margin-top: 3rem;
   @include tablet {
     width: 44rem;
     height: 18.25rem;
@@ -63,6 +64,7 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 1.5rem;
+    padding-top: 1.5rem;
   }
 
   &__back-arrow {
@@ -97,6 +99,7 @@
   &__edit {
     background: #2e66e5;
     border-radius: 1.25rem;
+    border: none;
     margin-left: 6.75rem;
     margin-right: 2rem;
     display: flex;
@@ -105,7 +108,6 @@
     padding: 8px;
     justify-content: center;
     align-items: center;
-    flex-shrink: 0;
     @include tablet {
       display: inline-flex;
       padding: 8px 16px;
@@ -114,10 +116,16 @@
       height: 36px;
     }
   }
+  &__edit-img {
+    width: 15px;
+    height: 15px;
+    filter: brightness(4) sepia(0) hue-rotate(0deg) saturate(0);
+  }
 
   &__divider {
     border-bottom: 1px solid var(--Cloud, #bdc5d5);
     margin-bottom: 2rem;
+    width: 107%;
   }
   &__details {
     padding: 0 1.5rem;
