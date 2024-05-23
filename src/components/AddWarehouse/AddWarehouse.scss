@@ -7,6 +7,38 @@
 /* -------------------------------------------------------------------------- */
 
 @include mobile {
+  .card {
+    @include flex(center, start);
+    flex-direction: column;
+    margin: 1rem;
+    width: 92%;
+    height: 106.8125rem;
+    flex-shrink: 0;
+    border-radius: 0.1875rem;
+    background: $color-primary-white;
+
+    /* Card Shadow */
+    box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.1);
+
+    &__title {
+      @include flex();
+      width: 91%;
+      padding: $padding-s $padding-xs;
+      flex-direction: row;
+      border-bottom: 1px solid $color-secondary-cloud;
+      &-container {
+        @include flex(center, start);
+        flex-direction: row;
+        width: 100%;
+      }
+    }
+
+    &__icon {
+      &-arrow {
+        padding-right: $padding-xxs;
+      }
+    }
+  }
 }
 
 /* -------------------------------------------------------------------------- */
@@ -14,6 +46,25 @@
 /* -------------------------------------------------------------------------- */
 
 @include tablet {
+  .card {
+    margin: 0 2rem;
+    width: 92%;
+
+    &__title {
+      @include flex();
+      width: 91%;
+      padding: $padding-m $padding-sm;
+    }
+
+    &__warehouse {
+      width: 10rem;
+    }
+    &__icon {
+      &-arrow {
+        padding-right: $padding-xxs;
+      }
+    }
+  }
 }
 
 /* -------------------------------------------------------------------------- */
@@ -21,4 +72,13 @@
 /* -------------------------------------------------------------------------- */
 
 @include desktop {
+  .card {
+    margin: 0 5rem;
+    width: 87%;
+
+    &__title {
+      width: 91%;
+      padding: $padding-m $padding-l;
+    }
+  }
 }

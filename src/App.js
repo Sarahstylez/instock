@@ -4,6 +4,7 @@ import WarehousePage from "./pages/Warehouse/Warehouse";
 import WarehouseDetails from "./components/WarehouseDetails/WarehouseDetails";
 import "./App.scss";
 import Navigation from "./components/Navigation/Navigation";
+import AddWarehouse from "./components/AddWarehouse/AddWarehouse";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<WarehousePage />} />
           <Route path="/inventory" element={<InventoryPage />} />
           <Route path="/warehouses" element={<WarehousePage />} />
+          <Route path="/warehouses/new" element={<AddWarehouse />} />
           <Route path="/warehouses/:id" element={<WarehouseDetails />} />
           <Route path="*" element={<h1>Page not found</h1>} />
         </Routes>
