@@ -13,14 +13,13 @@ function Navigation() {
         </div>
         <div className="nav__links">
           <Link className="nav__warehouse" to="/warehouses">
-            <div>Warehouses</div>
+            <h3>Warehouses</h3>
           </Link>
           <Link className="nav__inventory" to="/inventory">
-            <div>Inventory</div>
+            <h3>Inventory</h3>
           </Link>
         </div>
       </div>
-      <div className="nav__empty"></div>
     </header>
   );
 }

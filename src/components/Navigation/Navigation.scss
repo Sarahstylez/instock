@@ -2,18 +2,25 @@
 @use "../../styles/partials/__mixins" as *;
 @use "../../styles/partials/__utils" as *;
 
+.header {
+  width: 100%;
+}
+
 .nav {
   background-color: $color-bg-graphite;
   display: flex;
   flex-direction: column;
   font-family: "Titillium Semi-Bold";
+  width: 100%;
   @include tablet {
+    width: 90%;
     flex-direction: row;
     justify-content: space-between;
     padding: 2rem;
     align-items: center;
   }
   @include desktop {
+    width: 86%;
     padding: 2rem 5rem;
   }
 }
@@ -50,11 +57,15 @@
   }
 }
 
-.nav__empty {
-  height: 10vh;
-  background-color: $color-bg-graphite;
-  z-index: 1;
-}
+// .nav__empty {
+//   height: 10vh;
+//   width: 100%;
+//   background-color: $color-bg-graphite;
+//   z-index: 1;
+//   @include tablet {
+//     display: none;
+//   }
+// }
 
 /* -------------------------------------------------------------------------- */
 /*                                Mobile Styles                               */
