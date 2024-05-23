@@ -2,7 +2,7 @@ import "./TablesInventory.scss";
 import Chevron from "../../assets/Icons/chevron_right-24px.svg";
 import TrashBin from "../../assets/Icons/delete_outline-24px.svg";
 import EditButton from "../../assets/Icons/edit-24px.svg";
-import InStock from "../Tags/InStock";
+import InStock from "../Tags/Tags";
 
 function TablesInventory() {
   return (
