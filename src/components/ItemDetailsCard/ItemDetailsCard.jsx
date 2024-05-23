@@ -1,16 +1,27 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import BackArrow from "../../assets/Icons/arrow_back-24px.svg";
 import EditIcon from "../../assets/Icons/arrow_back-24px.svg";
 import "./ItemDetailsCard.scss";
 
-const ItemDetailsCard = (itemId) => {
+const ItemDetailsCard = () => {
   const [isEditing, setIsEditing] = useState(false);
+  const [item, setItem] = useState(null); // store item detail
+  console.log(`This is the item ${item}`);
 
   // use effect to load item details
   useEffect(() => {
-    console.log("Things are being loaded");
+    const getItem = async () => {
+      try {
+        const item = await axios.get(`http://localhost:5050/inventory/1`);
+        setItem(item);
+        console.log(`This is the response`, item.data);
+      } catch (error) {
+        console.log("Could not fetch data", error);
+      }
+    };
+    getItem();
   });
 
   // handle edit functionality
@@ -40,35 +51,27 @@ const ItemDetailsCard = (itemId) => {
           <div className="item__card__left_column">
             <div className="item__card__description">
               <h2 className="">ITEM DESCRIPTION:</h2>
-              {/* Fetch  here */}
-              <p>
-                This 50", 4K LED TV provides a crystal-clear picture and vivid
-                colors.
-              </p>
+              <p>{item.description}</p>
             </div>
             <div className="item__card__category">
-              {/* Fetch  here */}
               <h2>CATEGORY:</h2>
-              <p>Electronics</p>
+              <p>{item.category}</p>
             </div>
           </div>
           <div className="item__card__right_column">
-            {/* Fetch  here */}
             <div className="item__card__stock-container">
               <div className="item__card__status">
                 <h2>STATUS:</h2>
-                <p className="item__card__in-stock">IN STOCK</p>
+                <p className="item__card__in-stock">{item.status}</p>
               </div>
               <div className="item__card__quantity">
                 <h2>QUANTITY:</h2>
-                {/* Fetch  here */}
-                <p>500</p>
+                <p>{item.quantity}</p>
               </div>
             </div>
             <div className="item__card__warehouse">
-              {/* Fetch  here */}
               <h2>WAREHOUSE:</h2>
-              <p>Manhattan</p>
+              <p>{item.warehouse_name}</p>
             </div>
           </div>
         </div>
