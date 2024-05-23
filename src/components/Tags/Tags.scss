@@ -1,18 +1,26 @@
 @use "../../styles/partials/__variables" as *;
 @use "../../styles/partials/__mixins" as *;
-@use "../../styles/partials/__utils" as *;
 
 .tag {
   display: inline-flex;
+  flex-wrap: nowrap;
   padding: 0.25rem 0.5rem;
   align-items: center;
   border-radius: 1.25rem;
+  width: auto; //auto adjust tag width
+  height: 1.5rem;
+  padding-left: $padding-xxs;
+  padding-right: $padding-xxs;
   &--instock {
-    background: rgba(21, 132, 99, 0.07);
+    background: rgba($color-support-green, 0.07);
     color: $color-support-green;
   }
   &--outofstock {
     background: rgba(201, 69, 21, 0.07);
     color: $color-support-red;
+  }
+
+  @include tablet {
+    height: 1.625rem;
   }
 }

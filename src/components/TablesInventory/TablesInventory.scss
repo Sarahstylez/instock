@@ -33,11 +33,6 @@
       padding: 4px 0;
     }
   }
-  &__status {
-    &-tag {
-      padding: 4px 0;
-    }
-  }
   &__icons {
     @include flex(start, space-between);
     width: 100%;
