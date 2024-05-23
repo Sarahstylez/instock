@@ -15,8 +15,8 @@ function App() {
           <Route path="/" element={<WarehousePage />} />
           <Route path="/inventory" element={<InventoryPage />} />
           <Route path="/inventory/:id" element={<InventoryDetailsCard />} />
-          <Route path="/api/warehouses" element={<WarehousePage />} />
-          <Route path="/api/warehouses/:id" element={<WarehouseDetails />} />
+          <Route path="/warehouses" element={<WarehousePage />} />
+          <Route path="/warehouses/:id" element={<WarehouseDetails />} />
           <Route path="*" element={<h1>Page not found</h1>} />
         </Routes>
       </BrowserRouter>
