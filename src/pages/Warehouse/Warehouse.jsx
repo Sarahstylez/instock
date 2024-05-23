@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useState, useEffect } from 'react';
 import "./Warehouse.scss";
+import searchIcon from "../../assets/Icons/search-24px.svg";
+
 
 const WarehouseList = () => {
   const [warehouses, setWarehouses] = useState([]);
@@ -8,7 +10,7 @@ const WarehouseList = () => {
   useEffect(() => {
     const fetchWarehouses = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/warehouses');
+        const response = await axios.get('http://localhost:8080/api/warehouses');
         setWarehouses(response.data);
       } catch (error) {
         console.error("Error fetching warehouse data:", error);
@@ -21,6 +23,14 @@ const WarehouseList = () => {
   return (
     <section className="warehouse__section">
       <h1 className="warehouse__title">Warehouses</h1>
+      <form id="warehouse__search">
+            <img
+              className="warehouse__search-icon"
+              src={searchIcon}
+              alt="search icon"
+            />
+            <input type="text" name="Search" placeholder="Search..." />
+          </form>
 
       <ul>
         {warehouses.map((warehouse) => (
