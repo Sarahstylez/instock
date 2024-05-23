@@ -1,0 +1,60 @@
+.edit-inventory-item {
+    &__title {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    &__form-group {
+      margin-bottom: 15px;
+    }
+    &__label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    &__input,
+    &__select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1em;
+    }
+    &__status-group {
+      display: flex;
+      gap: 10px;
+    }
+    &__status-button {
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1em;
+      background-color: #f9f9f9;
+  
+      &.active {
+        background-color: #007bff;
+        color: white;
+        border-color: #007bff;
+      }
+  
+      input {
+        display: none;
+      }
+    }
+    &__button {
+      margin-right: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    &__button:hover {
+      background-color: #0056b3;
+    }
+  }
+  
