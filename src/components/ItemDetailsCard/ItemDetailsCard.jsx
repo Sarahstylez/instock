@@ -48,6 +48,7 @@ const ItemDetailsCard = () => {
               alt="edit button"
               className="item__card__edit-img"
             ></img>
+            <h3 className="item__card__edit-text">Edit</h3>
           </button>
         </div>
         <div className="item__card__divider"></div>
