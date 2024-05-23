@@ -30,7 +30,9 @@ function TablesInventory() {
           <div className="inventory__status">
             <h4 className="inventory__status-title">Status</h4>
             <div className="inventory__status-tag">
-              <Tags status="instock" />
+              {/* TODO replace by correct status field from api endpoint */}
+              <Tags status="In Stock" />
+              <Tags status="Out Of Stock" />
             </div>
           </div>
           <div className="inventory__quantity">
