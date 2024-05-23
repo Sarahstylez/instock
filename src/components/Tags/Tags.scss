@@ -2,41 +2,21 @@
 @use "../../styles/partials/__mixins" as *;
 @use "../../styles/partials/__utils" as *;
 
-/* -------------------------------------------------------------------------- */
-/*                                Mobile Styles                               */
-/* -------------------------------------------------------------------------- */
-
-@include mobile {
-  .tag {
-    &__instock {
-      display: inline-flex;
-      padding: 0.25rem 0.5rem;
-      align-items: center;
-      border-radius: 1.25rem;
-      background: rgba(21, 132, 99, 0.07);
-      color: $color-support-green;
-    }
-    &__outofstock {
-      display: inline-flex;
-      padding: 0.25rem 0.5rem;
-      align-items: center;
-      border-radius: 1.25rem;
-      background: rgba(201, 69, 21, 0.07);
-      color: $color-support-red;
-    }
+.tag {
+  &__instock {
+    display: inline-flex;
+    padding: 0.25rem 0.5rem;
+    align-items: center;
+    border-radius: 1.25rem;
+    background: rgba(21, 132, 99, 0.07);
+    color: $color-support-green;
   }
-}
-
-/* -------------------------------------------------------------------------- */
-/*                                Tablet Styles                               */
-/* -------------------------------------------------------------------------- */
-
-@include tablet {
-}
-
-/* -------------------------------------------------------------------------- */
-/*                                DesktopStyles                               */
-/* -------------------------------------------------------------------------- */
-
-@include desktop {
+  &__outofstock {
+    display: inline-flex;
+    padding: 0.25rem 0.5rem;
+    align-items: center;
+    border-radius: 1.25rem;
+    background: rgba(201, 69, 21, 0.07);
+    color: $color-support-red;
+  }
 }
