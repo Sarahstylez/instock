@@ -2,7 +2,7 @@ import "./TablesInventory.scss";
 import Chevron from "../../assets/Icons/chevron_right-24px.svg";
 import TrashBin from "../../assets/Icons/delete_outline-24px.svg";
 import EditButton from "../../assets/Icons/edit-24px.svg";
-import InStock from "../Tags/Tags";
+import Tags from "../Tags/Tags";
 
 /* TODO update table and use GET API endpoint */
 function TablesInventory() {
@@ -30,7 +30,7 @@ function TablesInventory() {
           <div className="inventory__status">
             <h4 className="inventory__status-title">Status</h4>
             <div className="inventory__status-tag">
-              <InStock />
+              <Tags status="instock" />
             </div>
           </div>
           <div className="inventory__quantity">
