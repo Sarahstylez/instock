@@ -1,0 +1,158 @@
+@use "../../styles/partials/__variables" as *;
+@use "../../styles/partials/__mixins" as *;
+@use "../../styles/partials/__utils" as *;
+
+.item__card {
+  display: flex;
+  flex-direction: column;
+  width: 21.4375rem;
+  height: 28rem;
+  padding: 0 1.5rem;
+  border-radius: 3px;
+  background: var(--White, #fff);
+  box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.1);
+  margin-top: 3rem;
+  @include tablet {
+    width: 44rem;
+    height: 22.25rem;
+  }
+  @include desktop {
+    width: 1020px;
+    height: 274px;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    padding-top: 1.5rem;
+  }
+
+  &__back-arrow {
+    background: #fff;
+    border: none;
+    display: flex;
+    padding: 8px;
+    width: 24px;
+    margin-left: 1rem;
+    height: 24px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    @include tablet {
+      display: inline-flex;
+      padding: 8px 16px;
+      gap: 10px;
+    }
+    @include desktop {
+      margin-left: 1rem;
+    }
+  }
+  &__name {
+    color: var(--Instock-Black, #13182c);
+    font-family: "Titillium Web";
+    font-size: 28px;
+    font-style: normal;
+    margin-left: -7.5rem;
+    font-weight: 600;
+    line-height: 36px;
+    @include tablet {
+      font-size: 32px;
+      line-height: 40px;
+      margin-left: -23.5rem;
+    }
+    @include desktop {
+      margin-left: -53rem;
+    }
+  }
+  &__edit {
+    background: #2e66e5;
+    border-radius: 1.25rem;
+    border: none;
+    display: flex;
+    width: 36px;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    @include tablet {
+      display: inline-flex;
+      padding: 8px 16px;
+      gap: 10px;
+      width: 81px;
+      height: 38px;
+    }
+  }
+  &__edit-img {
+    width: 15px;
+    filter: brightness(4) sepia(0) hue-rotate(0deg) saturate(0);
+  }
+  &__edit-text {
+    display: none;
+    @include tablet {
+      display: contents;
+      color: #fff;
+    }
+  }
+  &__divider {
+    border-bottom: 1px solid var(--Cloud, #bdc5d5);
+    margin-bottom: 2rem;
+    width: 114%;
+    margin-left: -1.5rem;
+    @include tablet {
+      width: 107%;
+    }
+    @include desktop {
+      width: 104%;
+    }
+  }
+  &__details {
+    padding: 0 1.5rem;
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+  &__left_column {
+    flex: 1;
+    @include tablet {
+      border-right: 1px solid rgba(189, 197, 213, 0.75);
+    }
+  }
+  &__right_column {
+    flex: 1;
+    @include tablet {
+      margin-left: 2.5rem;
+    }
+  }
+  &__description {
+    margin-right: 2.5rem;
+  }
+  &__stock-container {
+    display: flex;
+    flex-direction: row;
+  }
+  &__status {
+    flex: 1;
+  }
+  &__quantity {
+    flex: 1;
+  }
+  &__instock {
+    display: inline-flex;
+    padding: 0.25rem 0.5rem;
+    align-items: center;
+    border-radius: 1.25rem;
+    background: rgba(21, 132, 99, 0.07);
+    color: $color-support-green;
+  }
+  &__outofstock {
+    display: inline-flex;
+    padding: 0.25rem 0.5rem;
+    align-items: center;
+    border-radius: 1.25rem;
+    background: rgba(201, 69, 21, 0.5);
+    color: $color-support-red;
+  }
+}
