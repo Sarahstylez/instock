@@ -2,10 +2,12 @@
 @use "../../styles/partials/__mixins" as *;
 @use "../../styles/partials/__utils" as *;
 
+body {
+  background-color: $color-bg-light-grey;
+}
 .warehouse {
   &__section {
     position: relative;
-    background-color: $color-bg-light-grey;
   }
   &__overlay {
     position: absolute;
