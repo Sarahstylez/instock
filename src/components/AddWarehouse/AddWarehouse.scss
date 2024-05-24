@@ -57,6 +57,10 @@
         border: 1px solid $color-secondary-cloud;
         color: $color-secondary-slate;
         background-color: $color-primary-white;
+        &:hover {
+          color: $color-primary-is-indigo;
+          border: 1px solid $color-primary-is-indigo;
+        }
       }
       &-add {
         margin-left: 0.5rem;
@@ -67,6 +71,9 @@
         border-radius: 1.25rem;
         color: $color-primary-white;
         background-color: $color-primary-is-indigo;
+        &:hover {
+          background-color: $color-bg-graphite;
+        }
       }
     }
   }

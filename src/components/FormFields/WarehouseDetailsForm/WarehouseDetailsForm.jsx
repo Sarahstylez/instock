@@ -9,83 +9,94 @@ const WarehouseDetailsForm = () => {
     country: "",
   });
 
+  const [activeField, setActiveField] = useState(null);
+  const [errors, setErrors] = useState({});
+
   const handleChange = (e) => {
+    const { name, value } = e.target;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
+    validateInput(name, value);
+  };
+
+  const handleFocus = (name) => {
+    setActiveField(name);
+  };
+
+  const handleBlur = (name) => {
+    setActiveField(null);
+    validateInput(name, formData[name]);
+  };
+
+  const validateInput = (name, value) => {
+    let error = "";
+    if (!value) {
+      error = "This field is required";
+    }
+    setErrors((prevErrors) => ({ ...prevErrors, [name]: error }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log(formData);
+    let valid = true;
+    const newErrors = {};
+    Object.keys(formData).forEach((key) => {
+      if (!formData[key]) {
+        newErrors[key] = "This field is required";
+        valid = false;
+      } else {
+        validateInput(key, formData[key]);
+        if (errors[key]) {
+          valid = false;
+        }
+      }
+    });
+
+    setErrors(newErrors);
+
+    if (valid) {
+      // Handle form submission logic here
+      console.log(formData);
+    }
   };
 
   return (
     <div className="form-warehouse">
       <h2 className="form-warehouse__title">Warehouse Details</h2>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="warehouseName">
-            <h3>Warehouse Name:</h3>
-          </label>
-          <input
-            className="form-warehouse__input"
-            type="text"
-            id="warehouseName"
-            name="warehouseName"
-            value={formData.warehouseName}
-            onChange={handleChange}
-            placeholder="Warehouse Name"
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="streetAddress">
-            <h3>Street Address:</h3>
-          </label>
-          <input
-            className="form-warehouse__input"
-            type="text"
-            id="streetAddress"
-            name="streetAddress"
-            value={formData.streetAddress}
-            onChange={handleChange}
-            placeholder="Street Address"
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="city">
-            <h3>City:</h3>
-          </label>
-          <input
-            className="form-warehouse__input"
-            type="text"
-            id="city"
-            name="city"
-            value={formData.city}
-            onChange={handleChange}
-            placeholder="City"
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="country">
-            <h3>Country:</h3>
-          </label>
-          <input
-            className="form-warehouse__input"
-            type="text"
-            id="country"
-            name="country"
-            value={formData.country}
-            onChange={handleChange}
-            placeholder="Country"
-            required
-          />
-        </div>
+        {["warehouseName", "streetAddress", "city", "country"].map((field) => (
+          <div key={field}>
+            <label htmlFor={field}>
+              <h3>
+                {field
+                  .replace(/([A-Z])/g, " $1")
+                  .replace(/^./, (str) => str.toUpperCase())}
+                :
+              </h3>
+            </label>
+            <input
+              className={`form-warehouse__input ${
+                activeField === field ? "active" : ""
+              } ${errors[field] ? "error" : ""}`}
+              type="text"
+              id={field}
+              name={field}
+              value={formData[field]}
+              onChange={handleChange}
+              onFocus={() => handleFocus(field)}
+              onBlur={() => handleBlur(field)}
+              placeholder={field
+                .replace(/([A-Z])/g, " $1")
+                .replace(/^./, (str) => str.toUpperCase())}
+              required
+            />
+            {errors[field] && (
+              <div className="error-message">{errors[field]}</div>
+            )}
+          </div>
+        ))}
       </form>
     </div>
   );

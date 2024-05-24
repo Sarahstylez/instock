@@ -9,83 +9,100 @@ const ContactDetailsForm = () => {
     email: "",
   });
 
+  const [activeField, setActiveField] = useState(null);
+  const [errors, setErrors] = useState({});
+
   const handleChange = (e) => {
+    const { name, value } = e.target;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
+    validateInput(name, value);
+  };
+
+  const handleFocus = (name) => {
+    setActiveField(name);
+  };
+
+  const handleBlur = (name) => {
+    setActiveField(null);
+    validateInput(name, formData[name]);
+  };
+
+  const validateInput = (name, value) => {
+    let error = "";
+    if (!value) {
+      error = "This field is required";
+    } else if (name === "email") {
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      error = !emailPattern.test(value) ? "Invalid email address" : "";
+    } else if (name === "phoneNumber") {
+      const phonePattern = /^[0-9]{10}$/; // Example pattern: 10 digits
+      error = !phonePattern.test(value) ? "Invalid phone number" : "";
+    }
+    setErrors((prevErrors) => ({ ...prevErrors, [name]: error }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log(formData);
+    let valid = true;
+    const newErrors = {};
+    Object.keys(formData).forEach((key) => {
+      if (!formData[key]) {
+        newErrors[key] = "This field is required";
+        valid = false;
+      } else {
+        validateInput(key, formData[key]);
+        if (errors[key]) {
+          valid = false;
+        }
+      }
+    });
+
+    setErrors(newErrors);
+
+    if (valid) {
+      // Handle form submission logic here
+      console.log(formData);
+    }
   };
 
   return (
     <div className="form-contact">
       <h2 className="form-contact__title">Contact Details</h2>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="contactName">
-            <h3>Contact Name:</h3>
-          </label>
-          <input
-            className="form-contact__input"
-            type="text"
-            id="contactName"
-            name="contactName"
-            value={formData.contactName}
-            onChange={handleChange}
-            placeholder="Contact Name"
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="position">
-            <h3>Position:</h3>
-          </label>
-          <input
-            className="form-contact__input"
-            type="text"
-            id="position"
-            name="position"
-            value={formData.position}
-            onChange={handleChange}
-            placeholder="Position"
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="phoneNumber">
-            <h3>City:</h3>
-          </label>
-          <input
-            className="form-contact__input"
-            type="text"
-            id="city"
-            name="city"
-            value={formData.phoneNumber}
-            onChange={handleChange}
-            placeholder="Phone Number"
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="email">
-            <h3>Country:</h3>
-          </label>
-          <input
-            className="form-contact__input"
-            type="text"
-            id="country"
-            name="country"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="Email"
-            required
-          />
-        </div>
+        {["contactName", "position", "phoneNumber", "email"].map((field) => (
+          <div key={field}>
+            <label htmlFor={field}>
+              <h3>
+                {field
+                  .replace(/([A-Z])/g, " $1")
+                  .replace(/^./, (str) => str.toUpperCase())}
+                :
+              </h3>
+            </label>
+            <input
+              className={`form-contact__input ${
+                activeField === field ? "active" : ""
+              } ${errors[field] ? "error" : ""}`}
+              type="text"
+              id={field}
+              name={field}
+              value={formData[field]}
+              onChange={handleChange}
+              onFocus={() => handleFocus(field)}
+              onBlur={() => handleBlur(field)}
+              placeholder={field
+                .replace(/([A-Z])/g, " $1")
+                .replace(/^./, (str) => str.toUpperCase())}
+              required
+            />
+            {errors[field] && (
+              <div className="error-message">{errors[field]}</div>
+            )}
+          </div>
+        ))}
       </form>
     </div>
   );
