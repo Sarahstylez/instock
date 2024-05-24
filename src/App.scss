@@ -11,7 +11,7 @@
 
     /* position all pages to overlay header per style guide*/
     &__routes-overlay {
-      background-color: $color-bg-light-grey;
+      background-color: $color-primary-white;
       position: absolute;
       top: 8.5rem;
       left: $padding-sm;
@@ -42,6 +42,7 @@
 
   body {
     height: 100vw;
+    background-color: $color-bg-light-grey;
   }
 
   /* -------------------------------------------------------------------------- */
