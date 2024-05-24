@@ -59,7 +59,13 @@ function InventoryItem({
           src={TrashBin}
           alt="Delete Item"
         ></img>
-        <img className="inventory__edit" src={EditButton} alt="Edit Item"></img>
+        <Link to={`/inventory/edit/${id}`}>
+          <img
+            className="inventory__edit"
+            src={EditButton}
+            alt="Edit Item"
+          ></img>
+        </Link>
       </div>
     </div>
   );
