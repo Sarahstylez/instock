@@ -5,6 +5,7 @@ import searchIcon from "../../assets/Icons/search-24px.svg";
 import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
 import editIcon from "../../assets/Icons/edit-24px.svg";
 import sortIcon from "../../assets/Icons/sort-24px.svg";
+import chevronIcon from "../../assets/Icons/chevron_right-24px.svg";
 
 const WarehouseList = () => {
   const [warehouses, setWarehouses] = useState([]);
@@ -48,6 +49,7 @@ const WarehouseList = () => {
 
   return (
     <section className="warehouse__section">
+      <div className="warehouse__overlay">
       <div className="warehouse__top-section">
         <h1 className="warehouse__title">Warehouses</h1>
         <div className="warehouse__top-right">
@@ -96,7 +98,14 @@ const WarehouseList = () => {
         </li>
         {sortedWarehouses.map((warehouse) => (
           <li className="warehouse__list" key={warehouse.id}>
-            <div className="warehouse__name">{warehouse.warehouse_name}</div>
+            <div className="warehouse__name">
+              {warehouse.warehouse_name}
+              <img
+                className="warehouse__icon"
+                src={chevronIcon}
+                alt="chevron icon"
+              />
+            </div>
             <div className="warehouse__add">
               {warehouse.address} {warehouse.city}, {warehouse.country}
             </div>
@@ -122,6 +131,7 @@ const WarehouseList = () => {
           </li>
         ))}
       </ul>
+      </div>
     </section>
   );
 };

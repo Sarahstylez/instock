@@ -3,18 +3,23 @@
 @use "../../styles/partials/__utils" as *;
 
 .warehouse {
-  &__section {
+  &__section{
+    position: relative;
+    background-color: $color-bg-light-grey;
+  }
+  &__overlay {
+    position: absolute;
     font-family: "Titillium Regular";
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 2px 5px 0px rgba(19, 24, 44, 0.1);
-    margin: -4rem 1rem 0 1rem;
-    @include tablet {
-      margin: -4rem 2rem 0 2rem;
-    }
-    @include desktop {
-      margin: -4rem 5rem 0 5rem;
-    }
+    top: -4rem;
+    // @include tablet {
+    //   margin: -4rem 2rem 0 2rem;
+    // }
+    // @include desktop {
+    //   margin: -4rem 5rem 0 5rem;
+    // }
   }
   &__top-section {
     display: flex;
@@ -45,7 +50,6 @@
     padding: 1rem 2rem;
     display: grid;
     justify-content: center;
-    gap: 1.875rem;
     grid-template-columns: 1fr 0.8fr 0.5fr 1fr 0.5fr;
     border-bottom: 1px solid $color-secondary-cloud;
     align-items: center;
@@ -53,13 +57,25 @@
       border-bottom: none;
     }
     &:hover {
-        background-color: $color-bg-light-grey;
+      background-color: $color-bg-light-grey;
     }
     @include tablet {
-      grid-template-columns: 1.2fr 1fr 1.5fr 1.8fr 0.5fr;
+      font-size: 14px;
+      gap: 1rem;
+      grid-template-columns: 1.4fr 1.8fr 1.5fr 1.8fr 0.5fr;
     }
     @include desktop {
-      grid-template-columns: 1fr 1fr 1fr 1fr 0.5fr;
+      grid-template-columns: 1fr 1.8fr 1fr 1fr 0.5fr;
+    }
+  }
+  &__name {
+    display: flex;
+    align-items: center;
+  }
+  &__contact-info p {
+    @include tablet {
+      font-size: 14px;
+      line-height: 1.5;
     }
   }
   &__actions {
@@ -130,3 +146,5 @@
     align-items: center;
   }
 }
+
+//mobile view
