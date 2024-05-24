@@ -6,7 +6,8 @@
   &__section {
     font-family: "Titillium Regular";
     background-color: white;
-    border: 0.125rem solid $color-secondary-cloud;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px 0px rgba(19, 24, 44, 0.1);
     @include tablet {
       margin: -4rem 2rem;
     }
@@ -19,6 +20,9 @@
     justify-content: space-between;
     padding: 1rem 2rem;
   }
+  &__top-right {
+    display: flex;
+  }
   &__list {
     padding: 1rem 2rem;
     display: grid;
@@ -30,6 +34,10 @@
     @include desktop {
       grid-template-columns: 1fr 1fr 1fr 1fr 0.5fr;
     }
+  }
+  &__actions {
+    display: flex;
+    gap:0.5rem;
   }
 }
 

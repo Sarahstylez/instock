@@ -27,15 +27,17 @@ const WarehouseList = () => {
     <section className="warehouse__section">
       <div className="warehouse__top-section">
         <h1 className="warehouse__title">Warehouses</h1>
-        <form id="warehouse__search">
-          <img
-            className="warehouse__search-icon"
-            src={searchIcon}
-            alt="search icon"
-          />
-          <input type="text" name="search" placeholder="Search..." />
-        </form>
-        <button className="warehouse__upload-btn">+ Add New Warehouse</button>
+        <div className="warehouse__top-right">
+          <form id="warehouse__search">
+            <img
+              className="warehouse__search-icon"
+              src={searchIcon}
+              alt="search icon"
+            />
+            <input type="text" name="search" placeholder="Search..." />
+          </form>
+          <button className="warehouse__upload-btn">+ Add New Warehouse</button>
+        </div>
       </div>
       <ul>
         {warehouses.map((warehouse) => (
