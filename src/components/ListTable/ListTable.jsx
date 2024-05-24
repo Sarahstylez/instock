@@ -3,10 +3,10 @@ import React, { useState, useEffect } from "react";
 import "./ListTable.scss";
 import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
 import editIcon from "../../assets/Icons/edit-24px.svg";
-import sortIcon from "../../assets/Icons/sort-24px.svg";
 import chevronIcon from "../../assets/Icons/chevron_right-24px.svg";
 
 import PageHeader from "../PageHeader/PageHeader";
+import TableHeader from "../TableHeader/TableHeader";
 
 const ListTable = ({ page }) => {
   const [list, setList] = useState([]);
@@ -54,37 +54,7 @@ const ListTable = ({ page }) => {
       <div className="list-table__overlay">
         <PageHeader page={page} />
         <ul>
-          <li className="list-table__list --sort-header">
-            <div
-              onClick={() => sortItems("warehouse")}
-              className="list-table__sort-name"
-            >
-              WAREHOUSE
-              <img className="sort-icon" src={sortIcon} alt="sort icon" />
-            </div>
-            <div
-              onClick={() => sortItems("address")}
-              className="list-table__sort-add"
-            >
-              ADDRESS
-              <img className="sort-icon" src={sortIcon} alt="sort icon" />
-            </div>
-            <div
-              onClick={() => sortItems("contact_name")}
-              className="list-table__sort-contact-name"
-            >
-              CONTACT NAME
-              <img className="sort-icon" src={sortIcon} alt="sort icon" />
-            </div>
-            <div
-              onClick={() => sortItems("contact_phone")}
-              className="list-table__sort-contact-info"
-            >
-              CONTACT INFORMATION
-              <img className="sort-icon" src={sortIcon} alt="sort icon" />
-            </div>
-            <div className="list-table__sort-actions">ACTIONS</div>
-          </li>
+          <TableHeader page={page} sortItems={sortItems} />
           {sortedWarehouses.map((warehouse) => (
             <li className="list-table__list" key={warehouse.id}>
               <div className="mobile-warehouse">
