@@ -4,29 +4,62 @@
 
 .warehouse {
   &__section {
+    font-family: "Titillium Regular";
     background-color: white;
     border: 0.125rem solid $color-secondary-cloud;
     @include tablet {
-      margin: -3rem 2rem;
+      margin: -4rem 2rem;
     }
     @include desktop {
-      margin: -3rem 5rem;
+      margin: -4rem 5rem;
     }
   }
   &__top-section {
     display: flex;
     justify-content: space-between;
+    padding: 1rem 2rem;
   }
   &__list {
-    padding: 1rem;
+    padding: 1rem 2rem;
     display: grid;
     justify-content: center;
-    gap: 30px;
+    gap: 1.875rem;
     grid-template-columns: 1fr 0.8fr 0.5fr 1fr 0.5fr;
     border-bottom: 1px solid $color-secondary-cloud;
     align-items: center;
+    @include desktop {
+      grid-template-columns: 1fr 1fr 1fr 1fr 0.5fr;
+    }
   }
 }
 
-
+//search button 
+#warehouse__search {
+    position: relative;
+    margin: 0 0 0 1.5rem;
+    width: 100%;
+  }
   
+  #warehouse__search > input[type="text"] {
+    position: relative;
+    padding: 0.6rem 0 0.6rem 1.5rem;
+    width: 90%;
+    outline: none;
+    border: $color-secondary-cloud 0.0625rem solid;
+    border-radius: 25px;
+    @include tablet {
+      padding: 0.6rem 0 0.6rem 1.5rem;
+      width: 12.5rem;
+    }
+    &:focus {
+      border: 0.125rem blue solid;
+      outline: none;
+    }
+  }
+
+  .warehouse__search-icon {
+    position: absolute;
+    z-index: 2;
+    top:0.4rem;
+    left: 12rem;
+  }

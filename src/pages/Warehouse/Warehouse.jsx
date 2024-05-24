@@ -33,7 +33,7 @@ const WarehouseList = () => {
             src={searchIcon}
             alt="search icon"
           />
-          <input type="text" name="Search" placeholder="Search..." />
+          <input type="text" name="search" placeholder="Search..." />
         </form>
         <button className="warehouse__upload-btn">+ Add New Warehouse</button>
       </div>
