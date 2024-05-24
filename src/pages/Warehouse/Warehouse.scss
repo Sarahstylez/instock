@@ -8,22 +8,24 @@
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 2px 5px 0px rgba(19, 24, 44, 0.1);
-    margin: -4rem 1rem;
+    margin: -4rem 1rem 0 1rem;
     @include tablet {
-      margin: -4rem 2rem;
+      margin: -4rem 2rem 0 2rem;
     }
     @include desktop {
-      margin: -4rem 5rem;
+      margin: -4rem 5rem 0 5rem;
     }
   }
   &__top-section {
     display: flex;
     flex-direction: column;
     padding: 0 0 2rem 0;
+    border-bottom: 1px solid $color-secondary-cloud;
     @include tablet {
       flex-direction: row;
       justify-content: space-between;
       padding: 2rem 2rem 1rem 2rem;
+      border-bottom: none;
     }
   }
   &__top-right {
@@ -49,6 +51,9 @@
     align-items: center;
     &:last-child {
       border-bottom: none;
+    }
+    &:hover {
+        background-color: $color-bg-light-grey;
     }
     @include tablet {
       grid-template-columns: 1.2fr 1fr 1.5fr 1.8fr 0.5fr;
@@ -99,14 +104,20 @@
   }
 }
 
-//sorting header
+//sorting header -hides when in mobile mode
 .--sort-header {
-  background-color: $color-bg-light-grey;
-  font-size: 11px;
-  font-family: "Titillium Semi-Bold";
-  color: $color-secondary-slate;
-  padding: 0.5rem 2rem;
-  border-bottom: none;
+  @include mobile {
+    display: none;
+  }
+  @include tablet {
+    display: grid;
+    background-color: $color-bg-light-grey;
+    font-size: 11px;
+    font-family: "Titillium Semi-Bold";
+    color: $color-secondary-slate;
+    padding: 0.5rem 2rem;
+    border-bottom: none;
+  }
 }
 
 .warehouse__sort {
