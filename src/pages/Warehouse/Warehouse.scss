@@ -2,11 +2,31 @@
 @use "../../styles/partials/__mixins" as *;
 @use "../../styles/partials/__utils" as *;
 
-.warehouse__section {
+.warehouse {
+  &__section {
     background-color: white;
-    @include desktop {
-    border: .125rem solid red;
-    margin: -5rem 5rem;
+    border: 0.125rem solid $color-secondary-cloud;
+    @include tablet {
+      margin: -3rem 2rem;
     }
-};
+    @include desktop {
+      margin: -3rem 5rem;
+    }
+  }
+  &__top-section {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__list {
+    padding: 1rem;
+    display: grid;
+    justify-content: center;
+    gap: 30px;
+    grid-template-columns: 1fr 0.8fr 0.5fr 1fr 0.5fr;
+    border-bottom: 1px solid $color-secondary-cloud;
+    align-items: center;
+  }
+}
 
+
+  
