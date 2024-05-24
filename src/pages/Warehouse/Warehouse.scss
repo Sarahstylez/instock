@@ -78,9 +78,6 @@ body {
       gap: 1rem;
       grid-template-columns: 2fr 2fr 2fr 3fr 0.5fr 0.5fr;
     }
-    @include desktop {
-      grid-template-columns: 1fr 1.8fr 1fr 1fr 0.1fr 0.1fr;
-    }
   }
   &__name {
     display: flex;
@@ -99,11 +96,20 @@ body {
     }
   }
   &__actions {
+    &-delete {
+      display: flex;
+      @include tablet {
+        justify-content: end;
+      }
+    }
     &-edit {
       display: flex;
       justify-content: end;
       align-items: center;
       padding-bottom: 0.4rem;
+      @include tablet {
+        justify-content: start;
+      }
     }
   }
 }
