@@ -97,14 +97,17 @@ body {
     &-edit {
       display: flex;
       justify-content: end;
+      align-items: center;
+      padding-bottom: 0.4rem;
     }
   }
 }
 
 //search button
 #warehouse__search {
-  width: 100%;
   position: relative;
+  width: calc(100% - 6rem);
+    margin:0 0 1rem 2rem;
   @include tablet {
     margin: 0 0 0 1.5rem;
   }
@@ -113,7 +116,7 @@ body {
 #warehouse__search > input[type="text"] {
   position: relative;
   padding: 0.6rem 0 0.6rem 1.5rem;
-  width: 90%;
+  width: 100%;
   outline: none;
   border: $color-secondary-cloud 0.0625rem solid;
   border-radius: 25px;
@@ -131,7 +134,7 @@ body {
   position: absolute;
   z-index: 2;
   top: 0.4rem;
-  right: 2rem;
+  right: 0rem;
   @include tablet {
     left: 12rem;
   }
