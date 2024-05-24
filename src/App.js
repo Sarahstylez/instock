@@ -12,6 +12,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         {<Navigation />}
+        <div className="App__routes-overlay">
         <Routes>
           <Route path="/" element={<WarehousePage />} />
           <Route path="/inventory" element={<InventoryPage />} />
@@ -21,6 +22,7 @@ function App() {
           <Route path="/warehouses/:id" element={<WarehouseDetails />} />
           <Route path="*" element={<h1>Page not found</h1>} />
         </Routes>
+        </div>
       </BrowserRouter>
     </div>
   );
