@@ -7,27 +7,28 @@ import editIcon from "../../assets/Icons/edit-24px.svg";
 import sortIcon from "../../assets/Icons/sort-24px.svg";
 import chevronIcon from "../../assets/Icons/chevron_right-24px.svg";
 
-const ListTable = () => {
-  const [warehouses, setWarehouses] = useState([]);
+const ListTable = ({ page }) => {
+  const [list, setList] = useState([]);
   const [sortConfig, setSortConfig] = useState({
     key: "warehouse_name",
     direction: "ascending",
   });
 
   useEffect(() => {
-    const fetchWarehouses = async () => {
+    /* Fetch data from inventory or warehouses depending on page prop passed */
+    const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8080/api/warehouses"
+          `${process.env.REACT_APP_API_URL}/api/${page}`
         );
-        setWarehouses(response.data);
+        setList(response.data);
       } catch (error) {
-        console.error("Error fetching warehouse data:", error);
+        console.error("Error fetching data:", error);
       }
     };
 
-    fetchWarehouses();
-  }, []);
+    fetchData();
+  }, [page]);
 
   const sortItems = (key) => {
     let direction = "ascending";
@@ -37,7 +38,7 @@ const ListTable = () => {
     setSortConfig({ key, direction });
   };
 
-  const sortedWarehouses = [...warehouses].sort((a, b) => {
+  const sortedWarehouses = [...list].sort((a, b) => {
     if (a[sortConfig.key] < b[sortConfig.key]) {
       return sortConfig.direction === "ascending" ? -1 : 1;
     }
@@ -51,7 +52,13 @@ const ListTable = () => {
     <section className="list-table__section">
       <div className="list-table__overlay">
         <div className="list-table__top-section">
-          <h1 className="list-table__title">Warehouses</h1>
+          <h1 className="list-table__title">
+            {page === "warehouses"
+              ? "Warehouses"
+              : page === "inventory"
+              ? "Inventory"
+              : ""}
+          </h1>
           <div className="list-table__top-right">
             <form id="list-table__search">
               <img
@@ -62,7 +69,12 @@ const ListTable = () => {
               <input type="text" name="search" placeholder="Search..." />
             </form>
             <button className="list-table__upload-btn">
-              + Add New Warehouse
+              + Add New{" "}
+              {page === "warehouses"
+                ? "Warehouse"
+                : page === "inventory"
+                ? "Item"
+                : ""}
             </button>
           </div>
         </div>

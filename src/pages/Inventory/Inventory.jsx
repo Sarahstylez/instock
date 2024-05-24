@@ -1,4 +1,5 @@
 import "./Inventory.scss";
+import ListTable from "../../components/ListTable/ListTable";
 
 //importing relevant components to display on page
 import TablesInventory from "../../components/TablesInventory/TablesInventory";
@@ -6,8 +7,10 @@ import TablesInventory from "../../components/TablesInventory/TablesInventory";
 const InventoryPage = () => {
   return (
     <>
-      {/* TODO insert search and add new item header */}
-      <TablesInventory />
+      {/* <TablesInventory /> */}
+      {/* <ListTable page={"inventory"} /> */}
+
+      <ListTable page={"warehouses"} />
     </>
   );
 };
