@@ -18,6 +18,7 @@ const ItemDetailsCard = () => {
     const getItem = async () => {
       try {
         const item = await axios.get(`${apiUrl}/inventory/${id}`);
+        console.log(item.data);
         setItem(item.data);
       } catch (error) {
         console.log("Could not fetch data", error);
@@ -43,7 +44,7 @@ const ItemDetailsCard = () => {
           <button className="item__card__back-arrow" onClick={backClick}>
             <img src={BackArrow} alt="back button"></img>
           </button>
-          <h1 className="item__card__name">Television</h1>
+          {item && <h1 className="item__card__name">{item.item_name}</h1>}{" "}
           <button className="item__card__edit" onClick={editClick}>
             <img
               src={EditIcon}
