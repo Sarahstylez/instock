@@ -4,10 +4,14 @@ import "./Warehouse.scss";
 import searchIcon from "../../assets/Icons/search-24px.svg";
 import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
 import editIcon from "../../assets/Icons/edit-24px.svg";
+import sortIcon from "../../assets/Icons/sort-24px.svg";
 
 const WarehouseList = () => {
   const [warehouses, setWarehouses] = useState([]);
-  const [sortConfig, setSortConfig] = useState({ key: 'warehouse_name', direction: 'ascending' });
+  const [sortConfig, setSortConfig] = useState({
+    key: "warehouse_name",
+    direction: "ascending",
+  });
 
   useEffect(() => {
     const fetchWarehouses = async () => {
@@ -25,19 +29,19 @@ const WarehouseList = () => {
   }, []);
 
   const sortItems = (key) => {
-    let direction = 'ascending';
-    if (sortConfig.key === key && sortConfig.direction === 'ascending') {
-      direction = 'descending';
+    let direction = "ascending";
+    if (sortConfig.key === key && sortConfig.direction === "ascending") {
+      direction = "descending";
     }
     setSortConfig({ key, direction });
   };
 
   const sortedWarehouses = [...warehouses].sort((a, b) => {
     if (a[sortConfig.key] < b[sortConfig.key]) {
-      return sortConfig.direction === 'ascending' ? -1 : 1;
+      return sortConfig.direction === "ascending" ? -1 : 1;
     }
     if (a[sortConfig.key] > b[sortConfig.key]) {
-      return sortConfig.direction === 'ascending' ? 1 : -1;
+      return sortConfig.direction === "ascending" ? 1 : -1;
     }
     return 0;
   });
@@ -59,21 +63,36 @@ const WarehouseList = () => {
         </div>
       </div>
       <ul>
-
-      <li className="warehouse__list warehouse__list--header">
-          <div onClick={() => sortItems('warehouse_name')} className="warehouse__name">
-            Warehouse Name
+        <li className="warehouse__list --sort-header">
+          <div
+            onClick={() => sortItems("warehouse")}
+            className="warehouse__sort-name"
+          >
+            WAREHOUSE
+            <img className="sort-icon" src={sortIcon} alt="sort icon" />
           </div>
-          <div onClick={() => sortItems('address')} className="warehouse__add">
-            Address
+          <div
+            onClick={() => sortItems("address")}
+            className="warehouse__sort-add"
+          >
+            ADDRESS
+            <img className="sort-icon" src={sortIcon} alt="sort icon" />
           </div>
-          <div onClick={() => sortItems('contact_name')} className="warehouse__contact-name">
-            Contact Name
+          <div
+            onClick={() => sortItems("contact_name")}
+            className="warehouse__sort-contact-name"
+          >
+            CONTACT NAME
+            <img className="sort-icon" src={sortIcon} alt="sort icon" />
           </div>
-          <div onClick={() => sortItems('contact_phone')} className="warehouse__contact-info">
-            Contact Info
+          <div
+            onClick={() => sortItems("contact_phone")}
+            className="warehouse__sort-contact-info"
+          >
+            CONTACT INFORMATION
+            <img className="sort-icon" src={sortIcon} alt="sort icon" />
           </div>
-          <div className="warehouse__actions">Actions</div>
+          <div className="warehouse__sort-actions">ACTIONS</div>
         </li>
         {sortedWarehouses.map((warehouse) => (
           <li className="warehouse__list" key={warehouse.id}>
