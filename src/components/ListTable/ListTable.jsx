@@ -7,7 +7,7 @@ import editIcon from "../../assets/Icons/edit-24px.svg";
 import sortIcon from "../../assets/Icons/sort-24px.svg";
 import chevronIcon from "../../assets/Icons/chevron_right-24px.svg";
 
-const WarehouseList = () => {
+const ListTable = () => {
   const [warehouses, setWarehouses] = useState([]);
   const [sortConfig, setSortConfig] = useState({
     key: "warehouse_name",
@@ -48,64 +48,64 @@ const WarehouseList = () => {
   });
 
   return (
-    <section className="warehouse__section">
-      <div className="warehouse__overlay">
-        <div className="warehouse__top-section">
-          <h1 className="warehouse__title">Warehouses</h1>
-          <div className="warehouse__top-right">
-            <form id="warehouse__search">
+    <section className="list-table__section">
+      <div className="list-table__overlay">
+        <div className="list-table__top-section">
+          <h1 className="list-table__title">Warehouses</h1>
+          <div className="list-table__top-right">
+            <form id="list-table__search">
               <img
-                className="warehouse__search-icon"
+                className="list-table__search-icon"
                 src={searchIcon}
                 alt="search icon"
               />
               <input type="text" name="search" placeholder="Search..." />
             </form>
-            <button className="warehouse__upload-btn">
+            <button className="list-table__upload-btn">
               + Add New Warehouse
             </button>
           </div>
         </div>
         <ul>
-          <li className="warehouse__list --sort-header">
+          <li className="list-table__list --sort-header">
             <div
               onClick={() => sortItems("warehouse")}
-              className="warehouse__sort-name"
+              className="list-table__sort-name"
             >
               WAREHOUSE
               <img className="sort-icon" src={sortIcon} alt="sort icon" />
             </div>
             <div
               onClick={() => sortItems("address")}
-              className="warehouse__sort-add"
+              className="list-table__sort-add"
             >
               ADDRESS
               <img className="sort-icon" src={sortIcon} alt="sort icon" />
             </div>
             <div
               onClick={() => sortItems("contact_name")}
-              className="warehouse__sort-contact-name"
+              className="list-table__sort-contact-name"
             >
               CONTACT NAME
               <img className="sort-icon" src={sortIcon} alt="sort icon" />
             </div>
             <div
               onClick={() => sortItems("contact_phone")}
-              className="warehouse__sort-contact-info"
+              className="list-table__sort-contact-info"
             >
               CONTACT INFORMATION
               <img className="sort-icon" src={sortIcon} alt="sort icon" />
             </div>
-            <div className="warehouse__sort-actions">ACTIONS</div>
+            <div className="list-table__sort-actions">ACTIONS</div>
           </li>
           {sortedWarehouses.map((warehouse) => (
-            <li className="warehouse__list" key={warehouse.id}>
+            <li className="list-table__list" key={warehouse.id}>
               <div className="mobile-warehouse">
                 <div className="mobile-warehouse-title">WAREHOUSE</div>
-                <div className="warehouse__name">
+                <div className="list-table__name">
                   {warehouse.warehouse_name}
                   <img
-                    className="warehouse__icon"
+                    className="list-table__icon"
                     src={chevronIcon}
                     alt="chevron icon"
                   />
@@ -114,14 +114,14 @@ const WarehouseList = () => {
 
               <div className="mobile-add">
                 <div className="mobile-add-title">ADDRESS</div>
-                <div className="warehouse__add">
+                <div className="list-table__add">
                   {warehouse.address} {warehouse.city}, {warehouse.country}
                 </div>
               </div>
 
               <div className="mobile-contact-name">
                 <div className="mobile-contact-name-title">CONTACT NAME</div>
-                <div className="warehouse__contact-name">
+                <div className="list-table__contact-name">
                   {warehouse.contact_name}
                 </div>
               </div>
@@ -130,22 +130,22 @@ const WarehouseList = () => {
                 <div className="mobile-contact-info-title">
                   CONTACT INFORMATION
                 </div>
-                <div className="warehouse__contact-info">
+                <div className="list-table__contact-info">
                   <p>{warehouse.contact_phone}</p>
                   <p>{warehouse.contact_email}</p>
                 </div>
               </div>
 
-              <div className="warehouse__actions-delete">
+              <div className="list-table__actions-delete">
                 <img
-                  className="warehouse__delete"
+                  className="list-table__delete"
                   src={deleteIcon}
                   alt="delete warehouse"
                 />
               </div>
-              <div className="warehouse__actions-edit">
+              <div className="list-table__actions-edit">
                 <img
-                  className="warehouse__edit"
+                  className="list-table__edit"
                   src={editIcon}
                   alt="edit warehouse"
                 />
@@ -158,4 +158,4 @@ const WarehouseList = () => {
   );
 };
 
-export default WarehouseList;
+export default ListTable;
