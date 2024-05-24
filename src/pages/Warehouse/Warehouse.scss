@@ -3,9 +3,10 @@
 @use "../../styles/partials/__utils" as *;
 
 .warehouse {
-  &__section{
+  &__section {
     position: relative;
-    background-color: $color-bg-light-grey;
+    //background-color: $color-bg-light-grey;
+    background-color: red;
   }
   &__overlay {
     position: absolute;
@@ -14,12 +15,16 @@
     border-radius: 5px;
     box-shadow: 0 2px 5px 0px rgba(19, 24, 44, 0.1);
     top: -4rem;
-    // @include tablet {
-    //   margin: -4rem 2rem 0 2rem;
-    // }
-    // @include desktop {
-    //   margin: -4rem 5rem 0 5rem;
-    // }
+    left: 1rem;
+    right: 1rem;
+    @include tablet {
+      left: 2rem;
+      right: 2rem;
+    }
+    @include desktop {
+      left: 4rem;
+      right: 4rem;
+    }
   }
   &__top-section {
     display: flex;
