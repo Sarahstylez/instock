@@ -1,12 +1,12 @@
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import axios from "axios";
 import WarehouseDetails from "../../components/WarehouseDetails/WarehouseDetails";
+import ListTable from "../../components/ListTable/ListTable";
 
 const WarehousePage = () => {
   return (
     <>
-      <WarehouseDetails />
+      {/* TODO remove after refactor is done and Mary is happy about refactor */}
+      {/* <WarehouseDetails /> */}
+      <ListTable page={"warehouses"} />
     </>
   );
 };

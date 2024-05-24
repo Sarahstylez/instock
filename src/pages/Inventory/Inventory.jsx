@@ -10,7 +10,7 @@ const InventoryPage = () => {
       {/* <TablesInventory /> */}
       {/* <ListTable page={"inventory"} /> */}
 
-      <ListTable page={"warehouses"} />
+      <ListTable page={"inventory"} />
     </>
   );
 };
