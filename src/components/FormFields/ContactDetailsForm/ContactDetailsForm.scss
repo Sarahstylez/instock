@@ -7,6 +7,27 @@
 /* -------------------------------------------------------------------------- */
 
 @include mobile {
+  .form {
+    width: 85%;
+    padding: $padding-s;
+    &__title {
+      margin-bottom: 2rem;
+    }
+    &__input {
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+      width: 88%;
+      padding: $padding-xxs $padding-xs;
+      font-size: 13px;
+      line-height: 20px;
+      font-family: "Titillium Regular";
+      color: $color-primary-is-black;
+
+      //border styles
+      border-radius: 1.25rem;
+      border: 1px solid $color-secondary-cloud;
+    }
+  }
 }
 
 /* -------------------------------------------------------------------------- */

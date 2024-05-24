@@ -12,7 +12,7 @@
     flex-direction: column;
     margin: 1rem;
     width: 92%;
-    height: 106.8125rem;
+    height: 64rem;
     flex-shrink: 0;
     border-radius: 0.1875rem;
     background: $color-primary-white;
@@ -36,6 +36,35 @@
     &__icon {
       &-arrow {
         padding-right: $padding-xxs;
+      }
+    }
+  }
+
+  .form {
+    &__ctas {
+      @include flex(start, space-between);
+      width: 100%;
+      padding: $padding-xs 0;
+      background: $color-bg-light-grey;
+      &-cancel {
+        margin-left: 1.75rem;
+        margin-right: 0.5rem;
+        width: 10rem;
+        padding: $padding-xxs $padding-xs;
+        border-radius: 1.25rem;
+        border: 1px solid $color-secondary-cloud;
+        color: $color-secondary-slate;
+        background-color: $color-primary-white;
+      }
+      &-add {
+        margin-left: 0.5rem;
+        margin-right: 1.75rem;
+        width: 10rem;
+        border: none;
+        padding: $padding-xxs $padding-xs;
+        border-radius: 1.25rem;
+        color: $color-primary-white;
+        background-color: $color-primary-is-indigo;
       }
     }
   }
