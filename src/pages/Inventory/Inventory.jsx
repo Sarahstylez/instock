@@ -27,6 +27,8 @@ const InventoryPage = () => {
   };
   return (
     <>
+      <TablesInventory />
+      {/* TODO review below and move to TablesInventory component above */}
       <div className="inventory__page">
         {/* Map through list and on click navigate item details page */}
         {items.map((item) => (
