@@ -9,14 +9,16 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        {<Navigation />}
-        <Routes>
-          <Route path="/" element={<WarehousePage />} />
-          <Route path="/inventory" element={<InventoryPage />} />
-          <Route path="/api/warehouses" element={<WarehousePage />} />
-          <Route path="/api/warehouses/:id" element={<WarehouseDetails />} />
-          <Route path="*" element={<h1>Page not found</h1>} />
-        </Routes>
+        <Navigation />
+        {/* Wrap all routes in container to apply overlay style to all pages*/}
+        <div className="App__routes-overlay">
+          <Routes>
+            <Route path="/" element={<WarehousePage />} />
+            <Route path="/inventory" element={<InventoryPage />} />
+            <Route path="/api/warehouses" element={<WarehousePage />} />
+            <Route path="/api/warehouses/:id" element={<WarehouseDetails />} />
+            <Route path="*" element={<h1>Page not found</h1>} />
+          </Routes></div>
       </BrowserRouter>
     </div>
   );

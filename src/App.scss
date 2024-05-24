@@ -7,8 +7,26 @@
 
 @include mobile {
   .App {
-    background-image: url(../src/assets/Images/desktop-bg.svg);
-    background-repeat: no-repeat;
+    position: relative; // to allow to overlay pages
+
+    /* position all pages to overlay header per style guide*/
+    &__routes-overlay {
+      background-color: $color-bg-light-grey;
+      position: absolute;
+      top: 8.5rem;
+      left: $padding-sm;
+      right: $padding-sm;
+      height: 100%;
+      @include tablet {
+        top: 5.75rem;
+        left: $padding-sm;
+        right: $padding-sm;
+      }
+      @include desktop {
+        left: $padding-9xl;
+        right: $padding-9xl;
+      }
+    }
   }
   * {
     margin: 0;
