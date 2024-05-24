@@ -10,7 +10,9 @@ function TablesInventory() {
   useEffect(() => {
     const fetchInventory = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/api/inventory");
+        const response = await axios.get(
+          `${process.env.REACT_APP_API_URL}/api/inventory`
+        );
         setInventory(response.data);
       } catch (error) {
         console.error("Error fetching warehouse data:", error);
