@@ -19,15 +19,19 @@ function AddWarehouse() {
           <h1>Add New Warehouse</h1>
         </div>
       </div>
-      <WarehouseDetailsForm />
-      <ContactDetailsForm />
-      <div className="form__ctas">
-        <button className="form__ctas-cancel" type="reset">
-          <h3>Cancel</h3>
-        </button>
-        <button className="form__ctas-add" type="submit">
-          <h3>Add Warehouse</h3>
-        </button>
+      <div className="forms">
+        <div className="forms__container">
+          <WarehouseDetailsForm />
+          <ContactDetailsForm />
+        </div>
+        <div className="form__ctas">
+          <button className="form__ctas-cancel" type="reset">
+            <h3>Cancel</h3>
+          </button>
+          <button className="form__ctas-add" type="submit">
+            <h3>+ Add Warehouse</h3>
+          </button>
+        </div>
       </div>
     </section>
   );

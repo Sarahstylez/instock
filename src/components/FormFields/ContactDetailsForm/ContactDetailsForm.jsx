@@ -23,15 +23,15 @@ const ContactDetailsForm = () => {
   };
 
   return (
-    <div className="form">
-      <h2 className="form__title">Contact Details</h2>
+    <div className="form-contact">
+      <h2 className="form-contact__title">Contact Details</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="contactName">
             <h3>Contact Name:</h3>
           </label>
           <input
-            className="form__input"
+            className="form-contact__input"
             type="text"
             id="contactName"
             name="contactName"
@@ -46,7 +46,7 @@ const ContactDetailsForm = () => {
             <h3>Position:</h3>
           </label>
           <input
-            className="form__input"
+            className="form-contact__input"
             type="text"
             id="position"
             name="position"
@@ -61,7 +61,7 @@ const ContactDetailsForm = () => {
             <h3>City:</h3>
           </label>
           <input
-            className="form__input"
+            className="form-contact__input"
             type="text"
             id="city"
             name="city"
@@ -76,7 +76,7 @@ const ContactDetailsForm = () => {
             <h3>Country:</h3>
           </label>
           <input
-            className="form__input"
+            className="form-contact__input"
             type="text"
             id="country"
             name="country"

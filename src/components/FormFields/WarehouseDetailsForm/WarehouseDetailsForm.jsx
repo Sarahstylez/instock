@@ -23,15 +23,15 @@ const WarehouseDetailsForm = () => {
   };
 
   return (
-    <div className="form">
-      <h2 className="form__title">Warehouse Details</h2>
+    <div className="form-warehouse">
+      <h2 className="form-warehouse__title">Warehouse Details</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="warehouseName">
             <h3>Warehouse Name:</h3>
           </label>
           <input
-            className="form__input"
+            className="form-warehouse__input"
             type="text"
             id="warehouseName"
             name="warehouseName"
@@ -46,7 +46,7 @@ const WarehouseDetailsForm = () => {
             <h3>Street Address:</h3>
           </label>
           <input
-            className="form__input"
+            className="form-warehouse__input"
             type="text"
             id="streetAddress"
             name="streetAddress"
@@ -61,7 +61,7 @@ const WarehouseDetailsForm = () => {
             <h3>City:</h3>
           </label>
           <input
-            className="form__input"
+            className="form-warehouse__input"
             type="text"
             id="city"
             name="city"
@@ -76,7 +76,7 @@ const WarehouseDetailsForm = () => {
             <h3>Country:</h3>
           </label>
           <input
-            className="form__input"
+            className="form-warehouse__input"
             type="text"
             id="country"
             name="country"

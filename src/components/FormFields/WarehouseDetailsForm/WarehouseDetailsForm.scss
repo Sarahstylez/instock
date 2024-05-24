@@ -7,9 +7,10 @@
 /* -------------------------------------------------------------------------- */
 
 @include mobile {
-  .form {
+  .form-warehouse {
     width: 85%;
     padding: $padding-s;
+    border-bottom: 1px solid $color-secondary-cloud;
     &__title {
       margin-bottom: 2rem;
     }
@@ -35,6 +36,12 @@
 /* -------------------------------------------------------------------------- */
 
 @include tablet {
+  .form-warehouse {
+    width: 40%;
+    padding: $padding-m;
+    border-bottom: none;
+    border-right: 1px solid $color-secondary-cloud;
+  }
 }
 
 /* -------------------------------------------------------------------------- */
@@ -42,4 +49,10 @@
 /* -------------------------------------------------------------------------- */
 
 @include desktop {
+  .form-warehouse {
+    padding: $padding-m $padding-xl;
+    &__input {
+      width: 92%;
+    }
+  }
 }
