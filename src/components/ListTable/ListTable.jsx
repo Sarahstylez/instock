@@ -1,11 +1,12 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import "./ListTable.scss";
-import searchIcon from "../../assets/Icons/search-24px.svg";
 import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
 import editIcon from "../../assets/Icons/edit-24px.svg";
 import sortIcon from "../../assets/Icons/sort-24px.svg";
 import chevronIcon from "../../assets/Icons/chevron_right-24px.svg";
+
+import PageHeader from "../PageHeader/PageHeader";
 
 const ListTable = ({ page }) => {
   const [list, setList] = useState([]);
@@ -51,33 +52,7 @@ const ListTable = ({ page }) => {
   return (
     <section className="list-table__section">
       <div className="list-table__overlay">
-        <div className="list-table__top-section">
-          <h1 className="list-table__title">
-            {page === "warehouses"
-              ? "Warehouses"
-              : page === "inventory"
-              ? "Inventory"
-              : ""}
-          </h1>
-          <div className="list-table__top-right">
-            <form id="list-table__search">
-              <img
-                className="list-table__search-icon"
-                src={searchIcon}
-                alt="search icon"
-              />
-              <input type="text" name="search" placeholder="Search..." />
-            </form>
-            <button className="list-table__upload-btn">
-              + Add New{" "}
-              {page === "warehouses"
-                ? "Warehouse"
-                : page === "inventory"
-                ? "Item"
-                : ""}
-            </button>
-          </div>
-        </div>
+        <PageHeader page={page} />
         <ul>
           <li className="list-table__list --sort-header">
             <div

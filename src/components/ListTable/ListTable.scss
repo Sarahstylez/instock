@@ -28,31 +28,7 @@ body {
       right: 4rem;
     }
   }
-  &__top-section {
-    display: flex;
-    flex-direction: column;
-    padding: 0 0 2rem 0;
-    border-bottom: 1px solid $color-secondary-cloud;
-    @include tablet {
-      flex-direction: row;
-      justify-content: space-between;
-      padding: 2rem 2rem 1rem 2rem;
-      border-bottom: none;
-    }
-  }
-  &__top-right {
-    display: flex;
-    flex-direction: column;
-    @include tablet {
-      flex-direction: row;
-    }
-  }
-  &__title {
-    padding: 2rem 0 1rem 2rem;
-    @include tablet {
-      padding: 0;
-    }
-  }
+
   &__list {
     border-bottom: 1px solid $color-secondary-cloud;
     padding: 1rem 2rem;
@@ -100,43 +76,6 @@ body {
       align-items: center;
       padding-bottom: 0.4rem;
     }
-  }
-}
-
-//search button
-#warehouse__search {
-  position: relative;
-  width: calc(100% - 6rem);
-  margin: 0 0 1rem 2rem;
-  @include tablet {
-    margin: 0 0 0 1.5rem;
-  }
-}
-
-#warehouse__search > input[type="text"] {
-  position: relative;
-  padding: 0.6rem 0 0.6rem 1.5rem;
-  width: 100%;
-  outline: none;
-  border: $color-secondary-cloud 0.0625rem solid;
-  border-radius: 25px;
-  @include tablet {
-    padding: 0.6rem 0 0.6rem 1.5rem;
-    width: 12.5rem;
-  }
-  &:focus {
-    border: 0.125rem blue solid;
-    outline: none;
-  }
-}
-
-.warehouse__search-icon {
-  position: absolute;
-  z-index: 2;
-  top: 0.4rem;
-  right: 0rem;
-  @include tablet {
-    left: 12rem;
   }
 }
 
