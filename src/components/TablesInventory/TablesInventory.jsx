@@ -1,27 +1,30 @@
 import "./TablesInventory.scss";
 import InventoryItem from "../InventoryItem/InventoryItem";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 /* TODO update table and use GET API endpoint */
 function TablesInventory() {
-  const items = [
-    {
-      id: 9,
-      warehouse_name: "Manhattan",
-      item_name: "Television",
-      description:
-        'This 50", 4K LED TV provides a crystal-clear picture and vivid colors.',
-      category: "Electronics",
-      status: "In Stock",
-      quantity: 500,
-    },
-    // Add more items here
-  ];
+  const [inventory, setInventory] = useState([]);
+
+  useEffect(() => {
+    const fetchInventory = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/api/inventory");
+        setInventory(response.data);
+      } catch (error) {
+        console.error("Error fetching warehouse data:", error);
+      }
+    };
+
+    fetchInventory();
+  }, []);
 
   return (
     <>
       <div className="inventory__page">
         {/* Map through list and on click navigate item details page */}
-        {items.map((item) => (
+        {inventory.map((item) => (
           <InventoryItem
             key={item.id}
             id={item.id} // Pass the id prop for navigation
