@@ -2,7 +2,7 @@
 /*                              Responsive Styles                             */
 /* -------------------------------------------------------------------------- */
 
-$mobile-width: 320px;
+$mobile-width: 376px;
 $tablet-width: 768px;
 $desktop-width: 1280px;
 $max-site-width: 1282px;
@@ -40,6 +40,7 @@ $color-support-red: #c94515; // “Out of stock” label, error states & delete 
 /*                               Padding Styles                               */
 /* -------------------------------------------------------------------------- */
 
+$padding-9xl: 128px;
 $padding-xxxl: 80px;
 $padding-xxl: 64px;
 $padding-xl: 56px;
@@ -74,7 +75,6 @@ $page-header: (
   line-height: 36px,
   font-family: "Titillium Semi-Bold",
   text-transform: capitalize,
-  letter-spacing: 2px,
   color: $color-primary-is-black,
 );
 
@@ -83,7 +83,6 @@ $subheader: (
   line-height: 28px,
   font-family: "Titillium Semi-Bold",
   text-transform: capitalize,
-  letter-spacing: 1px,
   color: $color-primary-is-black,
 );
 

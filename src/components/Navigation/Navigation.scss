@@ -2,18 +2,29 @@
 @use "../../styles/partials/__mixins" as *;
 @use "../../styles/partials/__utils" as *;
 
-.nav {
+.header {
+  width: 100%;
+  height: 12.5rem;
+  @include tablet {
+    height: 11.625rem;
+  }
   background-color: $color-bg-graphite;
+}
+
+.nav {
   display: flex;
   flex-direction: column;
   font-family: "Titillium Semi-Bold";
+  width: 100%;
   @include tablet {
+    width: 90%;
     flex-direction: row;
     justify-content: space-between;
     padding: 2rem;
     align-items: center;
   }
   @include desktop {
+    width: 86%;
     padding: 2rem 5rem;
   }
 }
@@ -50,29 +61,12 @@
   }
 }
 
-.nav__empty {
-  height: 10vh;
-  background-color: $color-bg-graphite;
-  z-index: 1;
-}
-
-/* -------------------------------------------------------------------------- */
-/*                                Mobile Styles                               */
-/* -------------------------------------------------------------------------- */
-
-@include mobile {
-}
-
-/* -------------------------------------------------------------------------- */
-/*                                Tablet Styles                               */
-/* -------------------------------------------------------------------------- */
-
-@include tablet {
-}
-
-/* -------------------------------------------------------------------------- */
-/*                                DesktopStyles                               */
-/* -------------------------------------------------------------------------- */
-
-@include desktop {
-}
+// .nav__empty {
+//   height: 10vh;
+//   width: 100%;
+//   background-color: $color-bg-graphite;
+//   z-index: 1;
+//   @include tablet {
+//     display: none;
+//   }
+// }

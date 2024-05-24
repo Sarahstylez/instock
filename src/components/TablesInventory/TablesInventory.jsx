@@ -1,1 +1,2 @@
-import "./TablesInventory.scss"
+import "./TablesInventory.scss";
+export default TablesInventory;
