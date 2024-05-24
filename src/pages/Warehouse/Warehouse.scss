@@ -8,6 +8,7 @@
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 2px 5px 0px rgba(19, 24, 44, 0.1);
+    margin: -4rem 1rem;
     @include tablet {
       margin: -4rem 2rem;
     }
@@ -17,11 +18,25 @@
   }
   &__top-section {
     display: flex;
+    flex-direction: column;
+    @include tablet {
+    flex-direction: row;
     justify-content: space-between;
-    padding: 1rem 2rem;
+    padding: 2rem 2rem 0 2rem;
+    }
   }
   &__top-right {
     display: flex;
+    flex-direction: column;
+    @include tablet {
+        flex-direction: row;
+    }
+  }
+  &__title {
+    padding: 2rem 0 1rem 2rem;
+    @include tablet {
+        padding: 0;
+    }
   }
   &__list {
     padding: 1rem 2rem;
@@ -31,6 +46,9 @@
     grid-template-columns: 1fr 0.8fr 0.5fr 1fr 0.5fr;
     border-bottom: 1px solid $color-secondary-cloud;
     align-items: center;
+    &:last-child {
+        border-bottom: none;
+    }
     @include desktop {
       grid-template-columns: 1fr 1fr 1fr 1fr 0.5fr;
     }
@@ -43,9 +61,11 @@
 
 //search button 
 #warehouse__search {
-    position: relative;
-    margin: 0 0 0 1.5rem;
     width: 100%;
+    position: relative;
+    @include tablet {
+    margin: 0 0 0 1.5rem;
+    }
   }
   
   #warehouse__search > input[type="text"] {
@@ -68,6 +88,10 @@
   .warehouse__search-icon {
     position: absolute;
     z-index: 2;
-    top:0.4rem;
+    top: 0.4rem;
+    right: 2rem;
+    @include tablet {
     left: 12rem;
+    }
   }
+

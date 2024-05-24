@@ -7,6 +7,7 @@ import editIcon from "../../assets/Icons/edit-24px.svg";
 
 const WarehouseList = () => {
   const [warehouses, setWarehouses] = useState([]);
+  const [sortConfig, setSortConfig] = useState({ key: 'warehouse_name', direction: 'ascending' });
 
   useEffect(() => {
     const fetchWarehouses = async () => {
@@ -22,6 +23,24 @@ const WarehouseList = () => {
 
     fetchWarehouses();
   }, []);
+
+  const sortItems = (key) => {
+    let direction = 'ascending';
+    if (sortConfig.key === key && sortConfig.direction === 'ascending') {
+      direction = 'descending';
+    }
+    setSortConfig({ key, direction });
+  };
+
+  const sortedWarehouses = [...warehouses].sort((a, b) => {
+    if (a[sortConfig.key] < b[sortConfig.key]) {
+      return sortConfig.direction === 'ascending' ? -1 : 1;
+    }
+    if (a[sortConfig.key] > b[sortConfig.key]) {
+      return sortConfig.direction === 'ascending' ? 1 : -1;
+    }
+    return 0;
+  });
 
   return (
     <section className="warehouse__section">
@@ -40,7 +59,23 @@ const WarehouseList = () => {
         </div>
       </div>
       <ul>
-        {warehouses.map((warehouse) => (
+
+      <li className="warehouse__list warehouse__list--header">
+          <div onClick={() => sortItems('warehouse_name')} className="warehouse__name">
+            Warehouse Name
+          </div>
+          <div onClick={() => sortItems('address')} className="warehouse__add">
+            Address
+          </div>
+          <div onClick={() => sortItems('contact_name')} className="warehouse__contact-name">
+            Contact Name
+          </div>
+          <div onClick={() => sortItems('contact_phone')} className="warehouse__contact-info">
+            Contact Info
+          </div>
+          <div className="warehouse__actions">Actions</div>
+        </li>
+        {sortedWarehouses.map((warehouse) => (
           <li className="warehouse__list" key={warehouse.id}>
             <div className="warehouse__name">{warehouse.warehouse_name}</div>
             <div className="warehouse__add">
