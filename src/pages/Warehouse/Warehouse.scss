@@ -85,6 +85,11 @@ body {
   &__name {
     display: flex;
     align-items: center;
+    color: $color-primary-is-indigo;
+    font-family: "Titillium Semi-Bold";
+    &-hover:hover {
+      border-bottom: 1px solid $color-primary-is-indigo;
+    }
   }
   &__contact-info p {
     font-size: 11px;
@@ -167,6 +172,10 @@ body {
   &-actions {
     grid-column: span 2;
     justify-self: center;
+    @include desktop {
+    grid-column: span 2;
+    justify-self: center;
+    }
   }
 }
 

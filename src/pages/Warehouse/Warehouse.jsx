@@ -103,7 +103,7 @@ const WarehouseList = () => {
               <div className="mobile-warehouse">
                 <div className="mobile-warehouse-title">WAREHOUSE</div>
                 <div className="warehouse__name">
-                  {warehouse.warehouse_name}
+                <span className="warehouse__name-hover">{warehouse.warehouse_name}</span>
                   <img
                     className="warehouse__icon"
                     src={chevronIcon}
