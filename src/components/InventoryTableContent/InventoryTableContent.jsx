@@ -10,7 +10,9 @@ const InventoryTableContent = ({ page, listItem }) => {
       <div className="mobile-warehouse">
         <div className="mobile-warehouse-title">WAREHOUSE</div>
         <div className="list-table__name">
-          {listItem.warehouse_name}
+          <span className="warehouse__name-hover">
+            {listItem.warehouse_name}
+          </span>
           <img
             className="list-table__icon"
             src={chevronIcon}
