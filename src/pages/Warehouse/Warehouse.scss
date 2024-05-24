@@ -5,8 +5,7 @@
 .warehouse {
   &__section {
     position: relative;
-    //background-color: $color-bg-light-grey;
-    background-color: red;
+    background-color: $color-bg-light-grey;
   }
   &__overlay {
     position: absolute;
@@ -17,6 +16,7 @@
     top: -4rem;
     left: 1rem;
     right: 1rem;
+    font-size: 11px;
     @include tablet {
       left: 2rem;
       right: 2rem;
@@ -52,12 +52,15 @@
     }
   }
   &__list {
+    border-bottom: 1px solid $color-secondary-cloud;
     padding: 1rem 2rem;
     display: grid;
-    justify-content: center;
-    grid-template-columns: 1fr 0.8fr 0.5fr 1fr 0.5fr;
-    border-bottom: 1px solid $color-secondary-cloud;
-    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    &:not-first-child {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
     &:last-child {
       border-bottom: none;
     }
@@ -65,12 +68,16 @@
       background-color: $color-bg-light-grey;
     }
     @include tablet {
+      padding: 1rem 2rem;
+      display: grid;
+      justify-content: center;
+      align-items: center;
       font-size: 14px;
       gap: 1rem;
-      grid-template-columns: 1.4fr 1.8fr 1.5fr 1.8fr 0.5fr;
+      grid-template-columns: 1.4fr 1.8fr 1.5fr 1.8fr 0.1fr 0.1fr;
     }
     @include desktop {
-      grid-template-columns: 1fr 1.8fr 1fr 1fr 0.5fr;
+      grid-template-columns: 1fr 1.8fr 1fr 1fr 0.1fr 0.1fr;
     }
   }
   &__name {
@@ -78,14 +85,17 @@
     align-items: center;
   }
   &__contact-info p {
+    font-size: 11px;
+    line-height: 1.5;
     @include tablet {
       font-size: 14px;
-      line-height: 1.5;
     }
   }
   &__actions {
-    display: flex;
-    gap: 0.5rem;
+    &-edit {
+      display: flex;
+      justify-content: end;
+    }
   }
 }
 
@@ -145,11 +155,27 @@
   &-name,
   &-add,
   &-contact-name,
-  &-contact-info,
-  &actions {
+  &-contact-info {
     display: flex;
     align-items: center;
+  }
+  &-actions {
+    grid-column: span 2;
+    justify-self: center;
   }
 }
 
 //mobile view
+.mobile {
+  &-warehouse-title,
+  &-add-title,
+  &-contact-name-title,
+  &-contact-info-title {
+    font-size: map-get($table-header, font-size);
+    font-family: map-get($table-header, font-family);
+    color: map-get($table-header, color);
+    @include tablet {
+      display: none;
+    }
+  }
+}
