@@ -48,18 +48,16 @@ const ListTable = ({ page }) => {
   });
 
   return (
-    <section className="list-table__section">
-      <div className="list-table__overlay">
-        <PageHeader page={page} />
-        <ul>
-          <TableHeader page={page} sortItems={sortItems} />
-          {sortedLists.map((listItem) => (
-            <li className="list-table__list" key={listItem.id}>
-              <InventoryTableContent page={page} listItem={listItem} />
-            </li>
-          ))}
-        </ul>
-      </div>
+    <section>
+      <PageHeader page={page} />
+      <ul>
+        <TableHeader page={page} sortItems={sortItems} />
+        {sortedLists.map((listItem) => (
+          <li className="list-table__list" key={listItem.id}>
+            <InventoryTableContent page={page} listItem={listItem} />
+          </li>
+        ))}
+      </ul>
     </section>
   );
 };

@@ -6,29 +6,6 @@ body {
   background-color: $color-bg-light-grey;
 }
 .list-table {
-  &__section {
-    position: relative;
-  }
-  &__overlay {
-    position: absolute;
-    font-family: "Titillium Regular";
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px 0px rgba(19, 24, 44, 0.1);
-    top: -4rem;
-    left: 1rem;
-    right: 1rem;
-    font-size: 11px;
-    @include tablet {
-      left: 2rem;
-      right: 2rem;
-    }
-    @include desktop {
-      left: 4rem;
-      right: 4rem;
-    }
-  }
-
   &__list {
     border-bottom: 1px solid $color-secondary-cloud;
     padding: 1rem 2rem;
