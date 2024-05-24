@@ -4,11 +4,7 @@ import axios from "axios";
 import WarehouseDetails from "../../components/WarehouseDetails/WarehouseDetails";
 
 const WarehousePage = () => {
-  return (
-    <>
-      <WarehouseDetails />
-    </>
-  );
+  return <></>;
 };
 
 export default WarehousePage;

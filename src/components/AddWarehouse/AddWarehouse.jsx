@@ -16,8 +16,6 @@ function AddWarehouse() {
     contact_position: "",
     contact_phone: "",
     contact_email: "",
-    created_at: "",
-    updated_at: "",
   });
 
   const [activeField, setActiveField] = useState(null);
@@ -45,12 +43,22 @@ function AddWarehouse() {
     let error = "";
     if (!value) {
       error = "This field is required";
-    } else if (name === "contact_email") {
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      error = !emailPattern.test(value) ? "Invalid email address" : "";
-    } else if (name === "contact_phone") {
-      const phonePattern = /^[0-9]{10}$/; // Example pattern: 10 digits
-      error = !phonePattern.test(value) ? "Invalid phone number" : "";
+    } else {
+      switch (name) {
+        case "contact_email":
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          error = !emailPattern.test(value) ? "Valid email is required" : "";
+          break;
+        case "contact_phone":
+          const phonePattern = /^[0-9]+$/;
+          error = !phonePattern.test(value)
+            ? "Valid phone number is required"
+            : "";
+          break;
+        // Add more specific validation cases if needed
+        default:
+          break;
+      }
     }
     setErrors((prevErrors) => ({ ...prevErrors, [name]: error }));
   };
@@ -62,11 +70,13 @@ function AddWarehouse() {
     }
   };
 
-  const handleAddClick = (e) => {
+  const handleAddClick = async (e) => {
     e.preventDefault();
+
     if (window.confirm("Are you ready to submit?")) {
       let valid = true;
       const newErrors = {};
+
       Object.keys(formData).forEach((key) => {
         if (!formData[key]) {
           newErrors[key] = "This field is required";
@@ -82,9 +92,26 @@ function AddWarehouse() {
       setErrors(newErrors);
 
       if (valid) {
-        // Handle form submission logic here
-        console.log("Submitting form data:", formData);
-        // Add logic to submit form data
+        try {
+          const response = await fetch("http://localhost:8080/api/warehouses", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+          });
+
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+
+          const data = await response.json();
+          console.log("Form submitted successfully:", data);
+
+          navigate("/warehouses");
+        } catch (error) {
+          console.error("There was an issue with the form submission:", error);
+        }
       }
     }
   };
