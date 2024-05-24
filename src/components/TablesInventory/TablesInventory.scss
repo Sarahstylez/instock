@@ -2,44 +2,23 @@
 @use "../../styles/partials/__mixins" as *;
 @use "../../styles/partials/__utils" as *;
 
-.inventory {
-  @include flex(start, left);
-  flex-direction: column;
-  width: 86%;
-  padding: $padding-xs $padding-s;
-  border-bottom: 1px solid $color-secondary-cloud;
-  &__text {
-    @include flex(start, space-between);
-    flex-direction: row;
-    width: 100%;
-  }
-  &__container {
-    flex-direction: column;
-    width: 45%;
-  }
+/* -------------------------------------------------------------------------- */
+/*                                Mobile Styles                               */
+/* -------------------------------------------------------------------------- */
 
-  &__item {
-    &-item {
-      @include flex(center, left);
-      width: 45%;
-      flex-direction: row;
-      padding: 4px 0;
-      color: $color-primary-is-indigo;
-    }
-  }
-  &__category {
-    padding-top: $padding-xs;
-    &-text {
-      padding: 4px 0;
-    }
-  }
-  &__icons {
-    @include flex(start, space-between);
-    width: 100%;
-    padding-top: $padding-xs;
-  }
+@include mobile {
+}
 
-  &__quantity {
-    padding-top: $padding-xs;
-  }
+/* -------------------------------------------------------------------------- */
+/*                                Tablet Styles                               */
+/* -------------------------------------------------------------------------- */
+
+@include tablet {
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                DesktopStyles                               */
+/* -------------------------------------------------------------------------- */
+
+@include desktop {
 }
