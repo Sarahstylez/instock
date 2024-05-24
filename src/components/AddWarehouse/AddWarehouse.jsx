@@ -1,6 +1,7 @@
 import "./AddWarehouse.scss";
 import { Link } from "react-router-dom";
 import BackArrow from "../../assets/Icons/arrow_back-24px.svg";
+import WarehouseDetailsForm from "../FormFields/WarehouseDetailsForm/WarehouseDetailsForm";
 
 function AddWarehouse() {
   return (
