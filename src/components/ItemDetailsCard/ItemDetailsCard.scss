@@ -7,6 +7,7 @@
   flex-direction: column;
   width: 21.4375rem;
   height: 29rem;
+  box-sizing: border-box;
   padding: 0 1.5rem;
   border-radius: 3px;
   background: var(--White, #fff);
@@ -14,7 +15,7 @@
   margin-top: 3rem;
   @include tablet {
     width: 44rem;
-    height: 22.25rem;
+    height: 24.25rem;
   }
   @include desktop {
     width: 1020px;
@@ -40,31 +41,22 @@
     height: 24px;
     justify-content: center;
     align-items: center;
-    flex-shrink: 0;
-    @include tablet {
-      display: inline-flex;
-      padding: 8px 16px;
-      gap: 10px;
-    }
-    @include desktop {
-      margin-left: 1rem;
-    }
   }
   &__name {
     color: var(--Instock-Black, #13182c);
     font-family: "Titillium Web";
     font-size: 28px;
     font-style: normal;
-    margin-left: -7.5rem;
+    margin-left: -4rem;
     font-weight: 600;
     line-height: 36px;
     @include tablet {
       font-size: 32px;
       line-height: 40px;
-      margin-left: -23.5rem;
+      margin-left: -19.5rem;
     }
     @include desktop {
-      margin-left: -53rem;
+      margin-left: -48rem;
     }
   }
   &__edit {
@@ -98,14 +90,7 @@
   &__divider {
     border-bottom: 1px solid var(--Cloud, #bdc5d5);
     margin-bottom: 2rem;
-    width: 114%;
-    margin-left: -1.5rem;
-    @include tablet {
-      width: 107%;
-    }
-    @include desktop {
-      width: 104%;
-    }
+    width: 100%;
   }
   &__details {
     padding: 0 1.5rem;

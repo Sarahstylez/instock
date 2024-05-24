@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import BackArrow from "../../assets/Icons/arrow_back-24px.svg";
 import EditIcon from "../../assets/Icons/edit-24px.svg";
+import Tags from "../Tags/Tags.jsx";
 import "./ItemDetailsCard.scss";
 import "../Tags/Tags.scss";
 
@@ -70,13 +71,7 @@ const ItemDetailsCard = () => {
               <div className="item__card__stock-container">
                 <div className="item__card__status">
                   <h2>STATUS:</h2>
-                  <p
-                    className={`item__card__${item.status
-                      .toLowerCase()
-                      .replace(" ", "")}`}
-                  >
-                    {item.status}
-                  </p>
+                  <Tags status={item.status}></Tags>
                 </div>
                 <div className="item__card__quantity">
                   <h2>QUANTITY:</h2>
