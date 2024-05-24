@@ -1,0 +1,186 @@
+@use "../../styles/partials/__variables" as *;
+@use "../../styles/partials/__mixins" as *;
+@use "../../styles/partials/__utils" as *;
+
+body {
+  background-color: $color-bg-light-grey;
+}
+.warehouse {
+  &__section {
+    position: relative;
+  }
+  &__overlay {
+    position: absolute;
+    font-family: "Titillium Regular";
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px 0px rgba(19, 24, 44, 0.1);
+    top: -4rem;
+    left: 1rem;
+    right: 1rem;
+    font-size: 11px;
+    @include tablet {
+      left: 2rem;
+      right: 2rem;
+    }
+    @include desktop {
+      left: 4rem;
+      right: 4rem;
+    }
+  }
+  &__top-section {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 2rem 0;
+    border-bottom: 1px solid $color-secondary-cloud;
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 2rem 2rem 1rem 2rem;
+      border-bottom: none;
+    }
+  }
+  &__top-right {
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      flex-direction: row;
+    }
+  }
+  &__title {
+    padding: 2rem 0 1rem 2rem;
+    @include tablet {
+      padding: 0;
+    }
+  }
+  &__list {
+    border-bottom: 1px solid $color-secondary-cloud;
+    padding: 1rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    &:not-first-child {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+    &:hover {
+      background-color: $color-bg-light-grey;
+    }
+    @include tablet {
+      padding: 1rem 2rem;
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      gap: 1rem;
+      grid-template-columns: 1.4fr 1.8fr 1.5fr 1.8fr 0.1fr 0.1fr;
+    }
+    @include desktop {
+      grid-template-columns: 1fr 1.8fr 1fr 1fr 0.1fr 0.1fr;
+    }
+  }
+  &__name {
+    display: flex;
+    align-items: center;
+  }
+  &__contact-info p {
+    font-size: 11px;
+    line-height: 1.5;
+    @include tablet {
+      font-size: 14px;
+    }
+  }
+  &__actions {
+    &-edit {
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      padding-bottom: 0.4rem;
+    }
+  }
+}
+
+//search button
+#warehouse__search {
+  position: relative;
+  width: calc(100% - 6rem);
+  margin: 0 0 1rem 2rem;
+  @include tablet {
+    margin: 0 0 0 1.5rem;
+  }
+}
+
+#warehouse__search > input[type="text"] {
+  position: relative;
+  padding: 0.6rem 0 0.6rem 1.5rem;
+  width: 100%;
+  outline: none;
+  border: $color-secondary-cloud 0.0625rem solid;
+  border-radius: 25px;
+  @include tablet {
+    padding: 0.6rem 0 0.6rem 1.5rem;
+    width: 12.5rem;
+  }
+  &:focus {
+    border: 0.125rem blue solid;
+    outline: none;
+  }
+}
+
+.warehouse__search-icon {
+  position: absolute;
+  z-index: 2;
+  top: 0.4rem;
+  right: 0rem;
+  @include tablet {
+    left: 12rem;
+  }
+}
+
+//sorting header -hides when in mobile mode
+.--sort-header {
+  @include mobile {
+    display: none;
+  }
+  @include tablet {
+    display: grid;
+    background-color: $color-bg-light-grey;
+    font-size: 11px;
+    font-family: "Titillium Semi-Bold";
+    color: $color-secondary-slate;
+    padding: 0.5rem 2rem;
+    border-bottom: none;
+  }
+}
+
+.warehouse__sort {
+  &-name,
+  &-add,
+  &-contact-name,
+  &-contact-info {
+    display: flex;
+    align-items: center;
+  }
+  &-actions {
+    grid-column: span 2;
+    justify-self: center;
+  }
+}
+
+//mobile view
+.mobile {
+  &-warehouse-title,
+  &-add-title,
+  &-contact-name-title,
+  &-contact-info-title {
+    font-size: map-get($table-header, font-size);
+    font-family: map-get($table-header, font-family);
+    color: map-get($table-header, color);
+    @include tablet {
+      display: none;
+    }
+  }
+}
