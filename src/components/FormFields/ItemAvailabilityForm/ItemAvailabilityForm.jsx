@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './ItemAvailabilityForm.scss';
 
-const ItemAvailabilityForm = ({ status, setStatus, quantity, setQuantity, warehouse, setWarehouse, handleCancel, handleSave }) => {
+const ItemAvailabilityForm = ({ status, setStatus, quantity, setQuantity, warehouse, setWarehouse, handleCancel, handleUpdate }) => {
   const [warehouses, setWarehouses] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -10,8 +10,7 @@ const ItemAvailabilityForm = ({ status, setStatus, quantity, setQuantity, wareho
   useEffect(() => {
     const fetchWarehouses = async () => {
       try {
-        const response = await axios.get('http://localhost:5055/api/warehouses'); // Updated with the correct API endpoint
-        console.log(response.data); // Debugging log to check the fetched data
+        const response = await axios.get('http://localhost:5055/api/warehouses');
         setWarehouses(response.data);
       } catch (error) {
         setError('Error fetching warehouses');
@@ -84,8 +83,8 @@ const ItemAvailabilityForm = ({ status, setStatus, quantity, setQuantity, wareho
         </select>
       </div>
       <div className="item-availability-form__form-ctas">
-        <button className="item-availability-form__button-add" onClick={handleSave}>
-          Add Item
+        <button className="item-availability-form__button-add" onClick={handleUpdate}>
+          Save
         </button>
         <button className="item-availability-form__button-cancel" onClick={handleCancel}>
           Cancel

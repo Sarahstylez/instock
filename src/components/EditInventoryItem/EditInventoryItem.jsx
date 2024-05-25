@@ -17,30 +17,50 @@ const EditInventoryItem = () => {
   const [quantity, setQuantity] = useState(0);
   const [status, setStatus] = useState('In Stock');
   const [warehouse, setWarehouse] = useState('');
+  const [warehouses, setWarehouses] = useState([]);
 
   useEffect(() => {
     const fetchItem = async () => {
       try {
         const response = await axios.get(`http://localhost:5055/api/inventory/${id}`);
-        setItem(response.data);
-        setName(response.data.item_name);
-        setDescription(response.data.description);
-        setCategory(response.data.category);
-        setQuantity(response.data.quantity);
-        setStatus(response.data.status);
-        setWarehouse(response.data.warehouse_name);
+        const itemData = response.data;
+        setItem(itemData);
+        setName(itemData.item_name);
+        setDescription(itemData.description);
+        setCategory(itemData.category);
+        setQuantity(itemData.quantity);
+        setStatus(itemData.status);
+        setWarehouse(itemData.warehouse_name);
       } catch (error) {
         console.error('Error fetching the item:', error);
       }
     };
+
+    const fetchWarehouses = async () => {
+      try {
+        const response = await axios.get('http://localhost:5055/api/warehouses');
+        setWarehouses(response.data);
+      } catch (error) {
+        console.error('Error fetching warehouses:', error);
+      }
+    };
+
     fetchItem();
+    fetchWarehouses();
   }, [id]);
 
   const handleUpdate = async () => {
     try {
+      // Find the warehouse_id based on the selected warehouse_name
+      const selectedWarehouse = warehouses.find((wh) => wh.warehouse_name === warehouse);
+      if (!selectedWarehouse) {
+        alert('Invalid warehouse selected');
+        return;
+      }
+
       const updatedItem = {
         id: item.id,
-        warehouse_name: warehouse,
+        warehouse_id: selectedWarehouse.id, // Use warehouse_id instead of warehouse_name
         item_name: name,
         description,
         category,
