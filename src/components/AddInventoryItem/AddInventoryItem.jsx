@@ -17,7 +17,14 @@ const AddInventoryItem = () => {
   // Form validation logic
   const isFormValid = () => {
     // Form validation
-    if (name === "" || description === "" || quantity <= 0 || quantity === "") {
+    if (
+      name === "" ||
+      description === "" ||
+      quantity <= 0 ||
+      quantity === "" ||
+      category === "default" ||
+      warehouse === "default"
+    ) {
       alert(
         "Please fill on both name and description and ensure quantity is more than 0"
       );
@@ -112,8 +119,8 @@ const AddInventoryItem = () => {
               className="add-card__input-select"
               value={category}
               onChange={(e) => setCategory(e.target.value)}
-              placeholder="Please select"
             >
+              <option value="default">Select a category</option>
               <option value="Electronics">Electronics</option>
               <option value="Gear">Gear</option>
               <option value="Apparel">Apparel</option>
@@ -180,8 +187,8 @@ const AddInventoryItem = () => {
               className="add-card__input-select"
               value={warehouse}
               onChange={(e) => setWarehouse(e.target.value)}
-              placeholder="Please select"
             >
+              <option value="default">Select a category</option>
               <option value="1">Manhattan</option>
               <option value="2">Washington</option>
               <option value="3">Jersey</option>
