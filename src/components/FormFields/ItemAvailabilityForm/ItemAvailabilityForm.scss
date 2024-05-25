@@ -1,0 +1,149 @@
+@use "../../../styles/partials/__variables" as *;
+@use "../../../styles/partials/__mixins" as *;
+@use "../../../styles/partials/__utils" as *;
+
+@include mobile {
+.item-availability-form {
+    width: 85%;
+    padding: $padding-s;
+    border-bottom: 1px solid $color-secondary-cloud;
+  &__title {
+    margin-bottom: 2rem;
+  }
+
+  &__group {
+    margin: 1rem 0;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+
+  }
+ 
+
+  &__select {
+   
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    width: 96%;
+    padding: $padding-xxs $padding-xs;
+    font-size: 13px;
+    line-height: 20px;
+    font-family: "Titillium Regular";
+    color: $color-primary-is-black;
+ 
+      //border styles
+      border-radius: 1.25rem;
+      border: 1px solid $color-secondary-cloud;
+      &:focus {
+        border-color: $color-primary-is-indigo;
+        outline: none;
+      }
+  }
+  &__input {
+
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    width: 88%;
+    padding: $padding-xxs $padding-xs;
+    font-size: 13px;
+    line-height: 20px;
+    font-family: "Titillium Regular";
+    color: $color-primary-is-black;
+
+    //border styles
+    border-radius: 1.25rem;
+    border: 1px solid $color-secondary-cloud;
+    &:focus {
+      border-color: $color-primary-is-indigo;
+      outline: none;
+    }
+
+    &.active {
+      border: 1px solid $color-primary-is-indigo;
+      outline: none;
+    }
+
+    &.error {
+      border: 1px solid $color-support-red;
+      outline: none;
+    }
+  }
+  .error-message {
+    color: $color-support-red;
+    font-size: 12px;
+  }
+
+  &__form-ctas {
+    width: 100%;
+    background-color: rgba(247, 248, 249, 0.7);
+    padding: $padding-xs 0;
+    justify-content: center;
+    display: flex;
+    flex-direction: row-reverse;
+
+    @include tablet {
+      justify-content: end;
+    }
+  }
+
+  &__button-add {
+    margin-left: 0.5rem;
+    margin-right: 1.75rem;
+    width: 10rem;
+    border: none;
+    padding: $padding-xxs $padding-xs;
+    border-radius: 1.25rem;
+    color: $color-primary-white;
+    background-color: $color-primary-is-indigo;
+
+    &:hover {
+      background-color: $color-bg-graphite;
+    }
+  }
+
+  &__button-cancel {
+    margin-left: 1.75rem;
+    margin-right: 0.5rem;
+    width: 10rem;
+    padding: $padding-xxs $padding-xs;
+    border-radius: 1.25rem;
+    border: 1px solid $color-secondary-cloud;
+    color: $color-secondary-slate;
+    background-color: $color-primary-white;
+
+    &:hover {
+      color: $color-primary-is-indigo;
+      border: 1px solid $color-primary-is-indigo;
+    }
+  }
+}
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                                Tablet Styles                               */
+/* -------------------------------------------------------------------------- */
+
+@include tablet {
+    .form-contact {
+      width: 40%;
+      padding: $padding-m;
+      border-bottom: none;
+    }
+  }
+  
+  /* -------------------------------------------------------------------------- */
+  /*                                DesktopStyles                               */
+  /* -------------------------------------------------------------------------- */
+  
+  @include desktop {
+    .form-contact {
+      padding: $padding-m $padding-xl;
+      &__input {
+        width: 92%;
+      }
+    }
+  }

@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams, useNavigate } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import './EditInventoryItem.scss';
+import BackArrow from "../../assets/Icons/arrow_back-24px.svg";
+import ItemDetailsForm from '../FormFields/ItemDetailsForm/ItemDetailsForm';
+import ItemAvailabilityForm from '../FormFields/ItemAvailabilityForm/ItemAvailabilityForm';
 
 const EditInventoryItem = () => {
   const { id } = useParams();
@@ -58,100 +61,38 @@ const EditInventoryItem = () => {
   };
 
   return (
-    <div className="edit-inventory-item">
-      <h1 className="edit-inventory-item__title">Edit Inventory Item</h1>
-      <div className="edit-inventory-item__form-group">
-        <label className="edit-inventory-item__label">Item Name</label>
-        <input
-          type="text"
-          className="edit-inventory-item__input"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-      </div>
-      <div className="edit-inventory-item__form-group">
-        <label className="edit-inventory-item__label">Description</label>
-        <input
-          type="text"
-          className="edit-inventory-item__input"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-      </div>
-      <div className="edit-inventory-item__form-group">
-        <label className="edit-inventory-item__label">Category</label>
-        <select
-          className="edit-inventory-item__select"
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-        >
-          <option value="Electronics">Electronics</option>
-          <option value="Gear">Gear</option>
-          <option value="Apparel">Apparel</option>
-          <option value="Accessories">Accessories</option>
-          <option value="Health">Health</option>
-        </select>
-      </div>
-      <div className="edit-inventory-item__form-group">
-        <label className="edit-inventory-item__label">Status</label>
-        <div className="edit-inventory-item__status-group">
-          <label className={`edit-inventory-item__status-button ${status === 'In Stock' ? 'active' : ''}`}>
-            <input
-              type="radio"
-              name="status"
-              value="In Stock"
-              checked={status === 'In Stock'}
-              onChange={() => setStatus('In Stock')}
-            />
-            In Stock
-          </label>
-          <label className={`edit-inventory-item__status-button ${status === 'Out of Stock' ? 'active' : ''}`}>
-            <input
-              type="radio"
-              name="status"
-              value="Out of Stock"
-              checked={status === 'Out of Stock'}
-              onChange={() => setStatus('Out of Stock')}
-            />
-            Out of Stock
-          </label>
+    <section className="card">
+      <div className="card__title">
+        <div className="card__title-container">
+          <Link className="backarrow__link" to="/inventory">
+            <img className="card__icon-arrow" src={BackArrow} alt="Back to Inventory List Page" />
+          </Link>
+          <h1>Edit Inventory Item</h1>
         </div>
       </div>
-      {status === 'In Stock' && (
-        <div className="edit-inventory-item__form-group">
-          <label className="edit-inventory-item__label">Quantity</label>
-          <input
-            type="number"
-            className="edit-inventory-item__input"
-            value={quantity}
-            onChange={(e) => setQuantity(Number(e.target.value))}
+      <div className="forms">
+        <div className="forms__container">
+          <ItemDetailsForm
+            name={name}
+            setName={setName}
+            description={description}
+            setDescription={setDescription}
+            category={category}
+            setCategory={setCategory}
+          />
+          <ItemAvailabilityForm
+            status={status}
+            setStatus={setStatus}
+            quantity={quantity}
+            setQuantity={setQuantity}
+            warehouse={warehouse}
+            setWarehouse={setWarehouse}
+            handleUpdate={handleUpdate}
+            handleCancel={handleCancel}
           />
         </div>
-      )}
-      <div className="edit-inventory-item__form-group">
-        <label className="edit-inventory-item__label">Warehouse</label>
-        <select
-          className="edit-inventory-item__select"
-          value={warehouse}
-          onChange={(e) => setWarehouse(e.target.value)}
-        >
-          <option value="Manhattan">Manhattan</option>
-          <option value="Washington">Washington</option>
-          <option value="Jersey">Jersey</option>
-          <option value="SF">SF</option>
-          <option value="Santa Monica">Santa Monica</option>
-          <option value="Seattle">Seattle</option>
-          <option value="Miami">Miami</option>
-          <option value="Boston">Boston</option>
-        </select>
       </div>
-      <button className="edit-inventory-item__button" onClick={handleUpdate}>
-        Update Item
-      </button>
-      <button className="edit-inventory-item__button" onClick={handleCancel}>
-        Cancel
-      </button>
-    </div>
+    </section>
   );
 };
 
