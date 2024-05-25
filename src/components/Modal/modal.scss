@@ -2,36 +2,36 @@
 @use "../../styles/partials/__mixins" as *;
 @use "../../styles/partials/__utils" as *;
 
-.parent-modal {
-    @include tablet {
-        inset: 25% 0 0 50%;
-    }
-}
-
 .modal {
     display: flex;
     flex-direction: column;
 
     width: 100vw;
-    height: 100vh;
+    height: 140vh;
+    transform: translateY(27%);
     background-color: white;
+
     @include tablet {
+        transform: translateY(0%);
         width: 90vw;
         height: 100%;
     }
 
-    @include tablet {
+    @include desktop {
         width: 50vw;
         height: 100%;
     }
     &__container {
-        height: 100%;
+        height: 70%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         background-color: white;
         justify-content: space-between;
+
         @include tablet {
+            height: 100%;
+            margin: 0;
             justify-content: center;
         }
     }

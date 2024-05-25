@@ -3,6 +3,7 @@
 @use "../../styles/partials/__utils" as *;
 
 .parent-modal {
+    z-index: 1;
     @include tablet {
         inset: 25% 0 0 50%;
         transform: translate(300px, 0px);

@@ -4,7 +4,6 @@ import editIcon from "../../assets/Icons/edit-24px.svg";
 import chevronIcon from "../../assets/Icons/chevron_right-24px.svg";
 import { useState } from "react";
 import MyModal from "../Modal/MyModal";
-import "../Modal/modal.scss";
 
 import Tags from "../Tags/Tags";
 
@@ -128,7 +127,7 @@ const TableContent = ({ page, listItem }) => {
                     name={listItem.name}
                     id={listItem.id}
                     page={page}
-                    className="parent-modal"
+                    class="parent-modal"
                 />
             ) : (
                 ``
