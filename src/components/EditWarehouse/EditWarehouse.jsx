@@ -107,7 +107,7 @@ function EditWarehouse({ warehouseId }) {
   const handleEditClick = async (e) => {
     e.preventDefault();
 
-    if (window.confirm("Are you ready to submit?")) {
+    if (window.confirm("Are you ready to save?")) {
       let valid = true;
       const newErrors = {};
 
@@ -157,7 +157,7 @@ function EditWarehouse({ warehouseId }) {
     <section className="card">
       <div className="card__title">
         <div className="card__title-container">
-          <Link className="backarrow__link" to="/warehouses/:id">
+          <Link className="backarrow__link" to="/warehouses">
             <img
               className="card__icon-arrow"
               src={BackArrow}
