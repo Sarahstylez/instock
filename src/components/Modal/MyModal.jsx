@@ -25,6 +25,7 @@ Modal.setAppElement("#root");
 
 function MyModal(props) {
     const navigate = useNavigate();
+    console.log(props.name);
     const close = () => {
         console.log("closed");
         props.closeModal();
@@ -63,21 +64,28 @@ function MyModal(props) {
                                 </button>
                             </div>
                             <h1>
-                                Delete {props.name} {props.page}?
+                                Delete {props.name}{" "}
+                                {props.page == "inventory"
+                                    ? "inventory"
+                                    : "warehouse"}
+                                ?
                             </h1>
                             <div>
-                                Please confirm that you’d like to delete
-                                {props.name} from the list of {props.page}. You
-                                won’t be able to undo this action.
+                                Please confirm that you’d like to delete{" "}
+                                {props.name.toLowerCase()} from the list of{" "}
+                                {props.page == "inventory"
+                                    ? "inventories"
+                                    : "warehouses"}
+                                . You won’t be able to undo this action.
                             </div>
                         </section>
                         <section className="modal__buttons-row modal__right-justify">
-                            <button onClick={close}>CANCEL</button>
+                            <button onClick={close}>Cancel</button>
                             <button
                                 onClick={deleteItem}
                                 className="modal__delete"
                             >
-                                DELETE
+                                Delete
                             </button>
                         </section>
                     </div>

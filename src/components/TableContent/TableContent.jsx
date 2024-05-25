@@ -124,8 +124,12 @@ const TableContent = ({ page, listItem }) => {
                 <MyModal
                     modalIsOpen={modalIsOpen}
                     closeModal={closeModal}
-                    name={listItem.name}
                     id={listItem.id}
+                    name={
+                        listItem.item_name
+                            ? listItem.item_name
+                            : listItem.warehouse_name
+                    }
                     page={page}
                     class="parent-modal"
                 />

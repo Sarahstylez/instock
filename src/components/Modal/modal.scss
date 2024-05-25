@@ -1,4 +1,4 @@
-@use "../../styles/partials/__variables" as *;
+@use "../../styles/partials/_variables" as *;
 @use "../../styles/partials/__mixins" as *;
 @use "../../styles/partials/__utils" as *;
 
@@ -68,11 +68,15 @@
 }
 
 button {
+    @each $property, $value in $labels-links-buttons {
+        #{$property}: $value;
+    }
     height: 2rem;
     border-radius: 2rem;
     border: 1px solid darkgray;
     background-color: white;
     width: 100%;
+
     @include tablet {
         width: 6rem;
     }
