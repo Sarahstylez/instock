@@ -7,6 +7,7 @@ body {
 }
 .list-table {
   &__list {
+    font-size: 13px;
     border-bottom: 1px solid $color-secondary-cloud;
     padding: 1rem 2rem;
     display: grid;
@@ -41,7 +42,7 @@ body {
     color: $color-primary-is-indigo;
   }
   &__contact-info p {
-    font-size: 11px;
+    font-size: 13px;
     line-height: 1.5;
     @include tablet {
       font-size: 14px;

@@ -45,7 +45,7 @@ const WarehouseTableContent = ({ listItem }) => (
 const InventoryTableContent = ({ listItem }) => (
   <>
     <div className="mobile-item">
-      <div className="mobile-item-title">ITEM</div>
+      <div className="mobile-item-title">INVENTORY ITEM</div>
       <Link to={`/inventory/${listItem.id}`}>
         <div className="list-table__name">
           <h3>{listItem.item_name}</h3>
