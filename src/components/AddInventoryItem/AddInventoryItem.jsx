@@ -75,7 +75,6 @@ const AddInventoryItem = () => {
         `http://localhost:8080/api/inventory/`,
         newItem
       );
-      console.log("New item details:", addItem.data);
       alert("Item added successfully");
       navigate("/inventory"); // Redirect to the inventory list page
     } catch (error) {
