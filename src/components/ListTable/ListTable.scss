@@ -29,10 +29,7 @@ body {
       align-items: center;
       font-size: 14px;
       gap: 1rem;
-      grid-template-columns: 1.4fr 1.8fr 1.5fr 1.8fr 0.1fr 0.1fr;
-    }
-    @include desktop {
-      grid-template-columns: 1fr 1.8fr 1fr 1fr 0.1fr 0.1fr;
+      grid-template-columns: 2fr 2fr 2fr 3fr 0.5fr 0.5fr;
     }
   }
   &__name {
@@ -84,7 +81,7 @@ body {
   }
 }
 
-.warehouse__sort {
+.list-table__sort {
   &-name,
   &-add,
   &-contact-name,
