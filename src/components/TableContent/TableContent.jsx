@@ -62,7 +62,7 @@ const InventoryTableContent = ({ listItem }) => (
       <Tags status={listItem.status} />
     </div>
     <div className="mobile-quantity">
-      <div className="mobile-quantity-title">QUANTITY</div>
+      <div className="mobile-quantity-title">QTY</div>
       <div>{listItem.quantity}</div>
     </div>
     <div className="mobile-spacing"></div>
