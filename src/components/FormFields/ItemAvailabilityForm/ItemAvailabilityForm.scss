@@ -19,29 +19,35 @@
     display: block;
     margin-bottom: 0.5rem;
     font-weight: bold;
-
-  }
- 
-
-  &__select {
    
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
-    width: 96%;
-    padding: $padding-xxs $padding-xs;
-    font-size: 13px;
-    line-height: 20px;
-    font-family: "Titillium Regular";
-    color: $color-primary-is-black;
- 
-      //border styles
-      border-radius: 1.25rem;
-      border: 1px solid $color-secondary-cloud;
-      &:focus {
-        border-color: $color-primary-is-indigo;
-        outline: none;
-      }
+
   }
+ 
+&__status-button  {
+
+  margin-right: 3rem;
+ 
+}
+&__select {
+  appearance: none;
+ background: url("../../../assets/Icons/arrow_drop_down-24px.svg") no-repeat right 0.75em center;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  width: 96%;
+  padding: $padding-xxs $padding-xs;
+  font-size: 13px;
+  line-height: 20px;
+  font-family: "Titillium Regular";
+  color: $color-primary-is-black;
+
+    //border styles
+    border-radius: 1.25rem;
+    border: 1px solid $color-secondary-cloud;
+    &:focus {
+      border-color: $color-primary-is-indigo;
+      outline: none;
+    }
+}
   &__input {
 
     margin-top: 0.5rem;
@@ -77,7 +83,7 @@
   }
 
   &__form-ctas {
-    width: 100%;
+    width: 100vw;
     background-color: rgba(247, 248, 249, 0.7);
     padding: $padding-xs 0;
     justify-content: center;
@@ -98,7 +104,12 @@
     border-radius: 1.25rem;
     color: $color-primary-white;
     background-color: $color-primary-is-indigo;
-
+    .default-label{
+      display: inline;
+    }
+    .tablet-label {
+      display: none;
+    }
     &:hover {
       background-color: $color-bg-graphite;
     }
@@ -128,10 +139,18 @@
 /* -------------------------------------------------------------------------- */
 
 @include tablet {
-    .form-contact {
-      width: 40%;
-      padding: $padding-m;
-      border-bottom: none;
+  .item-availability-form {
+    width: 40%;
+    padding: $padding-sm;
+    border-bottom: none;
+    &__button-add {
+      .default-label{
+        display: none;
+      }
+      .tablet-label {
+        display: inline;
+      }
+    }
     }
   }
   
@@ -140,7 +159,7 @@
   /* -------------------------------------------------------------------------- */
   
   @include desktop {
-    .form-contact {
+    .item-availability-form {
       padding: $padding-m $padding-xl;
       &__input {
         width: 92%;

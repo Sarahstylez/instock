@@ -35,7 +35,7 @@ const ItemAvailabilityForm = ({ status, setStatus, quantity, setQuantity, wareho
     <div className="item-availability-form">
       <h2 className="item-availability-form__title">Item Availability</h2>
       <div className="item-availability-form__group">
-        <label className="item-availability-form__label">Status</label>
+        <label className="item-availability-form__label"><h3>Status</h3></label>
         <div className="item-availability-form__status-group">
           <label className={`item-availability-form__status-button ${status === 'In Stock' ? 'active' : ''}`}>
             <input
@@ -45,7 +45,7 @@ const ItemAvailabilityForm = ({ status, setStatus, quantity, setQuantity, wareho
               checked={status === 'In Stock'}
               onChange={() => setStatus('In Stock')}
             />
-            In Stock
+           <p2> In Stock</p2>
           </label>
           <label className={`item-availability-form__status-button ${status === 'Out of Stock' ? 'active' : ''}`}>
             <input
@@ -55,13 +55,13 @@ const ItemAvailabilityForm = ({ status, setStatus, quantity, setQuantity, wareho
               checked={status === 'Out of Stock'}
               onChange={() => setStatus('Out of Stock')}
             />
-            Out of Stock
+           <p2> Out of Stock</p2>
           </label>
         </div>
       </div>
       {status === 'In Stock' && (
         <div className="item-availability-form__group">
-          <label className="item-availability-form__label">Quantity</label>
+          <label className="item-availability-form__label"><h3>Quantity</h3></label>
           <input
             type="number"
             className="item-availability-form__input"
@@ -71,7 +71,7 @@ const ItemAvailabilityForm = ({ status, setStatus, quantity, setQuantity, wareho
         </div>
       )}
       <div className="item-availability-form__group">
-        <label className="item-availability-form__label">Warehouse</label>
+        <label className="item-availability-form__label"><h3>Warehouse</h3></label>
         <select
           className="item-availability-form__select"
           value={warehouse}
@@ -82,14 +82,7 @@ const ItemAvailabilityForm = ({ status, setStatus, quantity, setQuantity, wareho
           ))}
         </select>
       </div>
-      <div className="item-availability-form__form-ctas">
-        <button className="item-availability-form__button-add" onClick={handleUpdate}>
-          Save
-        </button>
-        <button className="item-availability-form__button-cancel" onClick={handleCancel}>
-          Cancel
-        </button>
-      </div>
+   
     </div>
   );
 };

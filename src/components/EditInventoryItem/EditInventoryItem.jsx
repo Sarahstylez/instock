@@ -51,7 +51,6 @@ const EditInventoryItem = () => {
 
   const handleUpdate = async () => {
     try {
-      // Find the warehouse_id based on the selected warehouse_name
       const selectedWarehouse = warehouses.find((wh) => wh.warehouse_name === warehouse);
       if (!selectedWarehouse) {
         alert('Invalid warehouse selected');
@@ -60,7 +59,7 @@ const EditInventoryItem = () => {
 
       const updatedItem = {
         id: item.id,
-        warehouse_id: selectedWarehouse.id, // Use warehouse_id instead of warehouse_name
+        warehouse_id: selectedWarehouse.id, 
         item_name: name,
         description,
         category,
@@ -111,6 +110,17 @@ const EditInventoryItem = () => {
             handleCancel={handleCancel}
           />
         </div>
+      </div>
+      <div>
+      <div className="item-availability-form__form-ctas">
+        <button className="item-availability-form__button-add" onClick={handleUpdate}>
+        <h3 className="default-label">Save</h3>
+  <h3 className="tablet-label">+ Item Update</h3>
+        </button>
+        <button className="item-availability-form__button-cancel" onClick={handleCancel}>
+        <h3>Cancel</h3>
+        </button>
+      </div>
       </div>
     </section>
   );

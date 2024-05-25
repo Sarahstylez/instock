@@ -86,58 +86,70 @@
 //     flex-direction: column;
 //   }
 // }
+/* -------------------------------------------------------------------------- */
+/*                                Tablet Styles                               */
+/* -------------------------------------------------------------------------- */
 
-/* Tablet Styles */
 @include tablet {
-    .card {
-      margin: 0 2rem;
-      width: 92%;
-      height: 42rem;
-  
-      &__title {
-        @include flex();
-        width: 91%;
-        padding: $padding-m $padding-sm;
-      }
-  
-      &__warehouse {
-        width: 10rem;
-      }
-      &__icon {
-        &-arrow {
-          padding-right: $padding-xxs;
-        }
+  .card {
+    margin: 0 2rem;
+    width: 92%;
+    height: 42rem;
+
+    &__title {
+      @include flex();
+      width: 91%;
+      padding: $padding-m $padding-sm;
+    }
+
+    &-container {
+      @include flex(center, start);
+      flex-direction: row;
+      width: 30%;
+    }
+    &__icon {
+      &-arrow {
+        padding-right: $padding-xxs;
       }
     }
-    .forms {
-      &__container {
-        @include flex();
-      }
-    }
-    .form {
-      &__ctas {
-        @include flex(start, right);
-        &-cancel {
-          width: 5rem;
-        }
+    &__form-ctas {
+      @include flex(start, right);
+      width: 100vw;
+      &-cancel {
+        width: 5rem;
       }
     }
   }
+  .forms {
+    &__container {
+      display: flex;
+      flex-direction: row;
+      //align-items: start;
+      //@include flex();
+    }
+  }
+ 
+ 
   
-/* Desktop Styles */
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                DesktopStyles                               */
+/* -------------------------------------------------------------------------- */
+
 @include desktop {
-    .card {
-      margin: 0 5rem;
-      width: 87%;
-  
-      &__title {
-        width: 91%;
-        padding: $padding-m $padding-l;
-      }
-    }
-    .forms {
-      &__container {
-        @include flex(start, space-between);
-      }
+  .card {
+    margin: 0 5rem;
+    width: 87%;
+
+    &__title {
+      width: 91%;
+      padding: $padding-m $padding-l;
     }
   }
+  .forms {
+    &__container {
+      @include flex(start, space-between);
+    }
+  }
+}

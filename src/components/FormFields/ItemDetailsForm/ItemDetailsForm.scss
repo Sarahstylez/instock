@@ -58,7 +58,8 @@
  }
 
   &__select {
-   
+    appearance: none;
+   background: url("../../../assets/Icons/arrow_drop_down-24px.svg") no-repeat right 0.75em center;
     margin-top: 0.5rem;
     margin-bottom: 1rem;
     width: 96%;
@@ -118,11 +119,21 @@
 /* -------------------------------------------------------------------------- */
 
 @include tablet {
-    .form-warehouse {
+  .item-details-form {
       width: 40%;
-      padding: $padding-m;
+      padding: $padding-sm;
       border-bottom: none;
-      border-right: 1px solid $color-secondary-cloud;
+      position: relative;
+
+    }
+    .item-details-form::after {
+      content: '';
+      position: absolute;
+      top: 5%;
+      right: 0;
+      width: 1px;
+      height: 90%;
+      background-color: $color-secondary-cloud;
     }
   }
   
@@ -131,7 +142,7 @@
   /* -------------------------------------------------------------------------- */
   
   @include desktop {
-    .form-warehouse {
+    .item-details-form {
       padding: $padding-m $padding-xl;
       &__input {
         width: 92%;
