@@ -93,6 +93,7 @@
     @include tablet {
       flex: 1;
       margin-left: 2.5rem;
+      padding-top: 0;
     }
   }
   &__description {
