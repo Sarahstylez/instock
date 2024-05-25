@@ -6,14 +6,24 @@ import InventoryDetailsCard from "../src/components/ItemDetailsCard/ItemDetailsC
 import AddInventoryItem from "./components/AddInventoryItem/AddInventoryItem";
 import "./App.scss";
 import Navigation from "./components/Navigation/Navigation";
+import AddWarehouse from "./components/AddWarehouse/AddWarehouse";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Navigation />
-        {/* Wrap all routes in container to apply overlay style to all pages*/}
+        {<Navigation />}
         <div className="App__routes-overlay">
+        <Routes>
+          <Route path="/" element={<WarehousePage />} />
+          <Route path="/inventory" element={<InventoryPage />} />
+          <Route path="/warehouses" element={<WarehousePage />} />
+          <Route path="/warehouses/new" element={<AddWarehouse />} />
+          <Route path="/inventory/:id" element={<InventoryDetailsCard />} />
+          <Route path="/warehouses/:id" element={<WarehouseDetails />} />
+          <Route path="*" element={<h1>Page not found</h1>} />
+        </Routes>
+        </div>
           <Routes>
             <Route path="/" element={<WarehousePage />} />
             <Route path="/inventory" element={<InventoryPage />} />

@@ -31,7 +31,7 @@ function WarehouseDetails() {
     <section className="card">
       <div className="card__title">
         <div className="card__title-container">
-          <Link className="backarrow__link" to="/api/warehouses">
+          <Link className="backarrow__link" to="/warehouses">
             <img
               className="card__icon-arrow"
               src={BackArrow}
