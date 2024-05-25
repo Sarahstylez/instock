@@ -5,23 +5,18 @@
 .item__card {
   display: flex;
   flex-direction: column;
-  width: 21.4375rem;
-  height: 29rem;
   box-sizing: border-box;
   padding: 0 1.5rem;
   border-radius: 3px;
   background: var(--White, #fff);
   box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.1);
-  margin-top: 3rem;
   @include tablet {
-    width: 44rem;
-    height: 24.25rem;
+    padding: 0 2.5rem;
+    width: 95%;
   }
   @include desktop {
-    width: 1020px;
-    height: 274px;
+    width: 100%;
   }
-
   &__header {
     display: flex;
     flex-direction: row;
@@ -94,9 +89,11 @@
   }
   &__details {
     padding: 0 1.5rem;
+    margin-bottom: 24px;
     @include tablet {
       display: flex;
       flex-direction: row;
+      margin-bottom: 1.5rem;
     }
   }
   &__left_column {
