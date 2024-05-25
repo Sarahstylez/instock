@@ -29,15 +29,6 @@
     border: none;
     background-color: transparent;
   }
-
-  &__title {
-    color: var(--Instock-Black, #13182c);
-    font-family: "Titillium Web";
-    font-size: 28px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 36px;
-  }
   &__divider {
     width: 100%;
     border-bottom: 1px solid $color-secondary-cloud;

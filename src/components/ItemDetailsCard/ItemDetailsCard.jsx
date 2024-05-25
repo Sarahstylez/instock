@@ -63,27 +63,27 @@ const ItemDetailsCard = () => {
           <div className="item__card__details">
             <div className="item__card__left_column">
               <div className="item__card__description">
-                <h2 className="">ITEM DESCRIPTION:</h2>
+                <h3 className="">ITEM DESCRIPTION:</h3>
                 <p>{item.description}</p>
               </div>
               <div className="item__card__category">
-                <h2>CATEGORY:</h2>
+                <h3>CATEGORY:</h3>
                 <p>{item.category}</p>
               </div>
             </div>
             <div className="item__card__right_column">
               <div className="item__card__stock-container">
                 <div className="item__card__status">
-                  <h2>STATUS:</h2>
+                  <h3>STATUS:</h3>
                   <Tags status={item.status}></Tags>
                 </div>
                 <div className="item__card__quantity">
-                  <h2>QUANTITY:</h2>
+                  <h3>QUANTITY:</h3>
                   <p>{item.quantity}</p>
                 </div>
               </div>
               <div className="item__card__warehouse">
-                <h2>WAREHOUSE:</h2>
+                <h3>WAREHOUSE:</h3>
                 <p>{item.warehouse_name}</p>
               </div>
             </div>
