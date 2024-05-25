@@ -1,6 +1,7 @@
 import "./AddWarehouse.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { parsePhoneNumberFromString } from "libphonenumber-js";
 import BackArrow from "../../assets/Icons/arrow_back-24px.svg";
 import WarehouseDetailsForm from "../FormFields/WarehouseDetailsForm/WarehouseDetailsForm";
 import ContactDetailsForm from "../FormFields/ContactDetailsForm/ContactDetailsForm";
@@ -23,11 +24,17 @@ function AddWarehouse() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    let formattedValue = value;
+
+    if (name === "contact_phone") {
+      formattedValue = formatPhoneNumber(value);
+    }
+
     setFormData({
       ...formData,
-      [name]: value,
+      [name]: formattedValue,
     });
-    validateInput(name, value);
+    validateInput(name, formattedValue);
   };
 
   const handleFocus = (name) => {
@@ -50,17 +57,25 @@ function AddWarehouse() {
           error = !emailPattern.test(value) ? "Valid email is required" : "";
           break;
         case "contact_phone":
-          const phonePattern = /^[0-9]+$/;
-          error = !phonePattern.test(value)
-            ? "Valid phone number is required"
-            : "";
+          const parsedPhoneNumber = parsePhoneNumberFromString(value, "US");
+          error =
+            !parsedPhoneNumber || !parsedPhoneNumber.isValid()
+              ? "Valid phone number is required"
+              : "";
           break;
-        // Add more specific validation cases if needed
         default:
           break;
       }
     }
     setErrors((prevErrors) => ({ ...prevErrors, [name]: error }));
+  };
+
+  const formatPhoneNumber = (phoneNumber) => {
+    const parsedPhoneNumber = parsePhoneNumberFromString(phoneNumber, "US");
+    if (parsedPhoneNumber) {
+      return parsedPhoneNumber.formatInternational();
+    }
+    return phoneNumber;
   };
 
   const handleCancelClick = (e) => {
