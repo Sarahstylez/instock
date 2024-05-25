@@ -39,9 +39,8 @@
   line-height: 20px;
   font-family: "Titillium Regular";
   color: $color-primary-is-black;
-
-    //border styles
-    border-radius: 1.25rem;
+ 
+    border-radius: 1.25rem;   //border styles
     border: 1px solid $color-secondary-cloud;
     &:focus {
       border-color: $color-primary-is-indigo;

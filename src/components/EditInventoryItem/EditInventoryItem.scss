@@ -3,6 +3,10 @@
 @use "../../styles/partials/__utils" as *;
 
 
+/* -------------------------------------------------------------------------- */
+/*                                Mobile Styles                               */
+/* -------------------------------------------------------------------------- */
+
 @include mobile {
 .card {
   @include flex(center, start);
@@ -43,49 +47,9 @@
     flex-direction: column;
   }
 }
-.form {
-    &__ctas {
-      @include flex(start, space-between);
-      width: 100%;
-      padding: $padding-xs 0;
-      background: $color-bg-light-grey;
-      &-cancel {
-        margin-left: 1.75rem;
-        margin-right: 0.5rem;
-        width: 10rem;
-        padding: $padding-xxs $padding-xs;
-        border-radius: 1.25rem;
-        border: 1px solid $color-secondary-cloud;
-        color: $color-secondary-slate;
-        background-color: $color-primary-white;
-        &:hover {
-          color: $color-primary-is-indigo;
-          border: 1px solid $color-primary-is-indigo;
-        }
-      }
-      &-add {
-        margin-left: 0.5rem;
-        margin-right: 1.75rem;
-        width: 10rem;
-        border: none;
-        padding: $padding-xxs $padding-xs;
-        border-radius: 1.25rem;
-        color: $color-primary-white;
-        background-color: $color-primary-is-indigo;
-        &:hover {
-          background-color: $color-bg-graphite;
-        }
-      }
-    }
-  }
+
 }
 
-// /* Mobile Styles */
-// @include mobile {
-//   .forms__container {
-//     flex-direction: column;
-//   }
-// }
 /* -------------------------------------------------------------------------- */
 /*                                Tablet Styles                               */
 /* -------------------------------------------------------------------------- */
@@ -101,20 +65,10 @@
       width: 91%;
       padding: $padding-m $padding-sm;
     }
-
-    &-container {
-      @include flex(center, start);
-      flex-direction: row;
-      width: 30%;
-    }
-    &__icon {
-      &-arrow {
-        padding-right: $padding-xxs;
-      }
-    }
     &__form-ctas {
       @include flex(start, right);
       width: 100vw;
+      background-color: $color-bg-light-grey;
       &-cancel {
         width: 5rem;
       }
