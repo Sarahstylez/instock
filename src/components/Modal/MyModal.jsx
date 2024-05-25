@@ -53,24 +53,25 @@ function MyModal(props) {
             <Modal isOpen={props.modalIsOpen} style={customStyles}>
                 <div className="modal">
                     <div className="modal__container">
-                        <div className="modal__right-justify">
-                            <button
-                                onClick={close}
-                                className="modal__close-button"
-                            >
-                                <img src={closeBtnImg} />
-                            </button>
-                        </div>
-                        <h1>
-                            Delete {props.name} {props.page}?
-                        </h1>
-                        <div>
-                            Please confirm that you’d like to delete{" "}
-                            {props.name} from the list of{" "}
-                            {props.inventoryOrWarehouse}. You won’t be able to
-                            undo this action.
-                        </div>
-                        <article className="modal__right-justify">
+                        <section>
+                            <div className="modal__right-justify">
+                                <button
+                                    onClick={close}
+                                    className="modal__close-button"
+                                >
+                                    <img src={closeBtnImg} />
+                                </button>
+                            </div>
+                            <h1>
+                                Delete {props.name} {props.page}?
+                            </h1>
+                            <div>
+                                Please confirm that you’d like to delete
+                                {props.name} from the list of {props.page}. You
+                                won’t be able to undo this action.
+                            </div>
+                        </section>
+                        <section className="modal__buttons-row modal__right-justify">
                             <button onClick={close}>CANCEL</button>
                             <button
                                 onClick={deleteItem}
@@ -78,7 +79,7 @@ function MyModal(props) {
                             >
                                 DELETE
                             </button>
-                        </article>
+                        </section>
                     </div>
                 </div>
             </Modal>
