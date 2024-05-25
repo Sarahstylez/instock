@@ -127,4 +127,9 @@ body {
       display: none;
     }
   }
+  &-spacing {
+    @include tablet {
+      display: none;
+    }
+  }
 }
