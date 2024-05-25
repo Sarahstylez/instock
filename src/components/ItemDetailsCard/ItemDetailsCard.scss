@@ -6,13 +6,11 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  padding: 0 1.5rem;
   border-radius: 3px;
   background: var(--White, #fff);
   box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.1);
   @include tablet {
-    padding: 0 2.5rem;
-    width: 95%;
+    width: 97%;
   }
   @include desktop {
     width: 100%;
@@ -25,18 +23,16 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: start;
-    margin-bottom: 1.5rem;
-    padding-top: 1.5rem;
+    justify-content: space-between;
+    padding: 1rem;
+    @include tablet {
+      padding: 1rem 2rem;
+    }
   }
-
   &__back-arrow {
     background: #fff;
     border: none;
     display: flex;
-    margin-left: 1rem;
-    justify-content: start;
-    flex-direction: row;
     align-items: center;
   }
   &__name {
@@ -72,16 +68,15 @@
   }
   &__divider {
     border-bottom: 1px solid var(--Cloud, #bdc5d5);
-    margin-bottom: 1rem;
     width: 100%;
   }
   &__details {
-    padding: 0 1.5rem;
-    margin-bottom: 24px;
+    padding: 1rem;
     @include tablet {
       display: flex;
       flex-direction: row;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
+      padding: 1rem 2rem;
     }
   }
   &__left_column {

@@ -41,10 +41,12 @@ const ItemDetailsCard = () => {
     <>
       <div className="item__card">
         <div className="item__card__header">
-          <button className="item__card__back-arrow" onClick={backClick}>
-            <img src={BackArrow} alt="back button"></img>
-          </button>
-          {item && <h1 className="item__card__name">{item.item_name}</h1>}{" "}
+          <div className="item__card__left-group">
+            <button className="item__card__back-arrow" onClick={backClick}>
+              <img src={BackArrow} alt="back button"></img>
+              {item && <h1 className="item__card__name">{item.item_name}</h1>}
+            </button>
+          </div>
           <button className="item__card__edit" onClick={editClick}>
             <img
               src={EditIcon}
