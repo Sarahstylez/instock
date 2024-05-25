@@ -104,7 +104,11 @@ body {
   &-warehouse-title,
   &-add-title,
   &-contact-name-title,
-  &-contact-info-title {
+  &-contact-info-title,
+  &-item-title,
+  &-category-title,
+  &-status-title,
+  &-quantity-title {
     font-size: map-get($table-header, font-size);
     font-family: map-get($table-header, font-family);
     color: map-get($table-header, color);
