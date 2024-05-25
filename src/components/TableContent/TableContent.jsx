@@ -93,8 +93,8 @@ const TableContent = ({ page, listItem }) => {
         <Link
           to={
             page === "warehouses"
-              ? `/warehouses/edit/${listItem.id}`
-              : `/inventory/edit/${listItem.id}`
+              ? `/warehouses/${listItem.id}/edit`
+              : `/inventory/${listItem.id}/edit`
           }
         >
           <img className="list-table__edit" src={editIcon} alt="edit item" />
