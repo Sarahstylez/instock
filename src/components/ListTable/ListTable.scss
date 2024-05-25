@@ -85,7 +85,11 @@ body {
   &-name,
   &-add,
   &-contact-name,
-  &-contact-info {
+  &-contact-info,
+  &-item,
+  &-category,
+  &-status,
+  &-quantity {
     display: flex;
     align-items: center;
   }
