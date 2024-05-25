@@ -43,7 +43,7 @@
       }
     }
     text-wrap: nowrap;
-    width: 100%;
+    width: calc(100% - 6rem);
     @include tablet {
       width: 10rem;
       margin-left: 1rem;

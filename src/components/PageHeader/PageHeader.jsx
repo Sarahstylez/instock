@@ -1,6 +1,8 @@
 import "./PageHeader.scss";
 import searchIcon from "../../assets/Icons/search-24px.svg";
 
+import { Link } from "react-router-dom";
+
 const PageHeader = ({ page }) => {
   return (
     <div className="list-table__top-section">
@@ -19,6 +21,8 @@ const PageHeader = ({ page }) => {
             alt="search icon"
           />
           <input type="text" name="search" placeholder="Search..." />
+        </form>
+        <Link to={page === "warehouses" ? "/warehouses/new" : "/inventory/new"}>
           <button className="list-table__upload-btn">
             + Add New{" "}
             {page === "warehouses"
@@ -27,7 +31,7 @@ const PageHeader = ({ page }) => {
               ? "Item"
               : ""}
           </button>
-        </form>
+        </Link>
       </div>
     </div>
   );
