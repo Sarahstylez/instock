@@ -17,6 +17,10 @@
   @include desktop {
     width: 100%;
   }
+
+  h2 {
+    margin-bottom: 0.25rem;
+  }
   &__header {
     display: flex;
     flex-direction: row;
@@ -36,15 +40,7 @@
     align-items: center;
   }
   &__name {
-    font-weight: 600;
-    line-height: 36px;
     margin-left: 1rem;
-    @include tablet {
-      font-size: 32px;
-      line-height: 40px;
-    }
-    @include desktop {
-    }
   }
   &__edit {
     background: #2e66e5;
@@ -76,7 +72,7 @@
   }
   &__divider {
     border-bottom: 1px solid var(--Cloud, #bdc5d5);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     width: 100%;
   }
   &__details {
@@ -89,23 +85,30 @@
     }
   }
   &__left_column {
-    flex: 1;
     @include tablet {
+      flex: 1;
       border-right: 1px solid rgba(189, 197, 213, 0.75);
     }
   }
+  &__description {
+    margin-bottom: 1rem;
+  }
   &__right_column {
-    flex: 1;
+    padding-top: 1rem;
     @include tablet {
+      flex: 1;
       margin-left: 2.5rem;
     }
   }
   &__description {
-    margin-right: 2.5rem;
+    @include tablet {
+      margin-right: 2.5rem;
+    }
   }
   &__stock-container {
     display: flex;
     flex-direction: row;
+    padding-bottom: 1rem;
   }
   &__status {
     flex: 1;
