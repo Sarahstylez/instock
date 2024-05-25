@@ -19,15 +19,15 @@ const PageHeader = ({ page }) => {
             alt="search icon"
           />
           <input type="text" name="search" placeholder="Search..." />
+          <button className="list-table__upload-btn">
+            + Add New{" "}
+            {page === "warehouses"
+              ? "Warehouse"
+              : page === "inventory"
+              ? "Item"
+              : ""}
+          </button>
         </form>
-        <button className="list-table__upload-btn">
-          + Add New{" "}
-          {page === "warehouses"
-            ? "Warehouse"
-            : page === "inventory"
-            ? "Item"
-            : ""}
-        </button>
       </div>
     </div>
   );
