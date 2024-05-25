@@ -9,8 +9,8 @@ const AddInventoryItem = () => {
 
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [category, setCategory] = useState("Electronics");
-  const [quantity, setQuantity] = useState(0);
+  const [category, setCategory] = useState("");
+  const [quantity, setQuantity] = useState();
   const [status, setStatus] = useState("In Stock");
   const [warehouse, setWarehouse] = useState("");
   // possibly add warehouse dynamic and get warehouses
@@ -91,6 +91,7 @@ const AddInventoryItem = () => {
               className="add-card__input"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              placeholder="Item name"
             />
           </div>
           {/* Item Description */}
@@ -98,18 +99,20 @@ const AddInventoryItem = () => {
             <label className="add-card__label">Description</label>
             <input
               type="text"
-              className="add-card__input"
+              className="add-card__input-description"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
+              placeholder="Please enter a brief item description..."
             />
           </div>
           {/* Category */}
           <div className="add-card__form-group-select">
             <label className="add-card__label">Category</label>
             <select
-              className="add-card__input"
+              className="add-card__input-select"
               value={category}
               onChange={(e) => setCategory(e.target.value)}
+              placeholder="Please select"
             >
               <option value="Electronics">Electronics</option>
               <option value="Gear">Gear</option>
@@ -124,7 +127,7 @@ const AddInventoryItem = () => {
           {/* Status */}
           <div className="add-card__form-group">
             <label className="add-card__label">Status</label>
-            <div className="add-card__status-group">
+            <div className="add-card__form-group-radio">
               <label
                 className={`add-card__status-button ${
                   status === "In Stock" ? "active" : ""
@@ -164,6 +167,7 @@ const AddInventoryItem = () => {
                 className="add-card__input"
                 value={quantity}
                 onChange={(e) => setQuantity(Number(e.target.value))}
+                placeholder="0"
               />
             </div>
           )}
@@ -171,9 +175,10 @@ const AddInventoryItem = () => {
           <div className="add-card__form-group">
             <label className="add-card__label">Warehouse</label>
             <select
-              className="add-card__input"
+              className="add-card__input-select"
               value={warehouse}
               onChange={(e) => setWarehouse(e.target.value)}
+              placeholder="Please select"
             >
               <option value="1">Manhattan</option>
               <option value="2">Washington</option>
@@ -185,19 +190,26 @@ const AddInventoryItem = () => {
               <option value="8">Boston</option>
             </select>
           </div>
-          {/* Cancel and add items buttons */}
           <div className="add-card__form_ctas">
             <button className="add-card__button-add" onClick={handleAdd}>
               Add Item
             </button>{" "}
-            {/* Changed button text to "Add Item" */}
             <button className="add-card__button-cancel" onClick={handleCancel}>
               Cancel
             </button>
           </div>
-          {/* Divider */}
         </div>
       </form>
+      {/* Cancel and add items buttons */}
+      <div className="add-card__form_ctas-tablet">
+        <button className="add-card__button-add" onClick={handleAdd}>
+          Add Item
+        </button>{" "}
+        {/* Changed button text to "Add Item" */}
+        <button className="add-card__button-cancel" onClick={handleCancel}>
+          Cancel
+        </button>
+      </div>
     </div>
   );
 };

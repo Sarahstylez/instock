@@ -7,17 +7,19 @@
   flex-direction: column;
   align-items: center;
   justify-content: start;
-  margin: 1rem;
-  width: 100%;
-  height: 64rem;
+  width: 91%;
   border-radius: 3px;
+  padding: 0 1rem;
   background: var(--White, #fff);
   box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.1);
+  @include tablet {
+    padding: 0 2rem;
+  }
 
   &__header {
     display: flex;
-    width: 91%;
-    padding: $padding-s $padding-xs;
+    width: 100%;
+    padding: $padding-s 0;
     flex-direction: row;
     border-bottom: 1px solid $color-secondary-cloud;
     &-container {
@@ -31,7 +33,7 @@
 
   &__back-arrow {
     border: none;
-    margin-left: 1rem;
+    background-color: transparent;
   }
 
   &__title {
@@ -39,28 +41,40 @@
     font-family: "Titillium Web";
     font-size: 28px;
     font-style: normal;
-    margin-left: -4rem;
     font-weight: 600;
     line-height: 36px;
   }
   &__forms {
     width: 100%;
     display: flex;
+    padding-top: 1rem;
     flex-direction: column;
     @include tablet {
       flex-direction: row;
+      padding-top: 1.5rem;
     }
+  }
+  &__forms-title {
+    padding-bottom: 2rem;
   }
   &__item-form {
     flex: 1;
     border-bottom: 1px solid $color-secondary-cloud;
     padding-bottom: 1rem;
+    @include tablet {
+      border-bottom: none;
+      border-right: 1px solid $color-secondary-cloud;
+      padding-right: 2rem;
+    }
   }
   &__vail-form {
     flex: 1;
     padding-top: 1rem;
-  }
-  &__label {
+    @include tablet {
+      padding-top: 0;
+      padding-left: 2rem;
+      width: 41%;
+    }
   }
   &__input {
     margin-top: 0.5rem;
@@ -75,17 +89,77 @@
     border-radius: 1.25rem;
     border: 1px solid $color-secondary-cloud;
   }
+  &__input-description {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    width: 88%;
+    padding: $padding-xxs $padding-xs;
+    font-size: 13px;
+    line-height: 120px;
+    font-family: "Titillium Regular";
+    color: $color-primary-is-black;
+    //border styles
+    border-radius: 1.25rem;
+    border: 1px solid $color-secondary-cloud;
+  }
+  &__input-select {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    width: 98%;
+    padding: $padding-xxs $padding-xs;
+    font-size: 13px;
+    line-height: 20px;
+    font-family: "Titillium Regular";
+    color: $color-primary-is-black;
+    //border styles
+    border-radius: 1.25rem;
+    border: 1px solid $color-secondary-cloud;
+  }
   &__form-group-select {
     display: flex;
     flex-direction: column;
   }
+  &__status-button.active {
+    margin-right: 5.5625rem;
+  }
+  &__status-button {
+    margin-right: 5.5625rem;
+  }
+  &__form-group-radio {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    width: 88%;
+    font-size: 13px;
+    line-height: 20px;
+    font-family: "Titillium Regular";
+    color: $color-primary-is-black;
+  }
+  &__radio-label {
+    margin-left: 0.5rem;
+  }
   &__form_ctas {
     width: 100%;
+    background-color: rgba(247, 248, 249, 0.7);
     padding: $padding-xs 0;
     justify-content: center;
-    background: $color-bg-light-grey;
     display: flex;
     flex-direction: row-reverse;
+    @include tablet {
+      display: none;
+    }
+  }
+  &__form_ctas-tablet {
+    display: none;
+    @include tablet {
+      width: 100%;
+      padding: $padding-xs 0;
+      justify-content: end;
+      display: flex;
+      flex-direction: row-reverse;
+      background: rgba(247, 248, 249, 0.7);
+    }
   }
   &__button-add {
     margin-left: 0.5rem;
