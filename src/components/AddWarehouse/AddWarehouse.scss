@@ -49,10 +49,10 @@
       padding: $padding-xs 0;
       background: $color-bg-light-grey;
       &-cancel {
-        margin-left: 1.75rem;
+        margin-left: 1.5rem;
         margin-right: 0.5rem;
         width: 10rem;
-        padding: $padding-xxs $padding-xs;
+        padding: $padding-xxs;
         border-radius: 1.25rem;
         border: 1px solid $color-secondary-cloud;
         color: $color-secondary-slate;
@@ -64,10 +64,10 @@
       }
       &-add {
         margin-left: 0.5rem;
-        margin-right: 1.75rem;
+        margin-right: 1.5rem;
         width: 10rem;
         border: none;
-        padding: $padding-xxs $padding-xs;
+        padding: $padding-xxs;
         border-radius: 1.25rem;
         color: $color-primary-white;
         background-color: $color-primary-is-indigo;
