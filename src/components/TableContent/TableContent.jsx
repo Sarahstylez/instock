@@ -3,6 +3,8 @@ import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
 import editIcon from "../../assets/Icons/edit-24px.svg";
 import chevronIcon from "../../assets/Icons/chevron_right-24px.svg";
 
+import Tags from "../Tags/Tags";
+
 import { Link } from "react-router-dom";
 
 const WarehouseTableContent = ({ listItem }) => (
@@ -57,7 +59,7 @@ const InventoryTableContent = ({ listItem }) => (
     </div>
     <div className="mobile-status">
       <div className="mobile-status-title">STATUS</div>
-      <div>{listItem.status}</div>
+      <Tags status={listItem.status} />
     </div>
     <div className="mobile-quantity">
       <div className="mobile-quantity-title">QUANTITY</div>
