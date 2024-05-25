@@ -41,25 +41,25 @@ const InventoryTableContent = ({ listItem }) => (
     <div className="mobile-item">
       <div className="mobile-item-title">ITEM</div>
       <div className="list-table__item">
-        <span className="item__name-hover">{listItem.item_name}</span>
-        <img
-          className="list-table__icon"
-          src={chevronIcon}
-          alt="chevron icon"
-        />
+        <span>{listItem.item_name}</span>
+        <img src={chevronIcon} alt="chevron icon" />
       </div>
     </div>
     <div className="mobile-category">
       <div className="mobile-category-title">CATEGORY</div>
-      <div className="list-table__category">{listItem.category}</div>
+      <div>{listItem.category}</div>
     </div>
     <div className="mobile-status">
       <div className="mobile-status-title">STATUS</div>
-      <div className="list-table__status">{listItem.status}</div>
+      <div>{listItem.status}</div>
     </div>
     <div className="mobile-quantity">
       <div className="mobile-quantity-title">QUANTITY</div>
-      <div className="list-table__quantity">{listItem.quantity}</div>
+      <div>{listItem.quantity}</div>
+    </div>
+    <div className="mobile-warehouse">
+      <div className="mobile-warehouse-title">WAREHOUSE</div>
+      <div>{listItem.warehouse_name}</div>
     </div>
   </>
 );

@@ -47,13 +47,21 @@ const ListTable = ({ page }) => {
     return 0;
   });
 
+  const listClassName = `list-table__list${
+    page === "inventory" ? " list-table__list--inventory" : ""
+  }`;
+
   return (
     <section>
       <PageHeader page={page} />
       <ul>
-        <TableHeader page={page} sortItems={sortItems} />
+        <TableHeader
+          page={page}
+          sortItems={sortItems}
+          listClassName={listClassName}
+        />
         {sortedLists.map((listItem) => (
-          <li className="list-table__list" key={listItem.id}>
+          <li className={listClassName} key={listItem.id}>
             <TableContent page={page} listItem={listItem} />
           </li>
         ))}

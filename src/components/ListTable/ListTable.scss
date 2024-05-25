@@ -29,7 +29,10 @@ body {
       align-items: center;
       font-size: 14px;
       gap: 1rem;
-      grid-template-columns: 2fr 2fr 2fr 3fr 0.5fr 0.5fr;
+      grid-template-columns: 2fr 2fr 2fr 3fr 0.5fr 0.5fr; // default for warehouses page
+      &--inventory {
+        grid-template-columns: 1.5fr 1.5fr 1.5fr 0.5fr 2fr 0.5fr 0.5fr; // 7 columns for inventory page
+      }
     }
   }
   &__name {
@@ -89,7 +92,8 @@ body {
   &-item,
   &-category,
   &-status,
-  &-quantity {
+  &-quantity,
+  &-warehouse-name {
     display: flex;
     align-items: center;
   }
@@ -112,7 +116,8 @@ body {
   &-item-title,
   &-category-title,
   &-status-title,
-  &-quantity-title {
+  &-quantity-title,
+  &-warehouse-name {
     font-size: map-get($table-header, font-size);
     font-family: map-get($table-header, font-family);
     color: map-get($table-header, color);

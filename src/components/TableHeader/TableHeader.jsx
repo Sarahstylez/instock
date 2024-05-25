@@ -37,12 +37,18 @@ const inventoryHeaders = [
     label: "QTY",
     className: "list-table__sort-quantity",
   },
+  {
+    key: "warehouse_name",
+    label: "WAREHOUSE",
+    className: "list-table__sort-warehouse-name",
+  },
 ];
 
-const TableHeader = ({ page, sortItems }) => {
+const TableHeader = ({ page, sortItems, listClassName }) => {
   const headers = page === "warehouses" ? warehouseHeaders : inventoryHeaders;
+
   return (
-    <li className="list-table__list --sort-header">
+    <li className={`${listClassName} --sort-header`}>
       {headers.map((header) => (
         <div
           key={header.key}
