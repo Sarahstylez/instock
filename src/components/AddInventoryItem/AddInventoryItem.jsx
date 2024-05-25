@@ -78,6 +78,7 @@ const AddInventoryItem = () => {
           <h1 className="add-card__title">Add New Inventory Item</h1>
         </div>
       </div>
+      <div className="add-card__divider"></div>
       {/* Form */}
       <form className="add-card__forms" action="">
         <div className="add-card__item-form">
@@ -96,9 +97,9 @@ const AddInventoryItem = () => {
           {/* Item Description */}
           <div className="add-card__form-group">
             <label className="add-card__label">Description</label>
-            <input
-              type="text"
+            <textarea
               className="add-card__input-description"
+              rows={5}
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               placeholder="Please enter a brief item description..."
@@ -191,16 +192,16 @@ const AddInventoryItem = () => {
               <option value="8">Boston</option>
             </select>
           </div>
-          <div className="add-card__form_ctas">
-            <button className="add-card__button-add" onClick={handleAdd}>
-              + Add Item
-            </button>{" "}
-            <button className="add-card__button-cancel" onClick={handleCancel}>
-              Cancel
-            </button>
-          </div>
         </div>
       </form>
+      <div className="add-card__form_ctas">
+        <button className="add-card__button-add" onClick={handleAdd}>
+          + Add Item
+        </button>{" "}
+        <button className="add-card__button-cancel" onClick={handleCancel}>
+          Cancel
+        </button>
+      </div>
       {/* Tablet/Desktop */}
       <div className="add-card__form_ctas-tablet">
         <button className="add-card__button-add" onClick={handleAdd}>

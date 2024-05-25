@@ -7,24 +7,20 @@
   flex-direction: column;
   align-items: center;
   justify-content: start;
-  width: 96%;
+  width: 100%;
   border-radius: 3px;
-  padding: 0 1rem;
   background: var(--White, #fff);
   box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.1);
-  @include tablet {
-    padding: 0 2rem;
-  }
 
   &__header {
     width: 100%;
-    padding: $padding-s 0;
-    border-bottom: 1px solid $color-secondary-cloud;
+    padding: $padding-s 1rem;
     &-container {
       display: flex;
       align-items: center;
       justify-content: start;
       flex-direction: row;
+      padding: 0 1rem;
       width: 100%;
     }
   }
@@ -42,14 +38,17 @@
     font-weight: 600;
     line-height: 36px;
   }
+  &__divider {
+    width: 100%;
+    border-bottom: 1px solid $color-secondary-cloud;
+  }
   &__forms {
     width: 100%;
     display: flex;
-    padding-top: 1rem;
     flex-direction: column;
     @include tablet {
       flex-direction: row;
-      padding-top: 1.5rem;
+      padding: 1.5rem 0rem;
     }
   }
   &__forms-title {
@@ -58,8 +57,9 @@
   &__item-form {
     flex: 1;
     border-bottom: 1px solid $color-secondary-cloud;
-    padding-bottom: 1rem;
+    padding: 1rem;
     @include tablet {
+      padding-top: 0;
       border-bottom: none;
       border-right: 1px solid $color-secondary-cloud;
       padding-right: 2rem;
@@ -67,7 +67,7 @@
   }
   &__vail-form {
     flex: 1;
-    padding-top: 1rem;
+    padding: 1rem;
     @include tablet {
       padding-top: 0;
       padding-left: 2rem;
@@ -77,23 +77,21 @@
   &__input {
     margin-top: 0.5rem;
     margin-bottom: 1rem;
-    width: 94%;
+    width: 97%;
     padding: $padding-xxs;
     font-size: 13px;
     line-height: 20px;
     font-family: "Titillium Regular";
     color: $color-primary-is-black;
-    //border styles
     border-radius: 1.25rem;
     border: 1px solid $color-secondary-cloud;
   }
   &__input-description {
     margin-top: 0.5rem;
     margin-bottom: 1rem;
-    width: 94%;
+    width: 97%;
     padding: $padding-xxs;
     font-size: 13px;
-    line-height: 120px;
     font-family: "Titillium Regular";
     color: $color-primary-is-black;
     //border styles
@@ -103,7 +101,7 @@
   &__input-select {
     margin-top: 0.5rem;
     margin-bottom: 1rem;
-    width: 99%;
+    width: 100%;
     padding: $padding-xxs $padding-xs;
     font-size: 13px;
     line-height: 20px;
