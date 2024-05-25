@@ -126,15 +126,12 @@
   &__status-button {
     margin-right: 5.5625rem;
   }
-  &__radio {
-    margin-right: 0.25rem;
-  }
   &__form-group-radio {
     display: flex;
     justify-content: flex-start;
     margin-top: 0.5rem;
     margin-bottom: 1rem;
-    width: 88%;
+    width: 100%;
     font-size: 13px;
     line-height: 20px;
     font-family: "Titillium Regular";
@@ -142,6 +139,9 @@
     @include tablet {
       width: 107%;
     }
+  }
+  &__radio {
+    margin-right: 0.25rem;
   }
   &__radio-label {
     margin-left: 0.5rem;
