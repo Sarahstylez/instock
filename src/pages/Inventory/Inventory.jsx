@@ -1,4 +1,3 @@
-import "./Inventory.scss";
 import ListTable from "../../components/ListTable/ListTable";
 
 const InventoryPage = () => {
