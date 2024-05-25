@@ -38,6 +38,7 @@ body {
   &__name {
     display: flex;
     align-items: center;
+    color: $color-primary-is-indigo;
   }
   &__contact-info p {
     font-size: 11px;

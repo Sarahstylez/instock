@@ -3,18 +3,22 @@ import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
 import editIcon from "../../assets/Icons/edit-24px.svg";
 import chevronIcon from "../../assets/Icons/chevron_right-24px.svg";
 
+import { Link } from "react-router-dom";
+
 const WarehouseTableContent = ({ listItem }) => (
   <>
     <div className="mobile-warehouse">
       <div className="mobile-warehouse-title">WAREHOUSE</div>
-      <div className="list-table__name">
-        <span className="warehouse__name-hover">{listItem.warehouse_name}</span>
-        <img
-          className="list-table__icon"
-          src={chevronIcon}
-          alt="chevron icon"
-        />
-      </div>
+      <Link to={`/warehouses/${listItem.id}`}>
+        <div className="list-table__name">
+          <h3>{listItem.warehouse_name}</h3>
+          <img
+            className="list-table__icon"
+            src={chevronIcon}
+            alt="chevron icon"
+          />
+        </div>
+      </Link>
     </div>
     <div className="mobile-add">
       <div className="mobile-add-title">ADDRESS</div>
@@ -40,10 +44,12 @@ const InventoryTableContent = ({ listItem }) => (
   <>
     <div className="mobile-item">
       <div className="mobile-item-title">ITEM</div>
-      <div className="list-table__item">
-        <span>{listItem.item_name}</span>
-        <img src={chevronIcon} alt="chevron icon" />
-      </div>
+      <Link to={`/inventory/${listItem.id}`}>
+        <div className="list-table__name">
+          <h3>{listItem.item_name}</h3>
+          <img src={chevronIcon} alt="chevron icon" />
+        </div>
+      </Link>
     </div>
     <div className="mobile-category">
       <div className="mobile-category-title">CATEGORY</div>
