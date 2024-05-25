@@ -85,9 +85,17 @@ const TableContent = ({ page, listItem }) => {
           alt="delete item"
         />
       </div>
-      <div className="list-table__actions-edit">
-        <img className="list-table__edit" src={editIcon} alt="edit item" />
-      </div>
+      <Link
+        to={
+          page === "warehouses"
+            ? `/warehouses/edit/${listItem.id}`
+            : `/inventory/edit/${listItem.id}`
+        }
+      >
+        <div className="list-table__actions-edit">
+          <img className="list-table__edit" src={editIcon} alt="edit item" />
+        </div>
+      </Link>
     </>
   );
 };
