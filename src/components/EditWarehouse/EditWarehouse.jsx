@@ -100,11 +100,11 @@ function EditWarehouse({ warehouseId }) {
   const handleCancelClick = (e) => {
     e.preventDefault();
     if (window.confirm("Are you sure you want to cancel?")) {
-      navigate("/warehouses");
+      window.history.back();;
     }
   };
 
-  const handleEditClick = async (e) => {
+  const handleSaveClick = async (e) => {
     e.preventDefault();
 
     if (window.confirm("Are you ready to save?")) {
@@ -197,9 +197,9 @@ function EditWarehouse({ warehouseId }) {
           <button
             className="form__ctas-edit"
             type="button"
-            onClick={handleEditClick}
+            onClick={handleSaveClick}
           >
-            <h3>Edit Warehouse</h3>
+            <h3>Save</h3>
           </button>
         </div>
       </div>
