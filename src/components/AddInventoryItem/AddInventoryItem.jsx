@@ -13,7 +13,6 @@ const AddInventoryItem = () => {
   const [quantity, setQuantity] = useState();
   const [status, setStatus] = useState("In Stock");
   const [warehouse, setWarehouse] = useState("");
-  // possibly add warehouse dynamic and get warehouses
 
   // Form validation logic
   const isFormValid = () => {
@@ -192,7 +191,7 @@ const AddInventoryItem = () => {
           </div>
           <div className="add-card__form_ctas">
             <button className="add-card__button-add" onClick={handleAdd}>
-              Add Item
+              + Add Item
             </button>{" "}
             <button className="add-card__button-cancel" onClick={handleCancel}>
               Cancel
@@ -200,12 +199,11 @@ const AddInventoryItem = () => {
           </div>
         </div>
       </form>
-      {/* Cancel and add items buttons */}
+      {/* Tablet/Desktop */}
       <div className="add-card__form_ctas-tablet">
         <button className="add-card__button-add" onClick={handleAdd}>
-          Add Item
+          + Add Item
         </button>{" "}
-        {/* Changed button text to "Add Item" */}
         <button className="add-card__button-cancel" onClick={handleCancel}>
           Cancel
         </button>
