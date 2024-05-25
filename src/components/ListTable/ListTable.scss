@@ -205,12 +205,14 @@ body {
   }
 
   @include tablet {
-    &-warehouse,
-    &-add,
-    &-contact-info,
-    &-contact-name,
+    &-item,
+    &-category,
+    &-quantity,
     &-spacing,
-    &-actions {
+    &-warehouse,
+    &-status,
+    &-actions-delete,
+    &-actions-edit {
       order: initial; // Revert the order back to default for tablet screens
     }
   }
