@@ -48,7 +48,9 @@ const ListTable = ({ page }) => {
   });
 
   const listClassName = `list-table__list${
-    page === "inventory" ? " list-table__list--inventory" : ""
+    page === "inventory"
+      ? " list-table__list--inventory"
+      : " list-table__list--warehouses"
   }`;
 
   return (

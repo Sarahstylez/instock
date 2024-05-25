@@ -81,24 +81,25 @@ const TableContent = ({ page, listItem }) => {
       ) : (
         <InventoryTableContent listItem={listItem} />
       )}
-      <div className="list-table__actions-delete">
+      <div className="list-table__actions-delete mobile-actions-delete">
         <img
           className="list-table__delete"
           src={deleteIcon}
           alt="delete item"
         />
       </div>
-      <Link
-        to={
-          page === "warehouses"
-            ? `/warehouses/edit/${listItem.id}`
-            : `/inventory/edit/${listItem.id}`
-        }
-      >
-        <div className="list-table__actions-edit">
+
+      <div className="list-table__actions-edit mobile-actions-edit">
+        <Link
+          to={
+            page === "warehouses"
+              ? `/warehouses/edit/${listItem.id}`
+              : `/inventory/edit/${listItem.id}`
+          }
+        >
           <img className="list-table__edit" src={editIcon} alt="edit item" />
-        </div>
-      </Link>
+        </Link>
+      </div>
     </>
   );
 };

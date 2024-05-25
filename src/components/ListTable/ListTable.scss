@@ -133,3 +133,85 @@ body {
     }
   }
 }
+
+/* Reordering warehouse items on mobile */
+.list-table__list--warehouses .mobile {
+  &-warehouse {
+    order: 1;
+  }
+
+  &-add {
+    order: 3;
+  }
+
+  &-contact-info {
+    order: 4;
+  }
+
+  &-contact-name {
+    order: 2;
+  }
+
+  &-actions-delete {
+    order: 5;
+  }
+
+  &-actions-edit {
+    order: 6;
+  }
+
+  @include tablet {
+    &-warehouse,
+    &-add,
+    &-contact-info,
+    &-contact-name,
+    &-actions-edit,
+    &-actions-delete {
+      order: initial; // Revert the order back to default for tablet screens
+    }
+  }
+}
+
+/* Reordering inventory items on mobile */
+.list-table__list--inventory .mobile {
+  &-item {
+    order: 1;
+  }
+
+  &-category {
+    order: 3;
+  }
+
+  &-quantity {
+    order: 4;
+  }
+  &-spacing {
+    order: 5;
+  }
+  &-warehouse {
+    order: 6;
+  }
+
+  &-status {
+    order: 2;
+  }
+
+  &-actions-delete {
+    order: 7;
+  }
+
+  &-actions-edit {
+    order: 8;
+  }
+
+  @include tablet {
+    &-warehouse,
+    &-add,
+    &-contact-info,
+    &-contact-name,
+    &-spacing,
+    &-actions {
+      order: initial; // Revert the order back to default for tablet screens
+    }
+  }
+}
