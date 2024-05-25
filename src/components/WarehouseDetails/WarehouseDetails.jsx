@@ -12,7 +12,9 @@ function WarehouseDetails() {
   useEffect(() => {
     const fetchWarehouse = async () => {
       try {
-        const response = await fetch(`/api/warehouses/${id}`);
+        const response = await fetch(
+          `${process.env.REACT_APP_API_URL}/api/warehouses/${id}`
+        );
         const data = await response.json();
         setWarehouse(data);
       } catch (error) {
