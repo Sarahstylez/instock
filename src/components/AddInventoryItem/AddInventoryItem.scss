@@ -17,10 +17,8 @@
   }
 
   &__header {
-    display: flex;
     width: 100%;
     padding: $padding-s 0;
-    flex-direction: row;
     border-bottom: 1px solid $color-secondary-cloud;
     &-container {
       display: flex;
