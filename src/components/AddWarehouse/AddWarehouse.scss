@@ -85,7 +85,6 @@
 
 @include tablet {
   .card {
-
     &__title {
       @include flex();
       width: 91%;
@@ -122,7 +121,6 @@
 
 @include desktop {
   .card {
-
     &__title {
       width: 91%;
       padding: $padding-m $padding-l;
