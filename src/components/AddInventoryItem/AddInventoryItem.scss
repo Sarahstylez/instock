@@ -110,6 +110,12 @@
     //border styles
     border-radius: 1.25rem;
     border: 1px solid $color-secondary-cloud;
+    // drop down arrow
+    appearance: none;
+    background: url("../../assets/Icons/arrow_drop_down-24px.svg") no-repeat
+      right 0.75rem center;
+    background-size: 12px 12px;
+    padding-right: 2rem;
     @include tablet {
       width: 102%;
     }

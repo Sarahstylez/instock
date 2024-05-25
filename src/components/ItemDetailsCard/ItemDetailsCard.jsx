@@ -29,10 +29,11 @@ const ItemDetailsCard = () => {
 
   // handle edit functionality
   const editClick = () => {
+    navigate(`/inventory/${id}/edit`);
     console.log("Edit being click");
   };
 
-  // handle navigate back to item details list
+  // handle navigate back
   const backClick = () => {
     navigate("/inventory");
   };
