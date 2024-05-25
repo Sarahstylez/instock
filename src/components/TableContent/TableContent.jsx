@@ -1,10 +1,10 @@
-import "./InventoryTableContent.scss";
+import "./TableContent.scss";
 
 import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
 import editIcon from "../../assets/Icons/edit-24px.svg";
 import chevronIcon from "../../assets/Icons/chevron_right-24px.svg";
 
-const InventoryTableContent = ({ page, listItem }) => {
+const TableContent = ({ page, listItem }) => {
   return (
     <>
       <div className="mobile-warehouse">
@@ -55,4 +55,4 @@ const InventoryTableContent = ({ page, listItem }) => {
   );
 };
 
-export default InventoryTableContent;
+export default TableContent;

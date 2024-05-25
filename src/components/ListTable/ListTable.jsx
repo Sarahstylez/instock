@@ -4,7 +4,7 @@ import "./ListTable.scss";
 
 import PageHeader from "../PageHeader/PageHeader";
 import TableHeader from "../TableHeader/TableHeader";
-import InventoryTableContent from "../InventoryTableContent/InventoryTableContent";
+import TableContent from "../TableContent/TableContent";
 
 const ListTable = ({ page }) => {
   const [list, setList] = useState([]);
@@ -54,7 +54,7 @@ const ListTable = ({ page }) => {
         <TableHeader page={page} sortItems={sortItems} />
         {sortedLists.map((listItem) => (
           <li className="list-table__list" key={listItem.id}>
-            <InventoryTableContent page={page} listItem={listItem} />
+            <TableContent page={page} listItem={listItem} />
           </li>
         ))}
       </ul>
