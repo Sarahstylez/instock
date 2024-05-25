@@ -7,8 +7,9 @@
     flex-direction: column;
 
     width: 100vw;
-    height: 145vh;
-    transform: translateY(25%);
+    height: 135vh;
+
+    transform: translateY(23%);
     background-color: white;
 
     @include tablet {
@@ -22,6 +23,7 @@
         height: 100%;
     }
     &__container {
+        margin: 3rem;
         height: 70%;
         display: flex;
         flex-direction: column;
@@ -36,7 +38,7 @@
         }
     }
 
-    & * {
+    &__container * {
         margin-top: 0.25rem;
         margin-bottom: 0.25rem;
     }
