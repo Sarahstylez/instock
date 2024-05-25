@@ -12,7 +12,6 @@
     flex-direction: column;
     margin: 0rem;
     width: 100%;
-    height: 64rem;
     flex-shrink: 0;
     border-radius: 0.1875rem;
     background: $color-primary-white;
@@ -22,8 +21,7 @@
 
     &__title {
       @include flex();
-      width: 91%;
-      padding: $padding-s $padding-xs;
+      //padding: $padding-s $padding-xs;
       flex-direction: row;
       border-bottom: 1px solid $color-secondary-cloud;
       &-container {
@@ -89,7 +87,6 @@
 
     &__title {
       @include flex();
-      width: 91%;
       padding: $padding-m $padding-sm;
     }
 
