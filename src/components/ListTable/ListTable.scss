@@ -32,7 +32,7 @@ body {
       gap: 1rem;
       grid-template-columns: 2fr 2fr 2fr 3fr 0.5fr 0.5fr; // default for warehouses page
       &--inventory {
-        grid-template-columns: 1.5fr 1.5fr 1.5fr 0.5fr 2fr 0.5fr 0.5fr; // 7 columns for inventory page
+        grid-template-columns: repeat(5, 1fr) repeat(2, minmax(25px, 0.2fr)); /* 5 columns sharing space, with last two actions columns taking less space */
       }
     }
   }
