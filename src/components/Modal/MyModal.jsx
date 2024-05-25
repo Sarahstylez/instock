@@ -80,10 +80,12 @@ function MyModal(props) {
                             </div>
                         </section>
                         <section className="modal__buttons-row modal__right-justify">
-                            <button onClick={close}>Cancel</button>
+                            <button onClick={close} className="modal__button">
+                                Cancel
+                            </button>
                             <button
                                 onClick={deleteItem}
-                                className="modal__delete"
+                                className="modal__delete modal__button"
                             >
                                 Delete
                             </button>
