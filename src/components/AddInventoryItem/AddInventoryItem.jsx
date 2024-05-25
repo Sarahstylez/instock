@@ -138,6 +138,7 @@ const AddInventoryItem = () => {
                   value="In Stock"
                   checked={status === "In Stock"}
                   onChange={() => setStatus("In Stock")}
+                  className="add-card__radio"
                 />
                 In Stock
               </label>
@@ -152,6 +153,7 @@ const AddInventoryItem = () => {
                   value="Out of Stock"
                   checked={status === "Out of Stock"}
                   onChange={() => setStatus("Out of Stock")}
+                  className="add-card__radio"
                 />
                 Out of Stock
               </label>
