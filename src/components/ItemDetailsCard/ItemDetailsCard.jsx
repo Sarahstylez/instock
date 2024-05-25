@@ -54,7 +54,7 @@ const ItemDetailsCard = () => {
               alt="edit button"
               className="item__card__edit-img"
             ></img>
-            <h3 className="item__card__edit-text">Edit</h3>
+            <p className="item__card__edit-text">Edit</p>
           </button>
         </div>
         <div className="item__card__divider"></div>
