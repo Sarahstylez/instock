@@ -1,0 +1,20 @@
+@use "../../styles/partials/__variables" as *;
+@use "../../styles/partials/__mixins" as *;
+@use "../../styles/partials/__utils" as *;
+
+/* Copyright text footer code adapted from Figma dev */
+.footer {
+  height: 161px;
+  & p {
+    color: $color-secondary-slate;
+    text-align: center;
+    font-feature-settings: "clig" off, "liga" off;
+
+    /* P3 */
+    font-family: "Titillium Web";
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.125rem; /* 150% */
+  }
+}

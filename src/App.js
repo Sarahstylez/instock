@@ -7,6 +7,7 @@ import AddInventoryItem from "./components/AddInventoryItem/AddInventoryItem";
 import "./App.scss";
 import Navigation from "./components/Navigation/Navigation";
 import AddWarehouse from "./components/AddWarehouse/AddWarehouse";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -14,17 +15,18 @@ function App() {
       <BrowserRouter>
         {<Navigation />}
         <div className="App__routes-overlay">
-            <Routes>
-              <Route path="/" element={<WarehousePage />} />
-              <Route path="/inventory" element={<InventoryPage />} />
-              <Route path="/warehouses" element={<WarehousePage />} />
-              <Route path="/warehouses/new" element={<AddWarehouse />} />
-              <Route path="/inventory/:id" element={<InventoryDetailsCard />} />
+          <Routes>
+            <Route path="/" element={<WarehousePage />} />
+            <Route path="/inventory" element={<InventoryPage />} />
+            <Route path="/warehouses" element={<WarehousePage />} />
+            <Route path="/warehouses/new" element={<AddWarehouse />} />
+            <Route path="/inventory/:id" element={<InventoryDetailsCard />} />
             <Route path="/inventory/new" element={<AddInventoryItem />} />
-              <Route path="/warehouses/:id" element={<WarehouseDetails />} />
-              <Route path="*" element={<h1>Page not found</h1>} />
-            </Routes>
+            <Route path="/warehouses/:id" element={<WarehouseDetails />} />
+            <Route path="*" element={<h1>Page not found</h1>} />
+          </Routes>
         </div>
+        <Footer />
       </BrowserRouter>
     </div>
   );
