@@ -21,6 +21,10 @@
       left: $padding-sm;
       right: $padding-sm;
 
+      // Add bottom spacing for footer, to make sure bottom of the list is not overlapped by footer
+      box-sizing: border-box;
+      padding-bottom: 50px;
+
       @include tablet {
         scrollbar-width: none; // hide scrollbar
         overflow-y: scroll; // Make it scrollable
@@ -28,6 +32,10 @@
         top: 5.75rem;
         left: $padding-sm;
         right: $padding-sm;
+
+        // revert mobile-only bottom spacing
+        box-sizing: initial;
+        padding-bottom: initial;
       }
       @include desktop {
         left: $padding-9xl;
