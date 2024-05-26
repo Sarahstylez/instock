@@ -7,11 +7,9 @@ import "./EditItem.scss";
 
 const EditItemPage = () => {
   return (
-    <>
       <div className="edititem__page">
         <EditInventoryItem></EditInventoryItem >
       </div>
-    </>
   );
 };
 

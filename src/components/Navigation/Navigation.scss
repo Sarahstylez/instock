@@ -6,7 +6,7 @@
   width: 100%;
   height: 12.5rem;
   @include tablet {
-    height: 11.625rem;
+    height: 11.30rem;
   }
   background-color: $color-bg-graphite;
 }
@@ -17,15 +17,15 @@
   font-family: "Titillium Semi-Bold";
   width: 100%;
   @include tablet {
-    width: 90%;
+    width: calc(100% - 2 * $padding-sm);
     flex-direction: row;
     justify-content: space-between;
-    padding: 2rem;
+    padding: $padding-sm;
     align-items: center;
   }
   @include desktop {
-    width: 86%;
-    padding: 2rem 5rem;
+    width: calc(100% - 2 * $padding-9xl);
+    padding: 2rem 8rem;
   }
 }
 
@@ -35,6 +35,7 @@
   padding: 1.5rem 0 0 0;
   @include tablet {
     padding: 0;
+    justify-content: flex-start;
   }
 }
 
@@ -45,6 +46,7 @@
   padding: 1rem;
   @include tablet {
     padding: 0;
+    justify-content: flex-end;
   }
 }
 
@@ -61,12 +63,3 @@
   }
 }
 
-// .nav__empty {
-//   height: 10vh;
-//   width: 100%;
-//   background-color: $color-bg-graphite;
-//   z-index: 1;
-//   @include tablet {
-//     display: none;
-//   }
-// }
