@@ -100,8 +100,12 @@ function EditWarehouse({ warehouseId }) {
   const handleCancelClick = (e) => {
     e.preventDefault();
     if (window.confirm("Are you sure you want to cancel?")) {
-      window.history.back();;
+      window.history.back();
     }
+  };
+
+  const handleBackClick = () => {
+    window.history.back();
   };
 
   const handleSaveClick = async (e) => {
@@ -157,13 +161,13 @@ function EditWarehouse({ warehouseId }) {
     <section className="card">
       <div className="card__title">
         <div className="card__title-container">
-          <Link className="backarrow__link" to="/warehouses">
+          <button className="backbutton__link" onClick={handleBackClick}>
             <img
               className="card__icon-arrow"
               src={BackArrow}
               alt="Back to Warehouse List Page"
             />
-          </Link>
+          </button>
           <h1>Edit Warehouse</h1>
         </div>
       </div>
