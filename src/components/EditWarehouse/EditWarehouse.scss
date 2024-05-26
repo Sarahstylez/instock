@@ -10,9 +10,9 @@
   .card {
     @include flex(center, start);
     flex-direction: column;
-    margin: 0;
-    width: 100%;
+    margin: 0rem;
     height: 100%;
+    width: 100%;
     flex-shrink: 0;
     border-radius: 0.1875rem;
     background: $color-primary-white;
@@ -22,7 +22,7 @@
 
     &__title {
       @include flex();
-      width: 91%;
+      width: 90%;
       padding: 13.5px $padding-xs;
       flex-direction: row;
       border-bottom: 1px solid $color-secondary-cloud;
@@ -33,33 +33,55 @@
       }
     }
 
-    &__warehouse {
-      width: 10rem;
-    }
     &__icon {
       &-arrow {
         padding-right: $padding-xxs;
       }
-      &-edit {
-        &-text {
-          display: none;
+    }
+  }
+  .forms {
+    width: 100%;
+  }
+  .form {
+    &__ctas {
+      @include flex(start, space-between);
+      width: 100%;
+      padding: $padding-xs 0;
+      background: $color-bg-light-grey;
+      &-cancel {
+        margin-left: 1.75rem;
+        margin-right: 0.5rem;
+        width: 10rem;
+        padding: $padding-xxs $padding-xs;
+        border-radius: 1.25rem;
+        border: 1px solid $color-secondary-cloud;
+        color: $color-secondary-slate;
+        background-color: $color-primary-white;
+        &:hover {
+          color: $color-primary-is-indigo;
+          border: 1px solid $color-primary-is-indigo;
         }
-        &-button {
-          border: none;
-          padding: $padding-xxs;
-          display: flex;
-          width: 2.25rem;
-          height: 2.25rem;
-          padding: 0.5rem;
-          justify-content: center;
-          align-items: center;
-          flex-shrink: 0;
-          border-radius: 1.25rem;
-          background: $color-primary-is-indigo;
+      }
+      &-edit {
+        margin-left: 0.5rem;
+        margin-right: 1.75rem;
+        width: 10rem;
+        border: none;
+        padding: $padding-xxs $padding-xs;
+        border-radius: 1.25rem;
+        color: $color-primary-white;
+        background-color: $color-primary-is-indigo;
+        &:hover {
+          background-color: $color-bg-graphite;
         }
       }
     }
   }
+}
+
+.backbutton__link {
+  border: none;
+  background: transparent;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -68,10 +90,12 @@
 
 @include tablet {
   .card {
+    margin: 0rem;
+
     &__title {
+      width: 91%;
       @include flex();
-      width: 93%;
-      padding: $padding-s;
+      padding: $padding-s $padding-sm;
     }
 
     &__warehouse {
@@ -81,15 +105,18 @@
       &-arrow {
         padding-right: $padding-xxs;
       }
-      &-edit {
-        &-text {
-          display: contents;
-        }
-        &-button {
-          display: flex;
-          width: 4.5rem;
-          color: $color-primary-white;
-        }
+    }
+  }
+  .forms {
+    &__container {
+      @include flex();
+    }
+  }
+  .form {
+    &__ctas {
+      @include flex(start, right);
+      &-cancel {
+        width: 5rem;
       }
     }
   }
@@ -101,9 +128,15 @@
 
 @include desktop {
   .card {
+    margin: 0rem;
     &__title {
       width: 93.5%;
       padding: $padding-s $padding-sm;
+    }
+  }
+  .forms {
+    &__container {
+      @include flex(start, space-between);
     }
   }
 }

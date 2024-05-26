@@ -8,6 +8,7 @@ import "./App.scss";
 import Navigation from "./components/Navigation/Navigation";
 import AddWarehouse from "./components/AddWarehouse/AddWarehouse";
 import Footer from "./components/Footer/Footer";
+import EditWarehouse from "./components/EditWarehouse/EditWarehouse";
 
 function App() {
   return (

@@ -42,14 +42,16 @@ function WarehouseDetails() {
           </Link>
           <h1 className="card__warehouse">{warehouse.warehouse_name}</h1>
         </div>
-        <button className="card__icon-edit-button">
-          <img
-            className="card__icon-edit"
-            src={EditButtonWhite}
-            alt="Edit Warehouse Details"
-          />
-          <h3 className="card__icon-edit-text">Edit</h3>
-        </button>
+        <Link className="edit__link" to={`/warehouses/${id}/edit`}>
+          <button className="card__icon-edit-button">
+            <img
+              className="card__icon-edit"
+              src={EditButtonWhite}
+              alt="Edit Warehouse Details"
+            />
+            <h3 className="card__icon-edit-text">Edit</h3>
+          </button>
+        </Link>
       </div>
       <TablesWarehouses warehouses={[warehouse]} />
       {/* <TablesInventory /> */}
