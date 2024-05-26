@@ -2,6 +2,8 @@ import "./TableContent.scss";
 import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
 import editIcon from "../../assets/Icons/edit-24px.svg";
 import chevronIcon from "../../assets/Icons/chevron_right-24px.svg";
+import { useState } from "react";
+import DeleteModal from "../Modal/DeleteModal";
 
 import Tags from "../Tags/Tags";
 
@@ -102,6 +104,16 @@ const InventoryTableContent = ({ listItem }) => (
 );
 
 const TableContent = ({ page, listItem }) => {
+    //Modal
+    const [modalIsOpen, setIsOpen] = useState(false);
+    function openModal() {
+        setIsOpen(true);
+    }
+
+    function closeModal() {
+        setIsOpen(false);
+    }
+
     return (
         <>
             {page === "warehouses" && (
@@ -119,6 +131,7 @@ const TableContent = ({ page, listItem }) => {
                     className="list-table__delete"
                     src={deleteIcon}
                     alt="delete item"
+                    onClick={openModal}
                 />
             </div>
 
@@ -137,6 +150,22 @@ const TableContent = ({ page, listItem }) => {
                     />
                 </Link>
             </div>
+            {modalIsOpen ? (
+                <DeleteModal
+                    modalIsOpen={modalIsOpen}
+                    closeModal={closeModal}
+                    id={listItem.id}
+                    name={
+                        listItem.item_name
+                            ? listItem.item_name
+                            : listItem.warehouse_name
+                    }
+                    page={page}
+                    class="parent-modal"
+                />
+            ) : (
+                ``
+            )}
         </>
     );
 };

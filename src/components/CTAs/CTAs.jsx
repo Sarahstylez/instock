@@ -1,1 +1,0 @@
-import "./CTAs.scss";
