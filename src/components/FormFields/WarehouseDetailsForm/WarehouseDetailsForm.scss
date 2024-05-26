@@ -43,6 +43,7 @@
       }
     }
     .error-message {
+      @include flex(center, start);
       color: $color-support-red;
       font-size: 12px;
     }
