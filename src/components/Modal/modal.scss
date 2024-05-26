@@ -1,0 +1,83 @@
+@use "../../styles/partials/_variables" as *;
+@use "../../styles/partials/__mixins" as *;
+@use "../../styles/partials/__utils" as *;
+
+.modal {
+    display: flex;
+    flex-direction: column;
+
+    width: 100vw;
+    height: 135vh;
+
+    transform: translateY(23%);
+    background-color: white;
+
+    @include tablet {
+        transform: translateY(0%);
+        width: 90vw;
+        height: 100%;
+    }
+
+    @include desktop {
+        width: 50vw;
+        height: 100%;
+    }
+    &__container {
+        margin: 3rem;
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: white;
+        justify-content: space-between;
+
+        @include tablet {
+            height: 100%;
+            margin: 0;
+            justify-content: center;
+        }
+    }
+
+    &__container * {
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+    }
+
+    &__button {
+        @each $property, $value in $labels-links-buttons {
+            #{$property}: $value;
+        }
+        height: 2rem;
+        border-radius: 2rem;
+        border: 1px solid darkgray;
+        background-color: white;
+        width: 100%;
+
+        @include tablet {
+            width: 6rem;
+        }
+    }
+    &__close-button {
+        margin-right: 0;
+        width: 3rem;
+        height: 2rem;
+        background: none;
+        border: none;
+    }
+
+    &__delete {
+        background-color: orangered;
+        color: white;
+        margin-left: 1rem;
+    }
+
+    &__right-justify {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    &__buttons-row {
+        width: 100%;
+    }
+}
