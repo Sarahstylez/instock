@@ -1,0 +1,20 @@
+@use "../../styles/partials/__variables" as *;
+@use "../../styles/partials/__mixins" as *;
+@use "../../styles/partials/__utils" as *;
+
+/* Copyright text footer code adapted from Figma dev
+TODO refactor to define variables partial instead */
+.footer {
+  width: 100%;
+  height: 100%;
+  margin-top: 60rem;
+
+  @include tablet {
+    margin-top: 44rem;
+  }
+  & p {
+    color: $color-secondary-slate;
+    text-align: center;
+    font-feature-settings: "clig" off, "liga" off;
+  }
+}

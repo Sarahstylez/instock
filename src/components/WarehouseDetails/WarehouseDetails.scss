@@ -23,7 +23,7 @@
     &__title {
       @include flex();
       width: 91%;
-      padding: $padding-s $padding-xs;
+      padding: 13.5px $padding-xs;
       flex-direction: row;
       border-bottom: 1px solid $color-secondary-cloud;
       &-container {
@@ -70,8 +70,8 @@
   .card {
     &__title {
       @include flex();
-      width: 91%;
-      padding: $padding-m $padding-sm;
+      width: 93%;
+      padding: $padding-s;
     }
 
     &__warehouse {
@@ -102,8 +102,8 @@
 @include desktop {
   .card {
     &__title {
-      width: 91%;
-      padding: $padding-m $padding-l;
+      width: 93.5%;
+      padding: $padding-s $padding-sm;
     }
   }
 }
