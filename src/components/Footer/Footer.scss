@@ -2,9 +2,11 @@
 @use "../../styles/partials/__mixins" as *;
 @use "../../styles/partials/__utils" as *;
 
-/* Copyright text footer code adapted from Figma dev */
+/* Copyright text footer code adapted from Figma dev
+TODO refactor to define variables partial instead */
 .footer {
   height: 161px;
+  margin-top: auto; // make sure content does not push it out of view
   & p {
     color: $color-secondary-slate;
     text-align: center;

@@ -7,10 +7,17 @@
 
 @include mobile {
   .App {
+    // used to help anchor footer component at bottom of screen
+    display: flex;
+    flex-direction: column;
+
+    min-height: 80vh; // Make sure the App container spans the full height of the viewport
     position: relative; // to allow to overlay pages
+    // margin-bottom: 3rem; // Add padding at the bottom to make space for the footer
 
     /* position all pages to overlay header per style guide*/
     &__routes-overlay {
+      flex: 1; // grow to fill the available space
       background-color: $color-primary-white;
       position: absolute;
       top: 8.5rem;
