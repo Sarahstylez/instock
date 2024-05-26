@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import BackArrow from "../../assets/Icons/arrow_back-24px.svg";
@@ -13,6 +13,9 @@ const AddInventoryItem = () => {
   const [quantity, setQuantity] = useState();
   const [status, setStatus] = useState("In Stock");
   const [warehouse, setWarehouse] = useState("");
+  const [warehouses, setWarehouses] = useState([]);
+
+  useEffect(() => {});
 
   // Form validation logic
   const isFormValid = () => {
@@ -38,9 +41,17 @@ const AddInventoryItem = () => {
     event.preventDefault();
 
     try {
+      const selectedWarehouse = warehouses.find(
+        (wh) => wh.warehouse_name === warehouse
+      );
+      if (!selectedWarehouse) {
+        alert("Invalid warehouse selected");
+        return;
+      }
+
       // Gather input from form
       const newItem = {
-        warehouse_id: warehouse,
+        warehouse_id: selectedWarehouse.id,
         item_name: name,
         description: description,
         category: category,

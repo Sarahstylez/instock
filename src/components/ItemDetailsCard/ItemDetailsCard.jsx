@@ -10,14 +10,15 @@ import "../Tags/Tags.scss";
 const ItemDetailsCard = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const apiUrl = "http://localhost:8080/api";
   const [item, setItem] = useState(null);
 
   // Fetch item details
   useEffect(() => {
     const getItem = async () => {
       try {
-        const item = await axios.get(`${apiUrl}/inventory/${id}`);
+        const item = await axios.get(
+          `${process.env.REACT_APP_API_URL}/api/inventory/${id}`
+        );
         console.log(item.data);
         setItem(item.data);
       } catch (error) {
