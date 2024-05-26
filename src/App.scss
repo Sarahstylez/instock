@@ -10,8 +10,10 @@
     min-height: 100vh; // So the footer can anchor to the bottom
 
     position: relative; // to allow to overlay pages
-    /* position all pages to overlay header per style guide*/
 
+    overflow-x: hidden; // hide horizontal scroll bar
+
+    /* position all pages to overlay header per style guide*/
     &__routes-overlay {
       // flex: 1; // grow to fill the available space
       background-color: $color-primary-white;
