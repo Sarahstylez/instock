@@ -73,6 +73,15 @@
     color: $color-primary-is-black;
     border-radius: 1.25rem;
     border: 1px solid $color-secondary-cloud;
+    &:focus {
+      border-color: $color-primary-is-indigo;
+      outline: none;
+    }
+
+    &:active {
+      border: 1px solid $color-primary-is-indigo;
+      outline: none;
+    }
   }
   &__input-description {
     margin-top: 0.5rem;
@@ -85,6 +94,15 @@
     //border styles
     border-radius: 1.25rem;
     border: 1px solid $color-secondary-cloud;
+    &:focus {
+      border-color: $color-primary-is-indigo;
+      outline: none;
+    }
+
+    &:active {
+      border: 1px solid $color-primary-is-indigo;
+      outline: none;
+    }
   }
   &__input-select {
     margin-top: 0.5rem;
@@ -106,6 +124,15 @@
     padding-right: 2rem;
     @include tablet {
       width: 102%;
+    }
+    &:focus {
+      border-color: $color-primary-is-indigo;
+      outline: none;
+    }
+
+    &:active {
+      border: 1px solid $color-primary-is-indigo;
+      outline: none;
     }
   }
   &__form-group-select {
