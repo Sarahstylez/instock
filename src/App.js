@@ -1,15 +1,23 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import InventoryPage from "./pages/Inventory/Inventory";
 import WarehousePage from "./pages/Warehouse/Warehouse";
+<<<<<<< HEAD
 import EditItemPage from "./pages/EditItem/EditItem";
+=======
+import WarehouseDetails from "./components/WarehouseDetails/WarehouseDetails";
+import InventoryDetailsCard from "../src/components/ItemDetailsCard/ItemDetailsCard";
+import AddInventoryItem from "./components/AddInventoryItem/AddInventoryItem";
+>>>>>>> eda9a7500cf2fe9d30dc06b00387e54dc7d35431
 import "./App.scss";
 import Navigation from "./components/Navigation/Navigation";
+import AddWarehouse from "./components/AddWarehouse/AddWarehouse";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         {<Navigation />}
+<<<<<<< HEAD
         <Routes>
           <Route path="/" element={<WarehousePage />} />
           <Route path="/inventory" element={<InventoryPage />} />
@@ -17,6 +25,20 @@ function App() {
           <Route path="/inventory/:id/edit/" element={<EditItemPage />} />
           <Route path="*" element={<h1>Page not found</h1>} />
         </Routes>
+=======
+        <div className="App__routes-overlay">
+            <Routes>
+              <Route path="/" element={<WarehousePage />} />
+              <Route path="/inventory" element={<InventoryPage />} />
+              <Route path="/warehouses" element={<WarehousePage />} />
+              <Route path="/warehouses/new" element={<AddWarehouse />} />
+              <Route path="/inventory/:id" element={<InventoryDetailsCard />} />
+            <Route path="/inventory/new" element={<AddInventoryItem />} />
+              <Route path="/warehouses/:id" element={<WarehouseDetails />} />
+              <Route path="*" element={<h1>Page not found</h1>} />
+            </Routes>
+        </div>
+>>>>>>> eda9a7500cf2fe9d30dc06b00387e54dc7d35431
       </BrowserRouter>
     </div>
   );

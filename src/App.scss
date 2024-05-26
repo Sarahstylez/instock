@@ -6,6 +6,30 @@
 /* -------------------------------------------------------------------------- */
 
 @include mobile {
+  .App {
+    position: relative; // to allow to overlay pages
+
+    /* position all pages to overlay header per style guide*/
+    &__routes-overlay {
+      background-color: $color-primary-white;
+      position: absolute;
+      top: 8.5rem;
+      left: $padding-sm;
+      right: $padding-sm;
+      @include tablet {
+        top: 5.75rem;
+        left: $padding-sm;
+        right: $padding-sm;
+      }
+      @include desktop {
+        left: $padding-9xl;
+        right: $padding-9xl;
+      }
+      // add card style using css style from figma mockup
+      box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.1);
+      border-radius: 3px;
+    }
+  }
   * {
     margin: 0;
     padding: 0;
@@ -17,6 +41,7 @@
 
   body {
     height: 100vw;
+    background-color: $color-bg-light-grey;
   }
 
   /* -------------------------------------------------------------------------- */

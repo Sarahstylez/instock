@@ -1,11 +1,9 @@
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import axios from "axios";
+import ListTable from "../../components/ListTable/ListTable";
 
 const InventoryPage = () => {
   return (
     <>
-      <h1>Inventory Page</h1>
+      <ListTable page={"inventory"} />
     </>
   );
 };
