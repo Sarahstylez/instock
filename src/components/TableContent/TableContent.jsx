@@ -67,11 +67,6 @@ const WarehouseInventoryTableContent = ({ listItem }) => (
             <div className="mobile-quantity-title">QTY</div>
             <div>{listItem.quantity}</div>
         </div>
-        {/* <div className="mobile-spacing"></div>
-        <div className="mobile-warehouse">
-            <div className="mobile-warehouse-title">WAREHOUSE</div>
-            <div>{listItem.warehouse_name}</div>
-        </div> */}
     </>
 );
 
@@ -109,11 +104,6 @@ const InventoryTableContent = ({ listItem }) => (
 const TableContent = ({ page, listItem }) => {
     return (
         <>
-            {/* {page === "warehouses" ? (
-                <WarehouseTableContent listItem={listItem} />
-            ) : (
-                <InventoryTableContent listItem={listItem} />
-            )} */}
             {page === "warehouses" && (
                 <WarehouseTableContent listItem={listItem} />
             )}

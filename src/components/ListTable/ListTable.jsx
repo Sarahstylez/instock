@@ -48,10 +48,15 @@ const ListTable = ({ page }) => {
         return 0;
     });
 
+    // const listClassName = `list-table__list
+    // ${page === "inventory" && " list-table__list--inventory"}
+    // ${page === "warehouses" && " list-table__list--warehouses"}`;
     const listClassName = `list-table__list
-    ${page === "inventory" && " list-table__list--inventory"}
-    ${page === "warehouses" && " list-table__list--warehouses"}`;
-
+    ${
+        page === "warehouses"
+            ? " list-table__list--warehouses"
+            : " list-table__list--inventory"
+    }`;
     return (
         <section>
             <PageHeader page={page} />

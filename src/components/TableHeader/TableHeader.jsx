@@ -64,7 +64,6 @@ const inventoryHeaders = [
 ];
 
 const TableHeader = ({ page, sortItems, listClassName }) => {
-    // const headers = page === "warehouses" ? warehouseHeaders : inventoryHeaders;
     const headers =
         page === "warehouses"
             ? warehouseHeaders
