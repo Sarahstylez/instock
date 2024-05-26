@@ -23,7 +23,7 @@ const customStyles = {
 
 Modal.setAppElement("#root");
 
-function MyModal(props) {
+function DeleteModal(props) {
     const navigate = useNavigate();
     console.log(props.name);
     const close = () => {
@@ -97,4 +97,4 @@ function MyModal(props) {
     );
 }
 
-export default MyModal;
+export default DeleteModal;

@@ -3,7 +3,7 @@ import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
 import editIcon from "../../assets/Icons/edit-24px.svg";
 import chevronIcon from "../../assets/Icons/chevron_right-24px.svg";
 import { useState } from "react";
-import MyModal from "../Modal/MyModal";
+import DeleteModal from "../Modal/DeleteModal";
 
 import Tags from "../Tags/Tags";
 
@@ -121,7 +121,7 @@ const TableContent = ({ page, listItem }) => {
                 </Link>
             </div>
             {modalIsOpen ? (
-                <MyModal
+                <DeleteModal
                     modalIsOpen={modalIsOpen}
                     closeModal={closeModal}
                     id={listItem.id}
