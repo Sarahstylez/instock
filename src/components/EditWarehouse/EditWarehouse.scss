@@ -11,6 +11,7 @@
     @include flex(center, start);
     flex-direction: column;
     margin: 0rem;
+    height: 100%;
     width: 100%;
     flex-shrink: 0;
     border-radius: 0.1875rem;
@@ -21,7 +22,8 @@
 
     &__title {
       @include flex();
-      //padding: $padding-s $padding-xs;
+      width: 90%;
+      padding: 13.5px $padding-xs;
       flex-direction: row;
       border-bottom: 1px solid $color-secondary-cloud;
       &-container {
@@ -88,11 +90,12 @@
 
 @include tablet {
   .card {
-   margin: 0rem;
+    margin: 0rem;
 
     &__title {
+      width: 91%;
       @include flex();
-      padding: $padding-m $padding-sm;
+      padding: $padding-s $padding-sm;
     }
 
     &__warehouse {
@@ -125,10 +128,10 @@
 
 @include desktop {
   .card {
-    margin:0rem;
+    margin: 0rem;
     &__title {
-      width: 91%;
-      padding: $padding-m $padding-l;
+      width: 93.5%;
+      padding: $padding-s $padding-sm;
     }
   }
   .forms {
