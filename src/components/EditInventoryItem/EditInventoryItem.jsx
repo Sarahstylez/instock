@@ -22,7 +22,7 @@ const EditInventoryItem = () => {
   useEffect(() => {
     const fetchItem = async () => {
       try {
-        const response = await axios.get(`http://localhost:5055/api/inventory/${id}`);
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/inventory/${id}`);
         const itemData = response.data;
         setItem(itemData);
         setName(itemData.item_name);
@@ -38,7 +38,7 @@ const EditInventoryItem = () => {
 
     const fetchWarehouses = async () => {
       try {
-        const response = await axios.get('http://localhost:5055/api/warehouses');
+        const response = await axios.get('${process.env.REACT_APP_API_URL}/warehouses');
         setWarehouses(response.data);
       } catch (error) {
         console.error('Error fetching warehouses:', error);
@@ -66,7 +66,7 @@ const EditInventoryItem = () => {
         status,
         quantity: status === 'In Stock' ? quantity : 0,
       };
-      await axios.put(`http://localhost:5055/api/inventory/${item.id}`, updatedItem);
+      await axios.put(`${process.env.REACT_APP_API_URL}/inventory/${item.id}`, updatedItem);
       alert('Item updated successfully');
       navigate('/inventory'); // Redirect to the inventory list page
     } catch (error) {
