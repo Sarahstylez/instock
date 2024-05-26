@@ -10,7 +10,7 @@ const ItemAvailabilityForm = ({ status, setStatus, quantity, setQuantity, wareho
   useEffect(() => {
     const fetchWarehouses = async () => {
       try {
-        const response = await axios.get('${process.env.REACT_APP_API_URL}/warehouses');
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/warehouses`);
         setWarehouses(response.data);
       } catch (error) {
         setError('Error fetching warehouses');
