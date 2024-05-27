@@ -62,7 +62,7 @@ const ItemAvailabilityForm = ({
               checked={status === "In Stock"}
               onChange={() => setStatus("In Stock")}
             />
-            <p className="p2"> In Stock</p>
+            In Stock
           </label>
           <label
             className={`item-availability-form__status-button ${
@@ -76,7 +76,7 @@ const ItemAvailabilityForm = ({
               checked={status === "Out of Stock"}
               onChange={() => setStatus("Out of Stock")}
             />
-            <p className="p2"> Out of Stock</p>
+            Out of Stock
           </label>
         </div>
       </div>

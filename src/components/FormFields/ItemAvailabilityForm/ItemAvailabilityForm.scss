@@ -21,6 +21,21 @@
       font-weight: bold;
     }
 
+    &__status-group {
+      display: flex;
+      justify-content: flex-start;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+      width: 100%;
+      font-size: 13px;
+      line-height: 20px;
+      font-family: "Titillium Regular";
+      color: $color-primary-is-black;
+      @include tablet {
+        width: 107%;
+      }
+    }
+
     &__status-button {
       margin-right: 3rem;
     }
