@@ -109,7 +109,7 @@
   }
   .forms {
     &__container {
-      @include flex();
+      @include flex(start);
     }
   }
   .form {
