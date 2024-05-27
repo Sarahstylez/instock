@@ -217,3 +217,10 @@ body {
     }
   }
 }
+
+// animate arrow for each item on hover
+
+.list-table__name:hover {
+  transform: translateX(4px);
+}
+//should be list-table__icon, however, inventory item does not have class name
