@@ -83,6 +83,11 @@ body {
     color: $color-secondary-slate;
     padding: 0.5rem 2rem;
     border-bottom: none;
+
+    //Keep header visible as you scroll down to show more items
+    position: sticky;
+    top: 0;
+    z-index: 10;
   }
 }
 
@@ -217,3 +222,10 @@ body {
     }
   }
 }
+
+// animate arrow for each item on hover
+
+.list-table__name:hover {
+  transform: translateX(4px);
+}
+//should be list-table__icon, however, inventory item does not have class name

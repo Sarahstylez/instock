@@ -7,19 +7,34 @@
 
 @include mobile {
   .App {
+    min-height: 100vh; // So the footer can anchor to the bottom
     position: relative; // to allow to overlay pages
+    overflow-x: hidden; // hide horizontal scroll bar
 
-    /* position all pages to overlay header per style guide*/
+    /* create single card all routes display to */
     &__routes-overlay {
       background-color: $color-primary-white;
+
+      //position overlay to overlap header
       position: absolute;
       top: 8.5rem;
-      left: $padding-sm;
-      right: $padding-sm;
+      left: $padding-xs;
+      right: $padding-xs;
+
+      // Add bottom spacing for footer, to make sure bottom of the list is not overlapped by footer
+      box-sizing: border-box;
+      padding-bottom: 50px;
       @include tablet {
+        scrollbar-width: none; // hide scrollbar
+        overflow-y: scroll; // Make it scrollable
+        max-height: 80vh; // set max height so content does not overlap footer
         top: 5.75rem;
         left: $padding-sm;
         right: $padding-sm;
+
+        // revert mobile-only bottom spacing
+        box-sizing: initial;
+        padding-bottom: initial;
       }
       @include desktop {
         left: $padding-9xl;
@@ -40,7 +55,6 @@
   }
 
   body {
-    height: 100vw;
     background-color: $color-bg-light-grey;
   }
 
