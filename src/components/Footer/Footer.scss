@@ -5,23 +5,25 @@
 /* Copyright text footer code adapted from Figma dev
 TODO refactor to define variables partial instead */
 .footer {
-  margin-bottom: 40px;
+    padding-bottom: 40px;
+    padding-top: 20px;
 
-  // position footer at the bottom of page
-  position: absolute;
-  bottom: 0;
-  left: $padding-sm;
-  right: $padding-sm;
+    // position footer at the bottom of page
+    background-color: $color-bg-light-grey;
+    position: fixed;
+    bottom: 0;
+    left: $padding-sm;
+    right: $padding-sm;
 
-  & p {
-    color: $color-secondary-slate;
-    text-align: center;
-    font-feature-settings: "clig" off, "liga" off;
+    & p {
+        color: $color-secondary-slate;
+        text-align: center;
+        font-feature-settings: "clig" off, "liga" off;
 
-    /* P3 */
-    font-size: 0.75rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.125rem; /* 150% */
-  }
+        /* P3 */
+        font-size: 0.75rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.125rem; /* 150% */
+    }
 }
