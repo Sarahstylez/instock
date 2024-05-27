@@ -1,0 +1,212 @@
+@use "../../styles/partials/__variables" as *;
+@use "../../styles/partials/__mixins" as *;
+@use "../../styles/partials/__utils" as *;
+
+.add-card {
+  @include flex();
+  flex-direction: column;
+  width: 100%;
+  border-radius: 3px;
+  &__header {
+    width: 100%;
+    padding: 1.5rem 0;
+    &-container {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      flex-direction: row;
+      padding: 0 1rem;
+      width: 90%;
+    }
+  }
+
+  &__back-arrow {
+    border: none;
+    background-color: transparent;
+  }
+  &__divider {
+    width: 100%;
+    border-bottom: 1px solid $color-secondary-cloud;
+  }
+  &__forms {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      flex-direction: row;
+      padding: 1.5rem 0rem;
+    }
+  }
+  &__forms-title {
+    padding-bottom: 2rem;
+  }
+  &__item-form {
+    flex: 1;
+    border-bottom: 1px solid $color-secondary-cloud;
+    padding: 1rem;
+    @include tablet {
+      padding-top: 0;
+      border-bottom: none;
+      border-right: 1px solid $color-secondary-cloud;
+      padding-right: 2rem;
+    }
+  }
+  &__vail-form {
+    flex: 1;
+    padding: 1rem;
+    @include tablet {
+      padding-top: 0;
+      padding-left: 2rem;
+      width: 41%;
+    }
+  }
+  &__input {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    width: 97%;
+    padding: $padding-xxs;
+    font-size: 13px;
+    line-height: 20px;
+    font-family: "Titillium Regular";
+    color: $color-primary-is-black;
+    border-radius: 1.25rem;
+    border: 1px solid $color-secondary-cloud;
+    &:focus {
+      border-color: $color-primary-is-indigo;
+      outline: none;
+    }
+
+    &:active {
+      border: 1px solid $color-primary-is-indigo;
+      outline: none;
+    }
+  }
+  &__input-description {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    width: 97%;
+    padding: $padding-xxs;
+    font-size: 13px;
+    font-family: "Titillium Regular";
+    color: $color-primary-is-black;
+    //border styles
+    border-radius: 1.25rem;
+    border: 1px solid $color-secondary-cloud;
+    &:focus {
+      border-color: $color-primary-is-indigo;
+      outline: none;
+    }
+
+    &:active {
+      border: 1px solid $color-primary-is-indigo;
+      outline: none;
+    }
+  }
+  &__input-select {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    padding: $padding-xxs $padding-xs;
+    font-size: 13px;
+    line-height: 20px;
+    font-family: "Titillium Regular";
+    color: $color-primary-is-black;
+    //border styles
+    border-radius: 1.25rem;
+    border: 1px solid $color-secondary-cloud;
+    // drop down arrow
+    appearance: none;
+    background: url("../../assets/Icons/arrow_drop_down-24px.svg") no-repeat
+      right 0.75rem center;
+    background-size: 12px 12px;
+    padding-right: 2rem;
+    @include tablet {
+      width: 102%;
+    }
+    &:focus {
+      border-color: $color-primary-is-indigo;
+      outline: none;
+    }
+
+    &:active {
+      border: 1px solid $color-primary-is-indigo;
+      outline: none;
+    }
+  }
+  &__form-group-select {
+    display: flex;
+    flex-direction: column;
+  }
+  &__status-button.active {
+    margin-right: 5.5625rem;
+  }
+  &__status-button {
+    margin-right: 5.5625rem;
+  }
+  &__form-group-radio {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    font-size: 13px;
+    line-height: 20px;
+    font-family: "Titillium Regular";
+    color: $color-primary-is-black;
+    @include tablet {
+      width: 100%;
+    }
+  }
+  &__radio {
+    margin-right: 0.25rem;
+  }
+  &__radio-label {
+    margin-left: 0.5rem;
+  }
+  &__form_ctas {
+    width: 100%;
+    background-color: rgba(247, 248, 249, 0.7);
+    padding: $padding-xs 0;
+    justify-content: right;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  &__button-add {
+    margin-left: 0.5rem;
+    margin-right: 1.75rem;
+    width: 10rem;
+    border: none;
+    padding: $padding-xxs $padding-xs;
+    border-radius: 1.25rem;
+    color: $color-primary-white;
+    background-color: $color-primary-is-indigo;
+    &:hover {
+      background-color: $color-bg-graphite;
+    }
+  }
+  &__button-cancel {
+    margin-left: 1.75rem;
+    margin-right: 0.5rem;
+    width: 10rem;
+    padding: $padding-xxs $padding-xs;
+    border-radius: 1.25rem;
+    border: 1px solid $color-secondary-cloud;
+    color: $color-secondary-slate;
+    background-color: $color-primary-white;
+    &:hover {
+      color: $color-primary-is-indigo;
+      border: 1px solid $color-primary-is-indigo;
+    }
+  }
+
+  .error {
+    border: 1px solid $color-support-red;
+  }
+  .error-message {
+    display: flex;
+    align-items: center;
+    color: $color-support-red;
+    font-size: 12px;
+    padding-bottom: 0.5rem;
+  }
+}

@@ -1,0 +1,138 @@
+@use "../../styles/partials/__variables" as *;
+@use "../../styles/partials/__mixins" as *;
+@use "../../styles/partials/__utils" as *;
+
+/* -------------------------------------------------------------------------- */
+/*                                Mobile Styles                               */
+/* -------------------------------------------------------------------------- */
+
+@include mobile {
+  .warehouse {
+    width: 86%;
+    padding: $padding-xs $padding-s;
+    border-bottom: 1px solid $color-secondary-cloud;
+    &__address-text {
+      padding: 4px 0;
+    }
+    &__contact {
+      @include flex(start, space-between);
+      padding-top: $padding-sm;
+      flex-direction: row;
+      &-name {
+        width: 44%;
+      }
+      &-info {
+        width: 50%;
+      }
+      &-text {
+        padding: 4px 0;
+      }
+    }
+    &__icons {
+      @include flex(start, space-between);
+      width: 100%;
+      padding-top: $padding-xs;
+      display: none;
+    }
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                Tablet Styles                               */
+/* -------------------------------------------------------------------------- */
+
+@include tablet {
+  .warehouse {
+    width: 91%;
+    padding: $padding-sm;
+
+    &__container {
+      @include flex(start, start);
+      width: 100%;
+    }
+    &__address {
+      padding-right: $padding-xxxl;
+      width: 50%;
+      border-right: 1px solid $color-secondary-cloud;
+    }
+
+    &__contact {
+      width: 100%;
+      @include flex(start, left);
+      padding-top: 0;
+      padding-left: $padding-xl;
+      &-name {
+        width: 40%;
+      }
+      &-info {
+        padding-left: $padding-xxl;
+        width: 40%;
+      }
+    }
+    &__icons {
+      display: none;
+    }
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                Desktop Styles                              */
+/* -------------------------------------------------------------------------- */
+
+@include desktop {
+  .warehouse {
+    width: 90%;
+    height: 4rem;
+    border: none;
+
+    &__address {
+      padding-right: $padding-xxxl;
+      width: 18%;
+      border: none;
+    }
+
+    &__contact {
+      width: 50%;
+      margin-left: 10rem;
+      border-left: 1px solid $color-secondary-cloud;
+      &-name {
+        width: 25%;
+        padding-right: 2rem;
+      }
+    }
+    &__icons {
+      display: none;
+    }
+  }
+}
+
+
+#root > div > div > section > section {
+  width: 100%;
+}
+
+#root > div > div > section > section > div {
+  display: none;
+}
+
+#root > div > div > section > div.warehouses > div > div.warehouse__container > div.warehouse__contact > div.warehouse__contact-info {
+  justify-content: end;
+}
+
+#root > div > div > section > div.warehouses > div {
+  @include tablet {
+  border-bottom: none;}
+}
+
+#root > div > div > section > div.warehouses {
+  width: 100%;
+  @include tablet {
+  border-bottom: none;
+}}
+
+
+#root > div > div > section > section > ul > li{
+  @include tablet {
+  grid-template-columns: 2fr 2fr 2fr 1fr 1fr 1fr;
+  };
+}

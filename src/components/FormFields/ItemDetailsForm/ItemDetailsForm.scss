@@ -1,0 +1,151 @@
+@use "../../../styles/partials/__variables" as *;
+@use "../../../styles/partials/__mixins" as *;
+@use "../../../styles/partials/__utils" as *;
+
+
+@include mobile {
+.item-details-form {
+    width: 85%;
+    padding: $padding-s;
+    border-bottom: 1px solid $color-secondary-cloud;
+  &__title {
+    margin-bottom: 2rem;
+  }
+
+  &__group {
+    margin: 1rem 0;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+
+  }
+ &-description__input{
+    height: 7.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    width: 88%;
+    padding: $padding-xxs $padding-xs;
+    font-size: 13px;
+    line-height: 20px;
+    font-family: "Titillium Regular";
+    color: $color-primary-is-black;
+
+    //border styles
+    border-radius: 1.25rem;
+    border: 1px solid $color-secondary-cloud;
+    &:focus {
+      border-color: $color-primary-is-indigo;
+      outline: none;
+    }
+
+    &.active {
+      border: 1px solid $color-primary-is-indigo;
+      outline: none;
+    }
+
+    &.error {
+      border: 1px solid $color-support-red;
+      outline: none;
+    }
+
+  .error-message {
+    color: $color-support-red;
+    font-size: 12px;
+  }
+ }
+
+  &__select {
+    appearance: none;
+   background: url("../../../assets/Icons/arrow_drop_down-24px.svg") no-repeat right 0.75em center;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    width: 96%;
+    padding: $padding-xxs $padding-xs;
+    font-size: 13px;
+    line-height: 20px;
+    font-family: "Titillium Regular";
+    color: $color-primary-is-black;
+ 
+      //border styles
+      border-radius: 1.25rem;
+      border: 1px solid $color-secondary-cloud;
+      &:focus {
+        border-color: $color-primary-is-indigo;
+        outline: none;
+      }
+  }
+  &__input {
+
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    width: 88%;
+    padding: $padding-xxs $padding-xs;
+    font-size: 13px;
+    line-height: 20px;
+    font-family: "Titillium Regular";
+    color: $color-primary-is-black;
+
+    //border styles
+    border-radius: 1.25rem;
+    border: 1px solid $color-secondary-cloud;
+    &:focus {
+      border-color: $color-primary-is-indigo;
+      outline: none;
+    }
+
+    &.active {
+      border: 1px solid $color-primary-is-indigo;
+      outline: none;
+    }
+
+    &.error {
+      border: 1px solid $color-support-red;
+      outline: none;
+    }
+  }
+  .error-message {
+    color: $color-support-red;
+    font-size: 12px;
+  }
+}
+
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                Tablet Styles                               */
+/* -------------------------------------------------------------------------- */
+
+@include tablet {
+  .item-details-form {
+      width: 40%;
+      padding: 8px $padding-s;
+      border-bottom: none;
+      position: relative;
+
+    }
+    .item-details-form::after {
+      content: '';
+      position: absolute;
+      top: 5%;
+      right: 0;
+      width: 1px;
+      height: 90%;
+      background-color: $color-secondary-cloud;
+    }
+  }
+  
+  /* -------------------------------------------------------------------------- */
+  /*                                DesktopStyles                               */
+  /* -------------------------------------------------------------------------- */
+  
+  @include desktop {
+    .item-details-form {
+      padding: 10px $padding-xl;
+      &__input {
+        width: 92%;
+      }
+    }
+  }

@@ -1,0 +1,7 @@
+@use "./_variables.scss" as *;
+
+.wrapper {
+  width: 100vw;
+  max-width: $max-site-width;
+  margin: 0 auto;
+}

@@ -1,0 +1,156 @@
+@use "./styles/partials/__variables.scss" as *;
+@use "./styles/partials/__mixins.scss" as *;
+
+/* -------------------------------------------------------------------------- */
+/*                             Mobile First Design                            */
+/* -------------------------------------------------------------------------- */
+
+@include mobile {
+  .App {
+    min-height: 100vh; // So the footer can anchor to the bottom
+    position: relative; // to allow to overlay pages
+    overflow-x: hidden; // hide horizontal scroll bar
+
+    /* create single card all routes display to */
+    &__routes-overlay {
+      background-color: $color-primary-white;
+
+      //position overlay to overlap header
+      position: absolute;
+      top: 8.5rem;
+      left: $padding-xs;
+      right: $padding-xs;
+
+      // Add bottom spacing for footer, to make sure bottom of the list is not overlapped by footer
+      box-sizing: border-box;
+      padding-bottom: 50px;
+      @include tablet {
+        scrollbar-width: none; // hide scrollbar
+        overflow-y: scroll; // Make it scrollable
+        max-height: 80vh; // set max height so content does not overlap footer
+        top: 5.75rem;
+        left: $padding-sm;
+        right: $padding-sm;
+
+        // revert mobile-only bottom spacing
+        box-sizing: initial;
+        padding-bottom: initial;
+      }
+      @include desktop {
+        left: $padding-9xl;
+        right: $padding-9xl;
+      }
+      // add card style using css style from figma mockup
+      box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.1);
+      border-radius: 3px;
+    }
+  }
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: $color-bg-light-grey;
+  }
+
+  /* -------------------------------------------------------------------------- */
+  /*                                 Text Styles                                */
+  /* -------------------------------------------------------------------------- */
+
+  a {
+    text-decoration: none;
+    color: $color-primary-white;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  // these text styles automatically add the correct specs from the variables.scss file
+
+  h1 {
+    @each $property, $value in $page-header {
+      #{$property}: $value;
+    }
+    @media (min-width: $tablet-width) {
+      @each $property, $value in $dt-page-header {
+        #{$property}: $value;
+      }
+    }
+  }
+
+  h2 {
+    @each $property, $value in $subheader {
+      #{$property}: $value;
+    }
+    @media (min-width: $tablet-width) {
+      @each $property, $value in $dt-subheader {
+        #{$property}: $value;
+      }
+    }
+  }
+
+  h3 {
+    @each $property, $value in $labels-links-buttons {
+      #{$property}: $value;
+    }
+    @media (min-width: $tablet-width) {
+      @each $property, $value in $dt-labels-links-buttons {
+        #{$property}: $value;
+      }
+    }
+  }
+
+  h4 {
+    @each $property, $value in $table-header {
+      #{$property}: $value;
+    }
+    @media (min-width: $tablet-width) {
+      @each $property, $value in $dt-table-header {
+        #{$property}: $value;
+      }
+    }
+  }
+
+  // please note that <p> automatically defaults to the p1 styles as outlined in the mockup
+
+  p {
+    @each $property, $value in $body-large {
+      #{$property}: $value;
+    }
+    @media (min-width: $tablet-width) {
+      @each $property, $value in $dt-body-large {
+        #{$property}: $value;
+      }
+    }
+  }
+
+  // use classes p2 and p3 respectively
+
+  .p2 {
+    @each $property, $value in $body-medium {
+      #{$property}: $value;
+    }
+    @media (min-width: $tablet-width) {
+      @each $property, $value in $dt-body-medium {
+        #{$property}: $value;
+      }
+    }
+  }
+
+  .p3 {
+    @each $property, $value in $body-small {
+      #{$property}: $value;
+    }
+    @media (min-width: $tablet-width) {
+      @each $property, $value in $dt-body-small {
+        #{$property}: $value;
+      }
+    }
+  }
+}

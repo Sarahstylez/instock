@@ -1,0 +1,181 @@
+/* -------------------------------------------------------------------------- */
+/*                              Responsive Styles                             */
+/* -------------------------------------------------------------------------- */
+
+$mobile-width: 376px;
+$tablet-width: 768px;
+$desktop-width: 1280px;
+$max-site-width: 1282px;
+
+/* -------------------------------------------------------------------------- */
+/*                            Primary Color Styles                            */
+/* -------------------------------------------------------------------------- */
+
+$color-primary-is-black: #13182c; // Global text color
+$color-primary-is-indigo: #2e66e5; // Interactive elements
+$color-primary-white: #fff; // Global white color
+
+/* -------------------------------------------------------------------------- */
+/*                           Secondary Color Styles                           */
+/* -------------------------------------------------------------------------- */
+
+$color-secondary-slate: #5c667e; // Table column headers & placeholder text
+$color-secondary-cloud: #bdc5d5; // Outlines, dividers, borders, table sorting icon
+
+/* -------------------------------------------------------------------------- */
+/*                           Background Color Styles                          */
+/* -------------------------------------------------------------------------- */
+
+$color-bg-graphite: #232940; // Top navigation header background,CTA button hover state background
+$color-bg-light-grey: #f7f8f9; //  Page background,table column header background, CTA background
+
+/* -------------------------------------------------------------------------- */
+/*                           Supporting Color Styles                          */
+/* -------------------------------------------------------------------------- */
+
+$color-support-green: #158463; // “In stock” label
+$color-support-red: #c94515; // “Out of stock” label, error states & delete icon
+
+/* -------------------------------------------------------------------------- */
+/*                               Padding Styles                               */
+/* -------------------------------------------------------------------------- */
+
+$padding-9xl: 128px;
+$padding-xxxl: 80px;
+$padding-xxl: 64px;
+$padding-xl: 56px;
+$padding-l: 48px;
+$padding-m: 40px;
+$padding-sm: 32px;
+$padding-s: 24px;
+$padding-xs: 16px;
+$padding-xxs: 8px;
+$padding-xxxs: 4px;
+
+/* -------------------------------------------------------------------------- */
+/*                                 Font Families                              */
+/* -------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: "Titillium Regular";
+  src: url("../../assets/Font/TitilliumWeb-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Titillium Semi-Bold";
+  src: url("../../assets/Font/TitilliumWeb-SemiBold.ttf");
+}
+
+/* -------------------------------------------------------------------------- */
+/*                             Mobile Text Styles                             */
+/* -------------------------------------------------------------------------- */
+
+$page-header: (
+  font-size: 28px,
+  line-height: 36px,
+  font-family: "Titillium Semi-Bold",
+  text-transform: capitalize,
+  color: $color-primary-is-black,
+);
+
+$subheader: (
+  font-size: 20px,
+  line-height: 28px,
+  font-family: "Titillium Semi-Bold",
+  text-transform: capitalize,
+  color: $color-primary-is-black,
+);
+
+$labels-links-buttons: (
+  // add colors to in-stock and out-of-stock labels separately
+  font-size: 13px,
+  line-height: 20px,
+  font-family: "Titillium Semi-Bold",
+  text-transform: capitalize
+);
+
+$table-header: (
+  font-size: 11px,
+  line-height: 16px,
+  font-family: "Titillium Semi-Bold",
+  text-transform: uppercase,
+  color: $color-secondary-slate,
+);
+
+$body-large: (
+  font-size: 15px,
+  line-height: 26px,
+  font-family: "Titillium Regular",
+  color: $color-primary-is-black,
+);
+
+$body-medium: (
+  font-size: 13px,
+  line-height: 20px,
+  font-family: "Titillium Regular",
+  color: $color-primary-is-black,
+);
+
+$body-small: (
+  font-size: 11px,
+  line-height: 16px,
+  font-family: "Titillium Regular",
+  color: $color-primary-is-black,
+);
+
+/* -------------------------------------------------------------------------- */
+/*                        Desktop & Tablet Text Styles                        */
+/* -------------------------------------------------------------------------- */
+
+$dt-page-header: (
+  font-size: 32px,
+  line-height: 40px,
+  font-family: "Titillium Semi-Bold",
+  text-transform: capitalize,
+  color: $color-primary-is-black,
+);
+
+$dt-subheader: (
+  font-size: 24px,
+  line-height: 32px,
+  font-family: "Titillium Semi-Bold",
+  text-transform: capitalize,
+  color: $color-primary-is-black,
+);
+
+$dt-labels-links-buttons: (
+  // add colors to in-stock and out-of-stock labels separately
+  font-size: 14px,
+  line-height: 22px,
+  font-family: "Titillium Semi-Bold",
+  text-transform: capitalize
+);
+
+$dt-table-header: (
+  font-size: 12px,
+  line-height: 18px,
+  font-family: "Titillium Semi-Bold",
+  text-transform: uppercase,
+  color: $color-secondary-slate,
+);
+
+$dt-body-large: (
+  font-size: 16px,
+  line-height: 28px,
+  font-family: "Titillium Regular",
+  color: $color-primary-is-black,
+);
+
+$dt-body-medium: (
+  font-size: 14px,
+  line-height: 22px,
+  font-family: "Titillium Regular",
+  color: $color-primary-is-black,
+);
+
+$dt-body-small: (
+  font-size: 12px,
+  line-height: 18px,
+  font-family: "Titillium Regular",
+  color: $color-primary-is-black,
+);

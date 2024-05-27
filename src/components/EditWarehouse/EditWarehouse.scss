@@ -1,0 +1,142 @@
+@use "../../styles/partials/__variables" as *;
+@use "../../styles/partials/__mixins" as *;
+@use "../../styles/partials/__utils" as *;
+
+/* -------------------------------------------------------------------------- */
+/*                                Mobile Styles                               */
+/* -------------------------------------------------------------------------- */
+
+@include mobile {
+  .card {
+    @include flex(center, start);
+    flex-direction: column;
+    margin: 0rem;
+    height: 100%;
+    width: 100%;
+    flex-shrink: 0;
+    border-radius: 0.1875rem;
+    background: $color-primary-white;
+
+    /* Card Shadow */
+    box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.1);
+
+    &__title {
+      @include flex();
+      width: 90%;
+      padding: 13.5px $padding-xs;
+      flex-direction: row;
+      border-bottom: 1px solid $color-secondary-cloud;
+      &-container {
+        @include flex(center, start);
+        flex-direction: row;
+        width: 100%;
+      }
+    }
+
+    &__icon {
+      &-arrow {
+        padding-right: $padding-xxs;
+      }
+    }
+  }
+  .forms {
+    width: 100%;
+  }
+  .form {
+    &__ctas {
+      @include flex(start, space-between);
+      width: 100%;
+      padding: $padding-xs 0;
+      background: $color-bg-light-grey;
+      &-cancel {
+        margin-left: 1.75rem;
+        margin-right: 0.5rem;
+        width: 10rem;
+        padding: $padding-xxs $padding-xs;
+        border-radius: 1.25rem;
+        border: 1px solid $color-secondary-cloud;
+        color: $color-secondary-slate;
+        background-color: $color-primary-white;
+        &:hover {
+          color: $color-primary-is-indigo;
+          border: 1px solid $color-primary-is-indigo;
+        }
+      }
+      &-edit {
+        margin-left: 0.5rem;
+        margin-right: 1.75rem;
+        width: 10rem;
+        border: none;
+        padding: $padding-xxs $padding-xs;
+        border-radius: 1.25rem;
+        color: $color-primary-white;
+        background-color: $color-primary-is-indigo;
+        &:hover {
+          background-color: $color-bg-graphite;
+        }
+      }
+    }
+  }
+}
+
+.backbutton__link {
+  border: none;
+  background: transparent;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                Tablet Styles                               */
+/* -------------------------------------------------------------------------- */
+
+@include tablet {
+  .card {
+    margin: 0rem;
+
+    &__title {
+      width: 91%;
+      @include flex();
+      padding: $padding-s $padding-sm;
+    }
+
+    &__warehouse {
+      width: 10rem;
+    }
+    &__icon {
+      &-arrow {
+        padding-right: $padding-xxs;
+      }
+    }
+  }
+  .forms {
+    &__container {
+      @include flex(start);
+    }
+  }
+  .form {
+    &__ctas {
+      @include flex(start, right);
+      &-cancel {
+        width: 5rem;
+      }
+    }
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                DesktopStyles                               */
+/* -------------------------------------------------------------------------- */
+
+@include desktop {
+  .card {
+    margin: 0rem;
+    &__title {
+      width: 93.5%;
+      padding: $padding-s $padding-sm;
+    }
+  }
+  .forms {
+    &__container {
+      @include flex(start, space-between);
+    }
+  }
+}

@@ -1,0 +1,77 @@
+@use "../../../styles/partials/__variables" as *;
+@use "../../../styles/partials/__mixins" as *;
+@use "../../../styles/partials/__utils" as *;
+
+/* -------------------------------------------------------------------------- */
+/*                                Mobile Styles                               */
+/* -------------------------------------------------------------------------- */
+
+@include mobile {
+  .form-warehouse {
+    width: 85%;
+    padding: $padding-s;
+    border-bottom: 1px solid $color-secondary-cloud;
+    &__title {
+      margin-bottom: 2rem;
+    }
+    &__input {
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+      width: 88%;
+      padding: $padding-xxs $padding-xs;
+      font-size: 13px;
+      line-height: 20px;
+      font-family: "Titillium Regular";
+      color: $color-primary-is-black;
+
+      //border styles
+      border-radius: 1.25rem;
+      border: 1px solid $color-secondary-cloud;
+      &:focus {
+        border-color: $color-primary-is-indigo;
+        outline: none;
+      }
+
+      &.active {
+        border: 1px solid $color-primary-is-indigo;
+        outline: none;
+      }
+
+      &.error {
+        border: 1px solid $color-support-red;
+        outline: none;
+      }
+    }
+    .error-message {
+      @include flex(center, start);
+      color: $color-support-red;
+      font-size: 12px;
+    }
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                Tablet Styles                               */
+/* -------------------------------------------------------------------------- */
+
+@include tablet {
+  .form-warehouse {
+    width: 40%;
+    padding: $padding-m;
+    border-bottom: none;
+    border-right: 1px solid $color-secondary-cloud;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                DesktopStyles                               */
+/* -------------------------------------------------------------------------- */
+
+@include desktop {
+  .form-warehouse {
+    padding: $padding-m $padding-xl;
+    &__input {
+      width: 92%;
+    }
+  }
+}
