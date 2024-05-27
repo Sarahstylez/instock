@@ -78,7 +78,7 @@
     }
 
     &__form-ctas {
-      width: 100vw;
+      width: 100%;
       background-color: rgba(247, 248, 249, 0.7);
       padding: $padding-xs 0;
       justify-content: center;
@@ -135,7 +135,6 @@
     border-bottom: none;
     &__form-ctas {
       justify-content: end;
-      margin-right: 2rem;
     }
     &__button-add {
       .default-label {
@@ -156,7 +155,7 @@
   .item-availability-form {
     &__form-ctas {
       justify-content: end;
-      margin-right: 18rem;
+      // margin-right: 18rem;
     }
     padding: $padding-m $padding-xl;
     &__input {

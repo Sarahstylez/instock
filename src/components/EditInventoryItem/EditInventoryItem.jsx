@@ -111,7 +111,7 @@ const EditInventoryItem = () => {
           />
         </div>
       </div>
-      <div>
+      <div className="item-ctas__container">
       <div className="item-availability-form__form-ctas">
         <button className="item-availability-form__button-add" onClick={handleUpdate}>
         <h3 className="default-label">Save</h3>
