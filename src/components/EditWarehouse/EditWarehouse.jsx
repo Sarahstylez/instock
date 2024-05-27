@@ -29,7 +29,7 @@ function EditWarehouse() {
             try {
                 console.log(id);
                 const response = await fetch(
-                    `http://localhost:8080/api/warehouses/${id}`
+                    `${process.env.REACT_APP_API_URL}/api/warehouses/${id}`
                 );
                 if (!response.ok) {
                     throw new Error("Network response was not ok");
@@ -141,9 +141,9 @@ function EditWarehouse() {
 
             if (valid) {
                 try {
-                    console.log(`http://localhost:8080/api/warehouses/${id}`);
+                    console.log(`${process.env.REACT_APP_API_URL}/api/warehouses/${id}`);
                     const response = await fetch(
-                        `http://localhost:8080/api/warehouses/${id}`,
+                        `${process.env.REACT_APP_API_URL}/api/warehouses/${id}`,
                         {
                             method: "PUT",
                             headers: {

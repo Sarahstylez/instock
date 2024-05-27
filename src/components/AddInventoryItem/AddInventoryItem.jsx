@@ -21,7 +21,7 @@ const AddInventoryItem = () => {
     const fetchWarehouses = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8080/api/warehouses"
+          `${process.env.REACT_APP_API_URL}/api/warehouses`
         );
         setWarehouses(response.data);
       } catch (error) {
@@ -72,7 +72,7 @@ const AddInventoryItem = () => {
       };
       // Check if data is valid and post to backend
       const addItem = await axios.post(
-        `http://localhost:8080/api/inventory/`,
+        `${process.env.REACT_APP_API_URL}/api/inventory/`,
         newItem
       );
       alert("Item added successfully");
