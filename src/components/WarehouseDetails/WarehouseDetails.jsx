@@ -58,7 +58,6 @@ function WarehouseDetails() {
             </div>
             <TablesWarehouses warehouses={[warehouse]} />
             <ListTable page={`warehouses/${id}/inventory`} />
-            {/* <TablesInventory /> */}
         </section>
     );
 }
