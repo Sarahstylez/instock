@@ -172,9 +172,6 @@
     justify-content: center;
     display: flex;
     flex-direction: row-reverse;
-    @include tablet {
-      justify-content: flex-start;
-    }
   }
   &__button-add {
     margin-left: 0.5rem;

@@ -161,7 +161,9 @@
   
   @include desktop {
     .item-availability-form {
-      margin-right: 17rem;
+      &__form-ctas {
+        justify-content: end;
+      margin-right: 18rem;}
       padding: $padding-m $padding-xl;
       &__input {
         width: 92%;
