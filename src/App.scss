@@ -18,13 +18,12 @@
       //position overlay to overlap header
       position: absolute;
       top: 8.5rem;
-      left: $padding-sm;
-      right: $padding-sm;
+      left: $padding-xs;
+      right: $padding-xs;
 
       // Add bottom spacing for footer, to make sure bottom of the list is not overlapped by footer
       box-sizing: border-box;
       padding-bottom: 50px;
-
       @include tablet {
         scrollbar-width: none; // hide scrollbar
         overflow-y: scroll; // Make it scrollable

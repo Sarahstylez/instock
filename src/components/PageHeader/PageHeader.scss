@@ -19,7 +19,6 @@
         display: flex;
         flex-direction: column;
         padding: 0 2rem;
-        width: 100%;
 
         @include tablet {
             flex-direction: row;
@@ -43,7 +42,7 @@
             }
         }
         text-wrap: nowrap;
-        width: calc(100% - 6rem);
+        width: 100%;
         @include tablet {
             width: 10.5rem;
         }
@@ -61,7 +60,7 @@
 //search button
 #list-table__search {
     position: relative;
-    width: calc(100% - 6rem);
+    width: 100%;
     z-index: 0;
     //   margin: 0 0 1rem 2rem;
     @include tablet {
