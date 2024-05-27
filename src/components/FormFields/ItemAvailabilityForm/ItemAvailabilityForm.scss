@@ -6,6 +6,7 @@
 .item-availability-form {
     width: 85%;
     padding: $padding-s;
+    padding-bottom: 15.875rem;
     border-bottom: 1px solid $color-secondary-cloud;
   &__title {
     margin-bottom: 2rem;
@@ -89,9 +90,6 @@
     display: flex;
     flex-direction: row-reverse;
 
-    @include tablet {
-      justify-content: end;
-    }
   }
 
   &__button-add {
@@ -142,6 +140,10 @@
     width: 40%;
     padding: $padding-sm;
     border-bottom: none;
+    &__form-ctas {
+      justify-content: end;
+      margin-right: 2rem;
+  }
     &__button-add {
       .default-label{
         display: none;
@@ -158,6 +160,7 @@
   /* -------------------------------------------------------------------------- */
   
   @include desktop {
+    margin-right: 17rem;
     .item-availability-form {
       padding: $padding-m $padding-xl;
       &__input {
