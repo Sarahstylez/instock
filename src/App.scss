@@ -14,8 +14,8 @@
       background-color: $color-primary-white;
       position: absolute;
       top: 8.5rem;
-      left: $padding-sm;
-      right: $padding-sm;
+      left: $padding-xs;
+      right: $padding-xs;
       @include tablet {
         top: 5.75rem;
         left: $padding-sm;
