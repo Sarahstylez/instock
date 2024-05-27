@@ -83,7 +83,6 @@
   .warehouse {
     width: 90%;
     height: 4rem;
-    padding: $padding-sm $padding-l;
     border: none;
 
     &__address {
@@ -106,3 +105,27 @@
     }
   }
 }
+
+
+#root > div > div > section > section {
+  width: 100%;
+}
+
+#root > div > div > section > section > div {
+  display: none;
+}
+
+#root > div > div > section > div.warehouses > div > div.warehouse__container > div.warehouse__contact > div.warehouse__contact-info {
+  justify-content: end;
+}
+
+#root > div > div > section > div.warehouses > div {
+  @include tablet {
+  border-bottom: none;}
+}
+
+#root > div > div > section > div.warehouses {
+  width: 100%;
+  @include tablet {
+  border-bottom: none;
+}}
