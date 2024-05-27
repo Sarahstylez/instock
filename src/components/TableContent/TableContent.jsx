@@ -46,6 +46,32 @@ const WarehouseTableContent = ({ listItem }) => (
     </>
 );
 
+const WarehouseInventoryTableContent = ({ listItem }) => (
+    <>
+        <div className="mobile-item">
+            <div className="mobile-item-title">INVENTORY ITEM</div>
+            <Link to={`/inventory/${listItem.id}`}>
+                <div className="list-table__name">
+                    <h3>{listItem.item_name}</h3>
+                    <img src={chevronIcon} alt="chevron icon" />
+                </div>
+            </Link>
+        </div>
+        <div className="mobile-category">
+            <div className="mobile-category-title">CATEGORY</div>
+            <div>{listItem.category}</div>
+        </div>
+        <div className="mobile-status">
+            <div className="mobile-status-title">STATUS</div>
+            <Tags status={listItem.status} />
+        </div>
+        <div className="mobile-quantity">
+            <div className="mobile-quantity-title">QTY</div>
+            <div>{listItem.quantity}</div>
+        </div>
+    </>
+);
+
 const InventoryTableContent = ({ listItem }) => (
     <>
         <div className="mobile-item">
@@ -90,10 +116,14 @@ const TableContent = ({ page, listItem }) => {
 
     return (
         <>
-            {page === "warehouses" ? (
+            {page === "warehouses" && (
                 <WarehouseTableContent listItem={listItem} />
-            ) : (
+            )}
+            {page === "inventory" && (
                 <InventoryTableContent listItem={listItem} />
+            )}
+            {page !== "inventory" && page !== "warehouses" && (
+                <WarehouseInventoryTableContent listItem={listItem} />
             )}
 
             <div className="list-table__actions-delete mobile-actions-delete">
