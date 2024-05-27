@@ -3,229 +3,232 @@
 @use "../../styles/partials/__utils" as *;
 
 body {
-  background-color: $color-bg-light-grey;
+    background-color: $color-bg-light-grey;
 }
 .list-table {
-  &__list {
-    font-size: 13px;
-    border-bottom: 1px solid $color-secondary-cloud;
-    padding: 1rem 2rem;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
-    &:not-first-child {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    &__list {
+        font-size: 13px;
+        border-bottom: 1px solid $color-secondary-cloud;
+        padding: 1rem 2rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+        &:not-first-child {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+        &:last-child {
+            border-bottom: none;
+        }
+        &:hover {
+            background-color: $color-bg-light-grey;
+        }
+        @include tablet {
+            padding: 1rem 2rem;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            gap: 1rem;
+            grid-template-columns: 2fr 2fr 2fr 3fr 0.5fr 0.5fr; // default for warehouses page
+            &--inventory {
+                grid-template-columns: repeat(5, 1fr) repeat(
+                        2,
+                        minmax(25px, 0.2fr)
+                    ); /* 5 columns sharing space, with last two actions columns taking less space */
+            }
+        }
     }
-    &:last-child {
-      border-bottom: none;
+    &__name {
+        display: flex;
+        align-items: center;
+        color: $color-primary-is-indigo;
     }
-    &:hover {
-      background-color: $color-bg-light-grey;
+    &__contact-info p {
+        font-size: 13px;
+        line-height: 1.5;
+        @include tablet {
+            font-size: 14px;
+        }
     }
-    @include tablet {
-      padding: 1rem 2rem;
-      display: grid;
-      justify-content: center;
-      align-items: center;
-      font-size: 14px;
-      gap: 1rem;
-      grid-template-columns: 2fr 2fr 2fr 3fr 0.5fr 0.5fr; // default for warehouses page
-      &--inventory {
-        grid-template-columns: repeat(5, 1fr) repeat(2, minmax(25px, 0.2fr)); /* 5 columns sharing space, with last two actions columns taking less space */
-      }
-    }
-  }
-  &__name {
-    display: flex;
-    align-items: center;
-    color: $color-primary-is-indigo;
-  }
-  &__contact-info p {
-    font-size: 13px;
-    line-height: 1.5;
-    @include tablet {
-      font-size: 14px;
-    }
-  }
-  &__actions {
-    &-delete {
-      display: flex;
+    &__actions {
+        &-delete {
+            display: flex;
 
-      @include tablet {
-        justify-content: end;
-      }
-    }
+            @include tablet {
+                justify-content: end;
+            }
+        }
 
-    &-edit {
-      display: flex;
-      justify-content: end;
-      align-items: center;
-      padding-bottom: 0rem;
+        &-edit {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            padding-bottom: 0rem;
 
-      @include tablet {
-        justify-content: start;
-      }
+            @include tablet {
+                justify-content: start;
+            }
+        }
     }
-  }
 }
 
 //sorting header -hides when in mobile mode
 .--sort-header {
-  @include mobile {
-    display: none;
-  }
-  @include tablet {
-    display: grid;
-    background-color: $color-bg-light-grey;
-    font-size: 11px;
-    font-family: "Titillium Semi-Bold";
-    color: $color-secondary-slate;
-    padding: 0.5rem 2rem;
-    border-bottom: none;
+    z-index: 0;
+    @include mobile {
+        display: none;
+    }
+    @include tablet {
+        display: grid;
+        background-color: $color-bg-light-grey;
+        font-size: 11px;
+        font-family: "Titillium Semi-Bold";
+        color: $color-secondary-slate;
+        padding: 0.5rem 2rem;
+        border-bottom: none;
 
-    //Keep header visible as you scroll down to show more items
-    position: sticky;
-    top: 0;
-    z-index: 10;
-  }
+        //Keep header visible as you scroll down to show more items
+        position: sticky;
+        top: 0;
+    }
 }
 
 .list-table__sort {
-  &-name,
-  &-add,
-  &-contact-name,
-  &-contact-info,
-  &-item,
-  &-category,
-  &-status,
-  &-quantity,
-  &-warehouse-name {
-    display: flex;
-    align-items: center;
-  }
-  &-actions {
-    grid-column: span 2;
-    justify-self: center;
-    @include desktop {
-      grid-column: span 2;
-      justify-self: center;
+    &-name,
+    &-add,
+    &-contact-name,
+    &-contact-info,
+    &-item,
+    &-category,
+    &-status,
+    &-quantity,
+    &-warehouse-name {
+        display: flex;
+        align-items: center;
     }
-  }
+    &-actions {
+        grid-column: span 2;
+        justify-self: center;
+        @include desktop {
+            grid-column: span 2;
+            justify-self: center;
+        }
+    }
 }
 
 //mobile view
 .mobile {
-  &-warehouse-title,
-  &-add-title,
-  &-contact-name-title,
-  &-contact-info-title,
-  &-item-title,
-  &-category-title,
-  &-status-title,
-  &-quantity-title,
-  &-warehouse-name {
-    font-size: map-get($table-header, font-size);
-    font-family: map-get($table-header, font-family);
-    color: map-get($table-header, color);
-    @include tablet {
-      display: none;
+    &-warehouse-title,
+    &-add-title,
+    &-contact-name-title,
+    &-contact-info-title,
+    &-item-title,
+    &-category-title,
+    &-status-title,
+    &-quantity-title,
+    &-warehouse-name {
+        font-size: map-get($table-header, font-size);
+        font-family: map-get($table-header, font-family);
+        color: map-get($table-header, color);
+        @include tablet {
+            display: none;
+        }
     }
-  }
-  &-spacing {
-    @include tablet {
-      display: none;
+    &-spacing {
+        @include tablet {
+            display: none;
+        }
     }
-  }
 }
 
 /* Reordering warehouse items on mobile */
 .list-table__list--warehouses .mobile {
-  &-warehouse {
-    order: 1;
-  }
-
-  &-add {
-    order: 3;
-  }
-
-  &-contact-info {
-    order: 4;
-  }
-
-  &-contact-name {
-    order: 2;
-  }
-
-  &-actions-delete {
-    order: 5;
-  }
-
-  &-actions-edit {
-    order: 6;
-  }
-
-  @include tablet {
-    &-warehouse,
-    &-add,
-    &-contact-info,
-    &-contact-name,
-    &-actions-edit,
-    &-actions-delete {
-      order: initial; // Revert the order back to default for tablet screens
+    &-warehouse {
+        order: 1;
     }
-  }
+
+    &-add {
+        order: 3;
+    }
+
+    &-contact-info {
+        order: 4;
+    }
+
+    &-contact-name {
+        order: 2;
+    }
+
+    &-actions-delete {
+        order: 5;
+    }
+
+    &-actions-edit {
+        order: 6;
+    }
+
+    @include tablet {
+        &-warehouse,
+        &-add,
+        &-contact-info,
+        &-contact-name,
+        &-actions-edit,
+        &-actions-delete {
+            order: initial; // Revert the order back to default for tablet screens
+        }
+    }
 }
 
 /* Reordering inventory items on mobile */
 .list-table__list--inventory .mobile {
-  &-item {
-    order: 1;
-  }
-
-  &-category {
-    order: 3;
-  }
-
-  &-quantity {
-    order: 4;
-  }
-  &-spacing {
-    order: 5;
-  }
-  &-warehouse {
-    order: 6;
-  }
-
-  &-status {
-    order: 2;
-  }
-
-  &-actions-delete {
-    order: 7;
-  }
-
-  &-actions-edit {
-    order: 8;
-  }
-
-  @include tablet {
-    &-item,
-    &-category,
-    &-quantity,
-    &-spacing,
-    &-warehouse,
-    &-status,
-    &-actions-delete,
-    &-actions-edit {
-      order: initial; // Revert the order back to default for tablet screens
+    &-item {
+        order: 1;
     }
-  }
+
+    &-category {
+        order: 3;
+    }
+
+    &-quantity {
+        order: 4;
+    }
+    &-spacing {
+        order: 5;
+    }
+    &-warehouse {
+        order: 6;
+    }
+
+    &-status {
+        order: 2;
+    }
+
+    &-actions-delete {
+        order: 7;
+    }
+
+    &-actions-edit {
+        order: 8;
+    }
+
+    @include tablet {
+        &-item,
+        &-category,
+        &-quantity,
+        &-spacing,
+        &-warehouse,
+        &-status,
+        &-actions-delete,
+        &-actions-edit {
+            order: initial; // Revert the order back to default for tablet screens
+        }
+    }
 }
 
 // animate arrow for each item on hover
 
 .list-table__name:hover {
-  transform: translateX(4px);
+    transform: translateX(4px);
 }
 //should be list-table__icon, however, inventory item does not have class name
