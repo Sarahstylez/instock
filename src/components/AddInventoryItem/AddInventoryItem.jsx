@@ -21,7 +21,7 @@ const AddInventoryItem = () => {
     const fetchWarehouses = async () => {
       try {
         const response = await axios.get(
-          `${process.env.REACT_APP_API_URL}/api/api/warehouses`
+          `${process.env.REACT_APP_API_URL}/api/warehouses`
         );
         setWarehouses(response.data);
       } catch (error) {
