@@ -160,8 +160,8 @@
   /* -------------------------------------------------------------------------- */
   
   @include desktop {
-    margin-right: 17rem;
     .item-availability-form {
+      margin-right: 17rem;
       padding: $padding-m $padding-xl;
       &__input {
         width: 92%;
