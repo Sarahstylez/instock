@@ -108,7 +108,7 @@ function AddWarehouse() {
 
       if (valid) {
         try {
-          const response = await fetch("http://localhost:8080/api/warehouses", {
+          const response = await fetch(`${process.env.REACT_APP_API_URL}/api/warehouses`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
