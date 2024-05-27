@@ -129,3 +129,10 @@
   @include tablet {
   border-bottom: none;
 }}
+
+
+#root > div > div > section > section > ul > li{
+  @include tablet {
+  grid-template-columns: 2fr 2fr 2fr 1fr 1fr 1fr;
+  };
+}
