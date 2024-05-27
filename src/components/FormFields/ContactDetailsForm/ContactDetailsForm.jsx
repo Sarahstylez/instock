@@ -1,4 +1,5 @@
 import "./ContactDetailsForm.scss";
+import ErrorIcon from "../../../assets/Icons/error-24px.svg";
 
 const ContactDetailsForm = ({
   formData,
@@ -50,7 +51,10 @@ const ContactDetailsForm = ({
             required
           />
           {errors[field] && (
-            <div className="error-message">{errors[field]}</div>
+            <div className="error-message">
+              <img src={ErrorIcon} alt="Error Icon" />
+              {errors[field]}
+            </div>
           )}
         </div>
       ))}

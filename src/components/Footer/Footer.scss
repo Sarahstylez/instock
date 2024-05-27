@@ -1,0 +1,47 @@
+@use "../../styles/partials/__variables" as *;
+@use "../../styles/partials/__mixins" as *;
+@use "../../styles/partials/__utils" as *;
+
+/* Copyright text footer code adapted from Figma dev
+TODO refactor to define variables partial instead */
+.footer {
+  background-color: $color-bg-light-grey;
+  width: 100%;
+
+  //set fixed height to offset as padding in overlay card
+  height: 50px;
+  box-sizing: border-box;
+
+  //style so footer remains on mobile
+  position: fixed;
+  bottom: 0;
+  padding: 1rem;
+  z-index: 1000; /* Ensure the footer stays above other content */
+  transition: transform 0.3s ease; /* Add smooth transition */
+
+  @include tablet {
+    margin-bottom: 40px;
+    // position footer at the bottom of page on tablet
+    position: absolute;
+    left: $padding-sm;
+    right: $padding-sm;
+    bottom: 0;
+    // revert mobile-only
+    z-index: initial;
+    padding: initial;
+    transition: none;
+    padding: initial;
+  }
+
+  & p {
+    color: $color-secondary-slate;
+    text-align: center;
+    font-feature-settings: "clig" off, "liga" off;
+
+    /* P3 */
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.125rem; /* 150% */
+  }
+}

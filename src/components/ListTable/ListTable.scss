@@ -83,6 +83,11 @@ body {
     color: $color-secondary-slate;
     padding: 0.5rem 2rem;
     border-bottom: none;
+
+    //Keep header visible as you scroll down to show more items
+    position: sticky;
+    top: 0;
+    z-index: 10;
   }
 }
 
