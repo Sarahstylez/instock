@@ -21,6 +21,21 @@
       font-weight: bold;
     }
 
+    &__status-group {
+      display: flex;
+      justify-content: flex-start;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+      width: 100%;
+      font-size: 13px;
+      line-height: 20px;
+      font-family: "Titillium Regular";
+      color: $color-primary-is-black;
+      @include tablet {
+        width: 107%;
+      }
+    }
+
     &__status-button {
       margin-right: 3rem;
     }
@@ -78,7 +93,7 @@
     }
 
     &__form-ctas {
-      width: 100vw;
+      width: 100%;
       background-color: rgba(247, 248, 249, 0.7);
       padding: $padding-xs 0;
       justify-content: center;
@@ -131,11 +146,10 @@
 @include tablet {
   .item-availability-form {
     width: 40%;
-    padding: $padding-sm;
+    padding: 8px $padding-s;
     border-bottom: none;
     &__form-ctas {
       justify-content: end;
-      margin-right: 2rem;
     }
     &__button-add {
       .default-label {
@@ -156,9 +170,9 @@
   .item-availability-form {
     &__form-ctas {
       justify-content: end;
-      margin-right: 18rem;
+      // margin-right: 18rem;
     }
-    padding: $padding-m $padding-xl;
+    padding: 10px $padding-xl;
     &__input {
       width: 92%;
     }

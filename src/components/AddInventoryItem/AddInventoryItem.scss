@@ -3,22 +3,20 @@
 @use "../../styles/partials/__utils" as *;
 
 .add-card {
-  display: flex;
+  @include flex();
   flex-direction: column;
-  align-items: center;
-  justify-content: start;
   width: 100%;
   border-radius: 3px;
   &__header {
     width: 100%;
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 0;
     &-container {
       display: flex;
       align-items: center;
       justify-content: start;
       flex-direction: row;
       padding: 0 1rem;
-      width: 100%;
+      width: 90%;
     }
   }
 
@@ -156,7 +154,7 @@
     font-family: "Titillium Regular";
     color: $color-primary-is-black;
     @include tablet {
-      width: 107%;
+      width: 100%;
     }
   }
   &__radio {
@@ -169,7 +167,7 @@
     width: 100%;
     background-color: rgba(247, 248, 249, 0.7);
     padding: $padding-xs 0;
-    justify-content: center;
+    justify-content: right;
     display: flex;
     flex-direction: row-reverse;
   }

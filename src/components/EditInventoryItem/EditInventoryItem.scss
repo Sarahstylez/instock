@@ -46,6 +46,9 @@
       flex-direction: column;
     }
   }
+  .item-ctas__container {
+    width: 100%;
+  }
 }
 
 /* -------------------------------------------------------------------------- */
@@ -65,7 +68,7 @@
     }
     &__form-ctas {
       @include flex(start, right);
-      width: 100vw;
+      width: 100%;
       background-color: $color-bg-light-grey;
       &-cancel {
         width: 5rem;
@@ -76,6 +79,7 @@
     &__container {
       display: flex;
       flex-direction: row;
+      width: 100%;
       //align-items: start;
       //@include flex();
     }

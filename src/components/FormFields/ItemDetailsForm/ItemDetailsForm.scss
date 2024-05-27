@@ -121,7 +121,7 @@
 @include tablet {
   .item-details-form {
       width: 40%;
-      padding: $padding-sm;
+      padding: 8px $padding-s;
       border-bottom: none;
       position: relative;
 
@@ -143,7 +143,7 @@
   
   @include desktop {
     .item-details-form {
-      padding: $padding-m $padding-xl;
+      padding: 10px $padding-xl;
       &__input {
         width: 92%;
       }
