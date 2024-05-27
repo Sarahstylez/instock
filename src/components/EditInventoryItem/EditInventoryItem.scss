@@ -2,52 +2,50 @@
 @use "../../styles/partials/__mixins" as *;
 @use "../../styles/partials/__utils" as *;
 
-
 /* -------------------------------------------------------------------------- */
 /*                                Mobile Styles                               */
 /* -------------------------------------------------------------------------- */
 
 @include mobile {
-.card {
-  @include flex(center, start);
-  flex-direction: column;
-  margin: 1rem;
-  width: 92%;
-  height: auto;
-  flex-shrink: 0;
-  border-radius: 0.1875rem;
-  background: $color-primary-white;
-  box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.1);
+  .card {
+    @include flex(center, start);
+    flex-direction: column;
+    margin: 1rem;
+    width: 92%;
+    height: auto;
+    flex-shrink: 0;
+    border-radius: 0.1875rem;
+    background: $color-primary-white;
+    box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.1);
 
-  &__title {
-    @include flex();
-    width: 91%;
-    padding: $padding-s $padding-xs;
-    flex-direction: row;
-    border-bottom: 1px solid $color-secondary-cloud;
-
-    &-container {
-      @include flex(center, start);
+    &__title {
+      @include flex();
+      width: 91%;
+      padding: $padding-s $padding-xs;
       flex-direction: row;
-      width: 100%;
+      border-bottom: 1px solid $color-secondary-cloud;
+
+      &-container {
+        @include flex(center, start);
+        flex-direction: row;
+        width: 100%;
+      }
+    }
+
+    &__icon-arrow {
+      padding-right: $padding-xxs;
     }
   }
 
-  &__icon-arrow {
-    padding-right: $padding-xxs;
-  }
-}
-
-.forms {
-  width: 100%;
-
-  &__container {
-    @include flex(start, space-between);
+  .forms {
     width: 100%;
-    flex-direction: column;
-  }
-}
 
+    &__container {
+      @include flex(start, space-between);
+      width: 100%;
+      flex-direction: column;
+    }
+  }
 }
 
 /* -------------------------------------------------------------------------- */
@@ -82,9 +80,6 @@
       //@include flex();
     }
   }
- 
- 
-  
 }
 
 /* -------------------------------------------------------------------------- */
