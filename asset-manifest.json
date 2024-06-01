@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.636c750f.css",
+    "main.js": "/static/js/main.3ddd63df.js",
+    "static/media/TitilliumWeb-Regular.ttf": "/static/media/TitilliumWeb-Regular.e53e0538893d432e0635.ttf",
+    "static/media/TitilliumWeb-SemiBold.ttf": "/static/media/TitilliumWeb-SemiBold.d4d3eeb6e2367e6796c3.ttf",
+    "static/media/InStock-Logo.svg": "/static/media/InStock-Logo.ea8e97e4e4da1786675b710b7c7b332f.svg",
+    "index.html": "/index.html",
+    "static/media/edit-white-24px.svg": "/static/media/edit-white-24px.3ec630c2ec930fd3a7fa27051a288457.svg",
+    "static/media/search-24px.svg": "/static/media/search-24px.5317dd0d1d2e2971f5148ed6cf930843.svg",
+    "static/media/edit-24px.svg": "/static/media/edit-24px.34030862a2aed1ec1efefe1b3ff181ed.svg",
+    "static/media/sort-24px.svg": "/static/media/sort-24px.1811f1f0c1cd36589492267c332f73d8.svg",
+    "static/media/error-24px.svg": "/static/media/error-24px.eed74db22e59ad00c516d6ed6b40a8ce.svg",
+    "static/media/delete_outline-24px.svg": "/static/media/delete_outline-24px.2cbb4a63b094d3d9b622b040446a6310.svg",
+    "static/media/close-24px.svg": "/static/media/close-24px.4862ddd56a4234e7665b782ce3c8e4fb.svg",
+    "static/media/chevron_right-24px.svg": "/static/media/chevron_right-24px.8bc767eb9cebbb42af635ab011ef1433.svg",
+    "static/media/arrow_back-24px.svg": "/static/media/arrow_back-24px.543f2ed7e7cac0707a80230af2299744.svg",
+    "static/media/arrow_drop_down-24px.svg": "/static/media/arrow_drop_down-24px.471302b288b1a9f172e1.svg",
+    "main.636c750f.css.map": "/static/css/main.636c750f.css.map",
+    "main.3ddd63df.js.map": "/static/js/main.3ddd63df.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.636c750f.css",
+    "static/js/main.3ddd63df.js"
+  ]
+}
